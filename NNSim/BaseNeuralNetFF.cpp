@@ -8,6 +8,8 @@
 #include <string.h>
 #include <math.h>
 
+#include <cassert>
+
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -133,8 +135,12 @@ bool CBaseNeuralNetFF :: ConnectLayer(long lFL,long lSL){
 
 void CBaseNeuralNetFF::SetInput(netvar_t *p){
 	long lschl;
-	CBaseNeuron **ppNL = pppNeurons[0];
-	
+	CBaseNeuron **ppNL;
+
+	assert(pppNeurons != NULL);
+
+	ppNL = pppNeurons[0];
+
 	for(lschl = plLNNum[0]-1;lschl>-1;lschl --){
 		((CBaseNeuronFF*)(ppNL[lschl]))->m_dOut = p[lschl];
 	}
@@ -142,8 +148,12 @@ void CBaseNeuralNetFF::SetInput(netvar_t *p){
 
 void CBaseNeuralNetFF::GetOutput(netvar_t *p){
 	long lschl;
-	CBaseNeuron **ppNL = pppNeurons[lLayerNum-1];
-	
+	CBaseNeuron **ppNL;
+
+	assert(pppNeurons != NULL);
+
+	ppNL = pppNeurons[lLayerNum-1];
+
 	for(lschl = plLNNum[lLayerNum-1]-1;lschl>-1;lschl --){
 		p[lschl] = ((CBaseNeuronFF*)(ppNL[lschl]))->m_dOut;
 	}
