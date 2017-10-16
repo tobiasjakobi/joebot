@@ -1,0 +1,2 @@
+g++ -O2 -fexpensive-optimizations -fforce-mem -fforce-addr -w -DCPU=686 -I../NNSim/ -I../engine -I../common -I../pm_shared -c ../dlls/nn.cpp -o ../dlls/nn.o
+g++ -O2 -fexpensive-optimizations -fforce-mem -fforce-addr -w -DCPU=686 -I../NNSim/ -I../engine -I../common -I../pm_shared ../NNSim/SOM/nVec.o ../NNSim/SOM/CqSOM2d.o ../NNSim/SOM/SOMPattern.o ../NNSim/SOM/SOMPatternElem.o ../NNSim/SOM/fNBorKernel.o ../dlls/nn.o main.cpp -o exe

@@ -1,0 +1,868 @@
+<html><body text = black bgcolor=lightgrey>
+<br>
+<table width=90% align=center bgcolor = white border=0><tr><td>
+<center>
+  <pre>----------------------------------------------------------------------------------------------
+-- This Bot is based on botman's HPB_bot - template code - http://planethalflife.com/botman --
+----------------------------------------------------------------------------------------------</pre>
+</center>
+<center>
+  <table border=1 align=center cellpadding=4 width= 60%>
+    <tr> 
+      <td> 
+              <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif"> 
+                <font size="5"><b>README FOR <a href="mailto:as3.1415rin@joebot.net">@$3.1415rin's</a> 
+                JoeBOT 1.6.2- <a href="http://joebot.net/index.php">http://www.joebot.net</a> 
+                </b> </font> </font> </div>
+  </table>
+        <p>Check out <a href="http://sourceforge.net/projects/joebot">JoeBOT on 
+          Sourceforge</a> if you have something to contribute to this project 
+          ! </p>
+      </center>
+<font face="Verdana, Arial, Helvetica, sans-serif"><br>
+<b>0. Information about this bot for cs</b><br>
+<br>
+The main movements of this bot are controlled by 2 artificial neural nets (nn.br3 
+and nnc.br3). The wayfinding stuff if done on the basis of waypoints and some 
+sort of backtracking combined with the floyd/warshall algorithm. <br>
+<br>
+( Note : Additional map loading times of about 1 minute are normal on the first start of a map, there is no reason to complain about it. In that time JoeBOT creates navigation tables, which are stored afterwards on your harddisk, so the next time the map will load faster, the bot just has to load the files. On normal CS maps you won't normally notice this additional delay, but on big maps like in DOD or maps with high density waypoints, you might notice it. )
+<br>
+<br>
+</font> 
+<table width=80% border=1 align=center>
+  <tr> 
+    <td> 
+      <table align=center border=0>
+        <tr> 
+          <th><font face="Verdana, Arial, Helvetica, sans-serif">features: </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- human-like 
+            reaction time + aiming </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- human-like 
+            accuracy ( changeable ) </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- some little 
+            pieces of teamwork ... to be extended next time </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- bots sometimes 
+            camp </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- defusing/planting 
+            bomb, rescuing hostages and other little things ... es and as maps 
+            are not supprted yet ! </font> 
+
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- all weapons 
+            are supported </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- weapon pickup 
+            system </font> 
+        <tr> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">- personality 
+                  system, i.e. favourite weapon, agressive/defensive, chat mode</font> 
+              <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- bots follow 
+            some radio commands and are using the radio themselves </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- bots don't 
+            attack teammates </font> 
+      </table>
+</table>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <b>1. Installing ...</b><br>
+        First deinstall your current bot, if u'd one.<br>
+        Then exec your <b>.exe</b> file and follow the instructions ...<br>
+        <br>
+        Or, <i><b>if u've got a *.zip file</b></i>, copy the *.br3 to your CStrike/joebot 
+        dir, the *.wpj to cstrike/joebot/wpjs/std/, the chat files ( texts.txt 
+        e.g. ) to cstrike/joebot/chat/ and the joebot.dll to half-life/joebot/. 
+        Then modify the dll entry in cstrike/liblist.gam to "../joebot/joebot.dll" 
+        as shown in 'my liblist.gam' after having made a backup of this file for 
+        deinstalling.(if the zip file contains directory information just unzip 
+        it and copy the cstrike dir into ur hl dir and overwrite everything)<br>
+        Now you just have to run cstrike as a server for a lan game.<br>
+        <br>
+        <b>2. Adding Bots</b><br>
+        <br>
+        Type addbot in your console<br>
+        The number of automatically added bots can be changed in cstrike/joebot/bot.cfg. 
+        max_bots/min_bots is a variable, which defines the min or maximum number 
+        of bots on one server. If this isn't the case, the server adds new bots. 
+        Of course u can just use the addbot command in the bot.cfg as well.<br>
+        <br>
+        <i>addbot syntax :</i><br>
+        <br>
+        addbot team model name skill<br>
+        (addbot [1/2/5] [1/2/3/4] name )<br>
+        <br>
+        example : addbot 2 2 @$3.1415rin<br>
+        <br>
+        write 'default' for the parameter u don't want to specify<br>
+        </font> <b><br>
+        3. Commands<br>
+        <br>
+        </b> 
+      <table border=1 cellpadding="3" cellspacing="3" align="center" bordercolor="#ff0000">
+        <tr>
+          <td><font color="#FF0000">( <font face="Verdana, Arial, Helvetica, sans-serif"><b>Dedicated 
+            server commands :</b> usage : "joebot command|parameter1|parameter2|...</font> 
+            ) </font>
+        </table>
+      <p>The 2nd to 4th column specify where a command can be used. <i><b>CON</b></i> 
+        means the in game console on a listenserver, <i><b>DED</b></i> the console 
+        of a dedicated server and <i><b>CFG</b></i> a bot config file like cstrike/joebot/bot.cfg.<br>
+        <br>
+      </p>
+      <table width=90% align=center border=1>
+  <tr> 
+    <td> 
+      <table width=100% align=center border=0>
+        <tr> 
+          <td> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>CON</i></b></font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>DED</i></b></font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>CFG</b></i></font> 
+                <td> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><i><u>Waypoint 
+            commands</u></i></b> </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">language e/de/fr</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">sets bot menu 
+            language to Englsih, German or French </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint on/off 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles visibility 
+            of waypoints </font> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint sound on/off 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles sound messages related to waypointing</font> 
+        <tr> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint delall
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">deletes all waypoints</font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint add 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">adds a waypoint 
+            </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint delete 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">deletes a waypoint 
+            </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint aim 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the aiming 
+            flag of the nearest wp within 100 Units - used for camping bots to 
+            look @ </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint sniper 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the sniper 
+            flag of the nearest wp within 100 Units </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint bomb 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the goal 
+            flag of the nearest wp within 100 Units (de) // bomb target </font> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint blockhostage/bh 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the blockhostage 
+            flag of the nearest wp within 100 Units. The function of this wp is to prevent bots from running there with hostages</font> 
+
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint hostage 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> toggles the 
+            goal flag of the nearest wp within 100 Units (cs) // hostages </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint viprescue	
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the goal 
+            flag of the nearest wp within 100 Units (cs) // vip rescue zone </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint rescue 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the rescue 
+            flag of the nearest wp within 100 Units (cs) // rescue zone </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint ladder 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the ladder 
+            flag of the nearest wp within 100 Units </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint jump 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the jump 
+            flag of the nearest wp within 100 Units </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint reset 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">forces a bot 
+            which is near to that wp to reset his setting of the next wp. This 
+            is useful if the probability is high, that a bot can fall down from 
+            somewhere </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint visit 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the visit 
+            flag of the nearest wp within 100 Units // this wp should be visited 
+            once in a while </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint dontavoidfall/daf	
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the dontavoidfall 
+            flag of the nearest wp within 100 Units // this flag is for supressing 
+            the bots anti fall system for a short time </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint dontavoid/da	
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">toggles the dontavoid 
+            flag of the nearest wp within 100 Units - at this wp the bot does 
+            not avoid walls, etc. (see waypoint.html) </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint counter/ct	
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">wp only for counters 
+            </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint terror/te 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">wp only for terrors 
+            </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint noteam 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">not team specific 
+            wp </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint addstdwp 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> adding standard 
+            wp's like starting points </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint test 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">counts the number 
+            of waypoint types and gives u hints, when there's for example a wp 
+            for the rescue zone missing </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint makepaths 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">/*This command 
+            is temporary not available ! Instead it'll save and load the waypoints 
+            to ur hd and will recreate the routes this way. Note that ur saved 
+            waypoint files are affected*/ Calculates paths. U should do this every 
+            time u have edited the wps. U'll have the same effect be saving and 
+            loading the wps, but makepaths does not affect your saved files (good 
+            for testing) </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint load 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">... </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint save 
+            [dir] </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">with the dir 
+            param u can define the directory in which the waypoint file will be 
+            stored. U don't need to specify a dir. </font> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint forcenostat [on/off] </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Forces the bot not to recalculate the statistics tables and visibility tables on waypoint editing. This saves some CPU power on waypoint editing.</font> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> waypoint forcestatrecalc</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Forces the bot to recalc statistics and visibility tables</font> 
+
+
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> autowaypoint 
+            on/off </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">waypoints will 
+            be added where player run </font> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> autowaypoint 
+            all/human </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Shall all players or just humans create waypoints ?</font> 
+
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> autowaypoint 
+            testjump on/off </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Should the jump wp added by autowaypointing be tested by an addtional routine if they are required ?</font> 
+
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> autowaypointaddjump/awpaj 
+            on/off </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">should a jump 
+            waypoint be added where the autowaypointer jumps ? default is on </font> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> advancedmovements/advm
+            on/off </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Should the advanced movement system be used while autowaypointing ?</font> 
+
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> pathwaypoint/pw 
+            create1 </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">starts a path 
+            from one wp to another </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> pathwaypoint 
+            create2 </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">determines the 
+            end of the path started with create1 </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> pathwaypoint 
+            remove1 </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">... </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> pathwaypoint 
+            remove2 </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">... </font> 
+	  <tr> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"> debuggoal 
+                  x </font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">forces 
+                  all bots to go to one waypoint. x is the number of this waypoint. 
+                  you can get the number of a waypoint with <i>&quot;waypoint 
+                  info&quot;</i></font> 
+              <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><u><i>Other 
+            Options : </i></u></b></font> 
+        <tr>
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">prefix 
+                  'agg' 'nor' 'def'</font>
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font>
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">Setting 
+                  prefixes for bot names ( the [JOE] at the beginning ) for differently 
+                  agressive bots <i>The default setting would be using this command "prefix [JOE] [JoE] [J0E]"</i></font> 
+              <tr>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">min_bots</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Setting min number 
+            of bots <i>Be careful, the default is -1, if you want the bot to kick some bots until the lower limit given by this variable is reached, set it to a number which isnt -1 )</i></font>
+        <tr>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">max_bots</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Setting max number 
+            of bots to be added automatically ( fill server up to this number 
+            ) </font>
+<tr>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">fillserver [all/te/ct/0/1] [full/half]</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Filling server with bots</font>
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> mix_names on/off 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> names from bot_names.txt 
+            are random or not </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> leetposs </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">possibility for 
+            bots "speaking" 1337 ... in % </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> botuseradio 
+            on/off </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">should bots use 
+            the radio ? </font> 
+<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> botspray 
+            on/off </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">should bots use 
+            the spraypaints defined in spray.txt ? </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> resetstat </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">resets statistics 
+            </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> extjoe on/off 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">should names 
+            be extended by [JOE] ? </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> extskill on/off 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">should names 
+            be extended by the skill ? </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> botshoot on/off 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">If u r 2 bad 
+            !!!! </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> kickbots ct/te/all 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">.... </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> kickbot ct/te 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">.... </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> bottkpunish 
+            on/off </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">sets flag for 
+            bots killing their teamkiller from the previous round. The default 
+            isoff, because many ppl thought this feature was a bug. </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> endround </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">kills all bots 
+            to make the round end </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> edown on/off 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">switches enemy 
+            down mess off/on </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> botchat on/off/sec	
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">switches bot 
+            chat on/off, or set the average pause between chatting messages in 
+            seconds </font> 
+			<tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">bot_ichat [off/dead/alive/all]</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font>
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">When should 
+                  the interactive chat mode be used ?</font> 
+              <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> nnstat </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">shows status 
+            of nns - to be extended in some time ... </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> nn_update </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">default : nn_update 
+            10 ... 10 updates of nn per sec </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> campposs value 
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">sets the overall 
+            probability of camping. The default value is 2, 100 would be almost 
+            no camping, 0 camping whenever useful </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> pistolonly [on/off]	
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">bot only use 
+            pistols </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> loadbuyprob / lbp [filename]	
+            </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Loads the probabilities for buying a weapon from a file. The file will be loaded when the next bot wants to buy sth.</font> 
+
+        <tr> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"> joinwhuman_max 
+                  / jwhm [on/off]</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">Should 
+                  bots join the game due to the max_bots variable if there isn't 
+                  already a human player on the server ?</font>
+				          <tr> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"> joinwhuman_res 
+                  / jwhr [on/off]</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">Should 
+                  bots join the game due to respawning after map change or fillserver 
+                  command if there isn't already a human player on the server 
+                  ?</font> 
+				  <tr> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"> randomwpload 
+                  / rwpl</font>
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">Load waypoints 
+                  without using the order of waypoint folders stated in cstrike/joebot/wpjs/dir.txt. 
+                  The loaded data from dir.txt will be changed in memory, but 
+                  the file remains as it is.</font>
+              <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"><s> trainnn</s> </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">with this command 
+            you can train the pattern u defined in nnpattern.pta. please add a 
+            bot before excuting this command to make sure the nn has been loaded 
+            correctly. The process itself can take a while. On a iCel466 it can 
+            take up to 1 minute. </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> <s>savenn</s> </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">save the trained 
+            nn </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><u><i>Bot 
+            Skill and Aiming options : </i></u></b></font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">botskill_min 
+            </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Setting range 
+            for skill of bots to be added ( if not specified when added ) </font>
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">botskill_max 
+            </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+ </font>
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">Setting range 
+            for skill of bots to be added ( if not specified when added ) </font>
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> botmom [all/default/getdefault/get/'name'] 
+            [Value] </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">setting bot's 
+            momentum for aiming .. default is 70 </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> botvs [all/default/getdefault/get/'name'] 
+            [Value] </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">setting bot's 
+            speed for aiming .. default is 100 </font> 
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> botskill [all/default/getdefault/get/'name'] 
+            [Value] </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">+</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">-</font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">- </font> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif">setting bot's 
+            skill for combat .. default is 90 ... this has till now only a little 
+            effect on avoiding recoil and reaction time </font> 
+      </table>
+</table>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <br>
+        <b>4. files and their importance</b><br>
+        <i>4.1. bot_names.txt</i><br>
+        Here you can create a list of names for the bots. The personality stuff 
+        is no longer handled in this file, instead there are some files in joebot/per/ 
+        to define this.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <b>4.2. texts.txt</b><br>
+        The file cstrike/jeobot/texts.txt contains the chat sentences of the bots. 
+        Every category is divided into sentences for </font></p>
+      <font face="Verdana, Arial, Helvetica, sans-serif"><all> and the team specific 
+      messages with <ct> resp. <te></font> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif">.<br>
+        <br>
+        Categories:<br>
+        <br>
+        -- [bombplanted]<br>
+        -- [hostdown]<br>
+        -- [kill]<br>
+        -- [dead]<br>
+        -- [teamattack]<br>
+        -- [reply]</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif"><b>About the [reply] 
+        category :</b></font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif">In this category you 
+        can specify keywords on which the bots can react with the following phrases. 
+        The chat file then looks like this :<br>
+        </font><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <i>@KEY &quot;keyword1&quot;,&quot;keyword2&quot;<br>
+        phrase1<br>
+        phrase2<br>
+        phrase3<br>
+        phrase4<br>
+        <br>
+        </i><br>
+        <b>4.3 bot.cfg</b><br>
+        Here u can add commands which should be executed while starting the game.<br>
+        <br>
+        <b>4.4 bot_skill.cfg</b><br>
+        <br>
+        <i>Example :</i><br>
+        <br>
+        </font> </p>
+      <pre>SKILL 0<br>{<br>VSC 10<br>VSM 70<br>REA 1.0<br>STH 0<br>DIS 500<br>TPD 1000<br>PDI 250<br>PTD 3000<br>}</pre>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+        this is data for skill 0. U can add as many skill settings as u want, 
+        but please sort them from 0-100.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>Of course you 
+        can use bots with skills in between. For those bots, the definitions from 
+        bot_skill.txt are interpolated.</i></b></font><br>
+      </p>
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># VSC : Speed of 
+          changing the direction<br>
+          </font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># VSM : Momentum 
+          for changing direction<br>
+          </font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># REA : Reaction 
+          time<br>
+          </font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># STH : values 
+          over 90 mean they don't have to estimate ur position, but the know the 
+          exact position<br>
+          </font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># DIS : distance 
+          to overlook instantly // at bots with sniper weapons this is 2 times<br>
+          </font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># TPD : milliseconds 
+          it takes to look further 1000 units<br>
+          </font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># PDI : distance 
+          to overlook instantly // at bots with sniper weapons this is 2 times 
+          <i>(prone)</i><br>
+          </font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># PTD : milliseconds 
+          it takes to look further 1000 units <i>(prone)<br>
+          </i></font>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif"># REC : Amount 
+          of recoil when the bot should stop shooting for some short time ( amount 
+          is tan(RecoilAngle) * fEnemyDistance )<br>
+          </font>
+      </ul>
+        <br>
+        <br>
+        <br>
+        -------:::::: SUPPORTED MAPS ::::::--------<br>
+        <br>
+        ( just look for the wpjs you have somewhere in ur cstrike/joebot/wpjs/.../ 
+        directories )<br>
+        <br>
+        (note that u can set another priority for the waypoint directories in 
+        /joebot/wpjs/dir.txt to play other wpj if there are more than one version 
+        of one waypoint file)<br>
+        <br>
+        <b>5. trainnn :</b> The neural net is a 6-5-5-5 bprop feedforward net. 
+        (for nntrain.pta)  <p></p>
+      <pre>
+Inputs are :
+	IHealth,			// health of bot ( -1 is 0%; 1 is 100% )
+	IDistance,			// distance to en ( -1 is near, 1 is far )
+	IEWeapon,			// weapon of enemy ( low range like pistol is -1, long range like awp is 1)
+	IWeapon,			// weapon of bot
+	IAmmo,				// amount of ammo in used clip ( -1 is 0%, 1 is 100% )
+	ISituation,			// situation, i.e. how many enemies are fighting against how 
+					many allies ? ( bad is -1; good is 1 )
+
+Outputs are :
+	ODuck,				// Duck (1 is duck, 0/-1 is not duck)
+	OJump,				// Jump (1 is jump, 0/-1 is not jump)
+	OHide,				// should hide ? (1 is hide, 0/-1 is not hide)
+	OMoveType,			// Run - Walk (none = -1;walk = 0;run = 1) 
+	OStrafe,			// strafe left - right (-1 left, 0 nothing, 1 right)
+</pre>
+<font face="Verdana, Arial, Helvetica, sans-serif"> if u think u've a well done 
+training pattern set, please send them to me. For this, attach nntrain.ptt in 
+the same dir as nntrain.pta to ur email. <br><br>
+<table border = 0>
+<th colspan = 2 align=left><b>6. Thx to ...<br></b>
+<br>
+<tr><td><b><i>botman</i></b><td> thx for HPB template code and forum
+<tr><td><b><i>[eli]rabe</i></b><td>help to get access to the server @ school to do some time expensive 
+computations on SOMs
+<tr><td><b><i>count floyd</i></b>
+          <td>for his decal list :D and always interesting discussions in case 
+            we're online the same time<br>
+            and for parts of his chat files :-)
+        <tr><td><b><i>killaruna</i></b><td>for some advice on the aiming system
+<tr><td><b><i>devil</i></b><td> from <a href=http://www.botgamer.net>www.botgamer.net</a> for translating main parts of the bot menu to french
+<tr><td colspan =2><center>
+              <b><i>....... a lot of nice ppl from different bot forums .......</i></b> 
+            </center>
+</table>
+</font>
+</table>
+<br>

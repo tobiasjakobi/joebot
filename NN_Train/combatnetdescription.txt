@@ -1,0 +1,159 @@
+Create a Feedforward NeuralNet
+with 4 layers
+6 neurons on layer #0
+7 neurons on layer #1
+7 neurons on layer #2
+5 neurons on layer #3
+and that's all about the basic topology
+Set the bias of neuron 0 on layer 0 to 0.000000
+Connect neuron 0 on layer 0 with neuron 0 on layer 1 with 0.643483
+Connect neuron 0 on layer 0 with neuron 1 on layer 1 with -0.438803
+Connect neuron 0 on layer 0 with neuron 2 on layer 1 with 2.440910
+Connect neuron 0 on layer 0 with neuron 3 on layer 1 with -0.832760
+Connect neuron 0 on layer 0 with neuron 4 on layer 1 with 0.331288
+Connect neuron 0 on layer 0 with neuron 5 on layer 1 with -0.516746
+Connect neuron 0 on layer 0 with neuron 6 on layer 1 with 0.825257
+Set the bias of neuron 1 on layer 0 to 0.000000
+Connect neuron 1 on layer 0 with neuron 0 on layer 1 with 1.579590
+Connect neuron 1 on layer 0 with neuron 1 on layer 1 with -0.064085
+Connect neuron 1 on layer 0 with neuron 2 on layer 1 with 2.204689
+Connect neuron 1 on layer 0 with neuron 3 on layer 1 with 1.736021
+Connect neuron 1 on layer 0 with neuron 4 on layer 1 with -1.306171
+Connect neuron 1 on layer 0 with neuron 5 on layer 1 with 0.251432
+Connect neuron 1 on layer 0 with neuron 6 on layer 1 with 0.876429
+Set the bias of neuron 2 on layer 0 to 0.000000
+Connect neuron 2 on layer 0 with neuron 0 on layer 1 with -0.154797
+Connect neuron 2 on layer 0 with neuron 1 on layer 1 with 0.066674
+Connect neuron 2 on layer 0 with neuron 2 on layer 1 with 0.156705
+Connect neuron 2 on layer 0 with neuron 3 on layer 1 with 0.431899
+Connect neuron 2 on layer 0 with neuron 4 on layer 1 with -0.774722
+Connect neuron 2 on layer 0 with neuron 5 on layer 1 with -0.014679
+Connect neuron 2 on layer 0 with neuron 6 on layer 1 with -0.232102
+Set the bias of neuron 3 on layer 0 to 0.000000
+Connect neuron 3 on layer 0 with neuron 0 on layer 1 with 0.769536
+Connect neuron 3 on layer 0 with neuron 1 on layer 1 with 0.279660
+Connect neuron 3 on layer 0 with neuron 2 on layer 1 with 2.322134
+Connect neuron 3 on layer 0 with neuron 3 on layer 1 with 0.829340
+Connect neuron 3 on layer 0 with neuron 4 on layer 1 with -0.968053
+Connect neuron 3 on layer 0 with neuron 5 on layer 1 with 1.478761
+Connect neuron 3 on layer 0 with neuron 6 on layer 1 with 1.713881
+Set the bias of neuron 4 on layer 0 to 0.000000
+Connect neuron 4 on layer 0 with neuron 0 on layer 1 with -0.344050
+Connect neuron 4 on layer 0 with neuron 1 on layer 1 with 1.325939
+Connect neuron 4 on layer 0 with neuron 2 on layer 1 with 0.870588
+Connect neuron 4 on layer 0 with neuron 3 on layer 1 with 0.019880
+Connect neuron 4 on layer 0 with neuron 4 on layer 1 with -0.098816
+Connect neuron 4 on layer 0 with neuron 5 on layer 1 with -0.319643
+Connect neuron 4 on layer 0 with neuron 6 on layer 1 with -0.386322
+Set the bias of neuron 5 on layer 0 to 0.000000
+Connect neuron 5 on layer 0 with neuron 0 on layer 1 with 0.290890
+Connect neuron 5 on layer 0 with neuron 1 on layer 1 with 2.041458
+Connect neuron 5 on layer 0 with neuron 2 on layer 1 with -0.152264
+Connect neuron 5 on layer 0 with neuron 3 on layer 1 with -0.447083
+Connect neuron 5 on layer 0 with neuron 4 on layer 1 with 1.380196
+Connect neuron 5 on layer 0 with neuron 5 on layer 1 with 0.011982
+Connect neuron 5 on layer 0 with neuron 6 on layer 1 with 1.163884
+Set the bias of neuron 0 on layer 1 to -1.053993
+Connect neuron 0 on layer 1 with neuron 0 on layer 2 with 0.522600
+Connect neuron 0 on layer 1 with neuron 1 on layer 2 with -0.090600
+Connect neuron 0 on layer 1 with neuron 2 on layer 2 with -0.087435
+Connect neuron 0 on layer 1 with neuron 3 on layer 2 with -0.925527
+Connect neuron 0 on layer 1 with neuron 4 on layer 2 with 1.778258
+Connect neuron 0 on layer 1 with neuron 5 on layer 2 with 1.557704
+Connect neuron 0 on layer 1 with neuron 6 on layer 2 with 1.232218
+Set the bias of neuron 1 on layer 1 to -0.137965
+Connect neuron 1 on layer 1 with neuron 0 on layer 2 with 2.763488
+Connect neuron 1 on layer 1 with neuron 1 on layer 2 with 0.076769
+Connect neuron 1 on layer 1 with neuron 2 on layer 2 with 0.028539
+Connect neuron 1 on layer 1 with neuron 3 on layer 2 with 0.361922
+Connect neuron 1 on layer 1 with neuron 4 on layer 2 with 0.082033
+Connect neuron 1 on layer 1 with neuron 5 on layer 2 with -0.494710
+Connect neuron 1 on layer 1 with neuron 6 on layer 2 with 0.173645
+Set the bias of neuron 2 on layer 1 to -2.306823
+Connect neuron 2 on layer 1 with neuron 0 on layer 2 with 0.140262
+Connect neuron 2 on layer 1 with neuron 1 on layer 2 with -0.269354
+Connect neuron 2 on layer 1 with neuron 2 on layer 2 with -0.437226
+Connect neuron 2 on layer 1 with neuron 3 on layer 2 with -1.297921
+Connect neuron 2 on layer 1 with neuron 4 on layer 2 with 1.292026
+Connect neuron 2 on layer 1 with neuron 5 on layer 2 with 0.975024
+Connect neuron 2 on layer 1 with neuron 6 on layer 2 with 0.829968
+Set the bias of neuron 3 on layer 1 to -1.657151
+Connect neuron 3 on layer 1 with neuron 0 on layer 2 with -0.856214
+Connect neuron 3 on layer 1 with neuron 1 on layer 2 with 0.162658
+Connect neuron 3 on layer 1 with neuron 2 on layer 2 with 0.397890
+Connect neuron 3 on layer 1 with neuron 3 on layer 2 with 0.251016
+Connect neuron 3 on layer 1 with neuron 4 on layer 2 with 0.145386
+Connect neuron 3 on layer 1 with neuron 5 on layer 2 with 0.744856
+Connect neuron 3 on layer 1 with neuron 6 on layer 2 with 1.743528
+Set the bias of neuron 4 on layer 1 to -0.612222
+Connect neuron 4 on layer 1 with neuron 0 on layer 2 with 1.774877
+Connect neuron 4 on layer 1 with neuron 1 on layer 2 with -0.509286
+Connect neuron 4 on layer 1 with neuron 2 on layer 2 with -0.178570
+Connect neuron 4 on layer 1 with neuron 3 on layer 2 with 0.137081
+Connect neuron 4 on layer 1 with neuron 4 on layer 2 with -0.310092
+Connect neuron 4 on layer 1 with neuron 5 on layer 2 with -0.487727
+Connect neuron 4 on layer 1 with neuron 6 on layer 2 with 0.516750
+Set the bias of neuron 5 on layer 1 to 0.855265
+Connect neuron 5 on layer 1 with neuron 0 on layer 2 with -0.005108
+Connect neuron 5 on layer 1 with neuron 1 on layer 2 with 1.511990
+Connect neuron 5 on layer 1 with neuron 2 on layer 2 with 1.394428
+Connect neuron 5 on layer 1 with neuron 3 on layer 2 with 0.515786
+Connect neuron 5 on layer 1 with neuron 4 on layer 2 with -0.444844
+Connect neuron 5 on layer 1 with neuron 5 on layer 2 with -0.534950
+Connect neuron 5 on layer 1 with neuron 6 on layer 2 with 0.869386
+Set the bias of neuron 6 on layer 1 to 0.697880
+Connect neuron 6 on layer 1 with neuron 0 on layer 2 with 1.777144
+Connect neuron 6 on layer 1 with neuron 1 on layer 2 with 0.994186
+Connect neuron 6 on layer 1 with neuron 2 on layer 2 with 0.861439
+Connect neuron 6 on layer 1 with neuron 3 on layer 2 with -0.367715
+Connect neuron 6 on layer 1 with neuron 4 on layer 2 with 0.356446
+Connect neuron 6 on layer 1 with neuron 5 on layer 2 with 0.067684
+Connect neuron 6 on layer 1 with neuron 6 on layer 2 with 0.468132
+Set the bias of neuron 0 on layer 2 to 0.006245
+Connect neuron 0 on layer 2 with neuron 0 on layer 3 with 0.091429
+Connect neuron 0 on layer 2 with neuron 1 on layer 3 with -0.284534
+Connect neuron 0 on layer 2 with neuron 2 on layer 3 with -2.235371
+Connect neuron 0 on layer 2 with neuron 3 on layer 3 with -0.030574
+Connect neuron 0 on layer 2 with neuron 4 on layer 3 with 0.009112
+Set the bias of neuron 1 on layer 2 to 1.317481
+Connect neuron 1 on layer 2 with neuron 0 on layer 3 with 2.082160
+Connect neuron 1 on layer 2 with neuron 1 on layer 3 with 0.641649
+Connect neuron 1 on layer 2 with neuron 2 on layer 3 with -0.066009
+Connect neuron 1 on layer 2 with neuron 3 on layer 3 with -1.142241
+Connect neuron 1 on layer 2 with neuron 4 on layer 3 with 0.255443
+Set the bias of neuron 2 on layer 2 to 0.380430
+Connect neuron 2 on layer 2 with neuron 0 on layer 3 with 1.985437
+Connect neuron 2 on layer 2 with neuron 1 on layer 3 with 0.806073
+Connect neuron 2 on layer 2 with neuron 2 on layer 3 with 0.080591
+Connect neuron 2 on layer 2 with neuron 3 on layer 3 with 0.145999
+Connect neuron 2 on layer 2 with neuron 4 on layer 3 with -0.248217
+Set the bias of neuron 3 on layer 2 to -1.158759
+Connect neuron 3 on layer 2 with neuron 0 on layer 3 with -1.866667
+Connect neuron 3 on layer 2 with neuron 1 on layer 3 with 0.949617
+Connect neuron 3 on layer 2 with neuron 2 on layer 3 with -0.266451
+Connect neuron 3 on layer 2 with neuron 3 on layer 3 with 0.657205
+Connect neuron 3 on layer 2 with neuron 4 on layer 3 with -0.079026
+Set the bias of neuron 4 on layer 2 to 0.730198
+Connect neuron 4 on layer 2 with neuron 0 on layer 3 with 0.889667
+Connect neuron 4 on layer 2 with neuron 1 on layer 3 with -1.756492
+Connect neuron 4 on layer 2 with neuron 2 on layer 3 with -0.203640
+Connect neuron 4 on layer 2 with neuron 3 on layer 3 with -0.079732
+Connect neuron 4 on layer 2 with neuron 4 on layer 3 with -0.130964
+Set the bias of neuron 5 on layer 2 to 0.562320
+Connect neuron 5 on layer 2 with neuron 0 on layer 3 with 0.745888
+Connect neuron 5 on layer 2 with neuron 1 on layer 3 with -2.154327
+Connect neuron 5 on layer 2 with neuron 2 on layer 3 with -0.018323
+Connect neuron 5 on layer 2 with neuron 3 on layer 3 with 0.204864
+Connect neuron 5 on layer 2 with neuron 4 on layer 3 with -0.043539
+Set the bias of neuron 6 on layer 2 to -1.993306
+Connect neuron 6 on layer 2 with neuron 0 on layer 3 with -0.995368
+Connect neuron 6 on layer 2 with neuron 1 on layer 3 with -0.968286
+Connect neuron 6 on layer 2 with neuron 2 on layer 3 with 0.026060
+Connect neuron 6 on layer 2 with neuron 3 on layer 3 with 1.344358
+Connect neuron 6 on layer 2 with neuron 4 on layer 3 with -2.446062
+Set the bias of neuron 0 on layer 3 to 1.687720
+Set the bias of neuron 1 on layer 3 to 0.164209
+Set the bias of neuron 2 on layer 3 to -2.216190
+Set the bias of neuron 3 on layer 3 to -3.896950
+Set the bias of neuron 4 on layer 3 to -2.591711
+and that was the whole net :D

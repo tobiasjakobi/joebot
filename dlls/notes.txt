@@ -1,0 +1,50 @@
+done:
+bridge in de_aztec is probably func_illusionary(*45)  -  done
+impl some kind of floyd like alg for being able to represent the map better - done
+the affirmative radio command should only be done when more conditions are fulfilled. p.ex. when so with an awp is calling, another bot with an awp shouldn't follow it, rather a bot with a subm or a rifle should say affirmative - done
+pEdict->idealpitch and ideal_yaw have to be inited in botinitvars
+code that the bots camp where the stat says fAdEn > 1000 - done
+BO_GUARD impl in HandleOrders - done
+BO_ROAMTEAM init and testing if bot and same order ( shift ) - done
+anti fall sys ... velocity isn't always the wanted movement ... therefore -f_move_speed can lead to falling of the edge : roof at militia - forced going backwards while trying to reach wp on top -> movement is to top but is inverted to 'get away from danger' - done - redo - done
+stat file handling on map change - current sys caused strange effects - done
+only shooting when dot product is high else add delay - done
+take_damage updated - done
+grenade handling -> nearest to en of team doesn't seem to work - done
+TODO : adaptation of readme.txt to new personality system - done
+TODO : c4 time handling - done
+TODO : cover me command when sniper isn't properly workin'  -  done
+TODO : autowaypoint of jumps -> it should be tested if it was a neccessary jump before adding a waypoint - done
+cbotcsnavigate.cpp 1858 new - done
+reachable func rewritten
+cpu usage when bomb is planted	- done
+cederwyn says distantsight does work properly with planted c4	- done
+findroute : now all solutions over 250 are just ignored. Just found out that all this shit is only important on bigger maps. normal dust wp create e.g. max. 80-100 suitable mid waypoints, whereas really big maps like cs_snowflake ingore about 40-60 waypoints when just calculating the first 250 found.
+probably it would be better if we first search all waypoints that are suitable for this connection between the 2 given points. this can be e.g. MAXTEMPDIV + 50 items. Any items with a number of this are placed by random in this field. Then we do additional checks on it using CONNVERTFLOYDTOWAY to check if just dead end ways are there e.g.. Here the 50 are important, they fill up everything to MAXTEMPDIV ( at least i think so, 50 should be sufficient ). This would result in more random paths and probably the MAXTMPDIV can be lowered resulting in a lower cpu usage. I think with this approach a decrease of MAXTEMPDIV to 100 is acceptable ( normal sized maps wouldn't get a big difference ) - done
+TODO : weapon switching system ... a system which handles weapon switches. u should be able to supress weapon switching etc,  e.g. for weapon reloading - done
+grenade throwing based on STM - done
+door handling -done
+roamteam ladder handling						----- almost done - not really needed
+max_bots only after human has joined .. extra command
+only replay an advanced movement if there is no other player near to the waypoints or in between -> near to waypoints should be sufficient :)
+
+to do:	----------------------------------------------------------------------------------------------------------------
+
+check if an advanced movement needs to be replayed -> bot might just be passing by but not wanting to perform that move
+TODO : replay of movements
+
+HACKHACK bool BotDecideOnWay(bot_t *pBot) - STM-Handling -> Bot doesn't know the exact position of enemy when searchin a visible wp
+//what about looking at punchangle ?
+bomb defusing and running away from bomb which might expl next time
+TODO : Fav weapon handling, sniper weapon handling. This has to be a bit more sophisticated, because the siming is a process, cannot be done a simply changing one shitty variable in one function
+TODO : botcreate is a bit fucked up with the names and skills
+look at training data for high distance and long range weapon
+better flashbang avoidance
+take non jump wp after loosing waypoint route
+
+-------- covering fire
+detecting if covering fire would be cool just like the grenade stuff
+- if bots running forwards and e.g. to the right there is a far area ( something like "interesting location" ) and a STMem item is near there or is a little farer ( < 300 ) and it can look there shoot there
+- only if there is still enough ammo in clip ( let's say at least >20 rounds )
+- Just fireweapon like with f_shootbox ( that's with tk avoidance )
+-------- end covering fire

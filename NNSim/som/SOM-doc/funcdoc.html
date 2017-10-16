@@ -1,0 +1,122 @@
+<HTML><HEAD></HEAD><body><a name="head"><h1 align=center>Documentation of Johannes Lampel's SOMSim</h1>
+<table align=center width="30%">
+<tr><td>
+      <P align=center><A href="#qsom">qSOM2d</A> </P>
+<tr><td>
+      <P align=center><A href="#vec">nVec</A> </P>
+<tr><td>
+      <P align=center><A href="#pat">SOMPattern</A> </P></td></tr>
+</table><br>
+<a name = "qsom">
+<table border = 1 width="100%">
+<tr><th colspan=3><FONT color=red size=5>class DllExport 
+      qSOM2d </FONT>  
+<tr><td><FONT color=blue><b>public:</b> </FONT>
+	<tr><td><td>qSOM2d();									<td>ctor
+	<tr><td><td>~qSOM2d();									<td>dtor
+
+	<tr><td><td>int SetSize(long,long,long);				<td>set size of map (Dim of Input,x,y)	-&gt; x=y isn't too useful
+	<tr><td><td>int InitWeights(InitType);					<td>...
+	<tr><td><td>int SetInput(double *);						<td>copies input into local class storage
+	<tr><td><td>double Categorize(void);					<td>cats input
+	<tr><td><td>double Categorize(double*);					<td>like the two above
+	<tr><td><td>double CategorizeFast(void);				<td>cats faster cause it neglects some (!) neurons
+	<tr><td><td>double CategorizeFast(double*);				<td>...
+	<tr><td><td>void GetWinner(long &amp;,long &amp;);				<td>finds 'nearest' neuron
+	<tr><td><td>double *GetNWeights(long,long);				<td>return the weight matrix of one neuron
+	<tr><td><td>double GetDistP(void);						<td>return stiffness param
+	<tr><td><td>void SetDistP(double);						<td>...
+	<tr><td><td>double GetLRate(void);						<td>return lRate
+	<tr><td><td>void SetLRate(double);						<td>...
+	<tr><td><td>void SetNKFunction(double (*name)(const double&amp;,const double&amp;));	<td>sets the pointer to the NK functions, which is set to fNKgauss1 by default
+	<tr><td><td>void *GetNKFunction(void);					<td>..
+	<tr><td><td>void Save(const char *);					<td>savin' data to file
+	<tr><td><td>void Load(const char *);					<td>loadin' data from file to mem
+<tr><td><b><FONT 
+      color=blue>protected:</FONT></b>
+	<tr><td><td>long lXSize,lYSize,lNNeurons;<td>...
+	<tr><td><td>long lRow;									<td>lXSize * lNNeurons
+	<tr><td><td>double *dp3Weights;							<td>field of weights
+	<tr><td><td>double *dp1Input;							<td>input to be categorized or tested
+	<tr><td><td>double dLearnrate;							<td>...
+	<tr><td><td>double dDistanceP;							<td>stiffness param
+	<tr><td><td>char *szVersion;							<td>Just some information about this simulator
+	<tr><td><td>double (*fNK)(const double&amp;,const double&amp;); <td>pointer to NK function
+	<tr><td><td>nVec	*pVDiff;							<td>diff (updated by calling cat) between Input and Winner
+<tr><td><b><FONT 
+      color=blue>private:</FONT></b></td> </tr>
+</table><br><A href="#head">back to title</a><br>
+
+
+<a name = "vec">
+<table border=1 width="100%">
+<tr><th colspan=3><FONT color=red size=5>class DllExport 
+      nVec </FONT>  
+	<tr><td><td><FONT color=green>friend nVec operator 
+      *(double,nVec&amp;); </FONT>   
+	<tr><td><td><FONT color=green>friend class SOMPattern; 
+</FONT>  
+<tr><td><FONT color=blue>public: </FONT>
+	<tr><td><td>nVec();<td>ctor
+	<tr><td><td>nVec(const dim_c);<td>ctor
+	<tr><td><td>nVec(const dim_c,const double * const);<td>ctor
+	<tr><td><td>nVec(const nVec &amp;);<td>ctor
+	<tr><td><td>virtual ~nVec();<td>dtor
+
+<tr><td>	<td>double	Length(void);<td>							  ...
+	<tr><td><td>int		Normalize(void);<td>						  ...
+	<tr><td><td>int		GetVec(double *);	<td>					  copy data from field into this class
+	<tr><td><td>int		SetMemVec(double *);	<td>				  set ddpDim to Param and iType to nVT_mem - be careful, you havn't a copy of this data, your changing the original data
+	<tr><td><td>int		ConvMemtoCopy(void);		<td>				  convert a Mem - typed instance of this class to a instance, which contains a copy of this data items - alloc mem and copy
+	<tr><td><td>int		SetVec(double *);				<td>		  copy data from class to field
+	<tr><td><td>double	SQuadr(void);						<td>	  return sum of all quadrs of comps
+	<tr><td><td>int		SetNumDim(const dim_c);
+
+	<tr><td><td>virtual const nVec &amp; operator = (const nVec &amp;);<td>	  ...
+	<tr><td><td>virtual const nVec &amp; operator +=(const nVec &amp;);<td>	  ...
+	<tr><td><td>virtual const nVec &amp; operator -=(const nVec &amp;);<td>	  ...
+	<tr><td><td>virtual const nVec &amp; operator *=(const double);<td>	  ...
+	<tr><td><td>virtual const nVec &amp; operator /=(const double);<td>	  ...
+
+<tr><td><td>	virtual nVec		operator +(const nVec &amp;);<td>	  ...
+<tr><td><td>	virtual nVec		operator -(const nVec &amp;);<td>	  ...
+<tr><td><td>	virtual nVec		operator *(const double);<td>	  ...
+	<tr><td><td>virtual nVec		operator /(const double);	<td>  ...
+
+	<tr><td><td>virtual double &amp;	operator [](long);		<td>	  return value of [dimension] component
+<tr><td><FONT color=blue>protected: </FONT>
+	<tr><td><td>double *ppdDim;		<td>							  data items
+	<tr><td><td>long lCDim;				<td>						  number of dimensions
+	<tr><td><td>int iType;					<td>					  copy data or set pointer to data
+<tr><td><FONT 
+color=blue>private:</FONT></td></tr>
+</table>
+
+<br><A href="#head">back to title</a><br>
+<a name = "pat">
+<table border=1 width="100%">
+
+<tr><th colspan=3><FONT color=red size=5>class DllExport 
+      SOMPattern </FONT>  
+<tr><td><FONT color=blue>public: </FONT>
+	<tr><td><td>SOMPattern(const dim_c);<td>							 ctor
+	<tr><td><td>~SOMPattern();			<td>							 dtor
+	<tr><td><td>int SetMaxPatternNum(const long);<td>					 max Number of Pattern - not yet able to copy data from old array to new and no dynamic alloc
+	<tr><td><td>long AddPattern(const double *);	<td>				 ...
+	<tr><td><td>long AddPattern(const nVec &amp;);			<td>			 ... (-&gt; calling AddPattern(const double *)
+	<tr><td><td>int SetSOM(qSOM2d *);						<td>		 setting som to be trained
+	<tr><td><td>int TeachEpoch(const double&amp;,const double&amp;);	<td>	 Teaching a full number of pattern and storing the errors ( return values of qSOM2d :: Categorize ) in a pattern related variable
+	<tr><td><td>int TeachEpochFast(const double &amp;,const double &amp;);	<td> same as above, only using qSOM2d::CategorizeFast
+<tr><td><FONT color=blue>protected</FONT>:
+	<tr><td><td>SOMPatternElem *pFPattern;<td>							 Field of PatternElem instances with static size
+	<tr><td><td>long lPDimNum;				<td>						 Number of dimensions of every Pattern
+	<tr><td><td>long lPNum;						<td>					 Number of pattern
+	<tr><td><td>long lActPPos;						<td>				 Actual position of last elem ( lActPPos - 1 )
+
+	<tr><td><td>qSOM2d * SActSOM;						<td>			 som to be trained
+<tr><td><FONT color=blue>private: 
+</FONT></td></tr>
+
+</table><br><A href="#head">back to title</a><br>
+
+</body></HTML>

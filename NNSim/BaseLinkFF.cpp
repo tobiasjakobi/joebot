@@ -1,0 +1,29 @@
+// BaseLinkFF.cpp: implementation of the CBaseLinkFF class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "BaseLinkFF.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CBaseLinkFF::CBaseLinkFF()
+{
+
+}
+
+CBaseLinkFF::~CBaseLinkFF()
+{
+
+}
+
+void CBaseLinkFF::Save(FILE *fhd)
+{
+	CBaseLink::Save(fhd);
+}
+
+void CBaseLinkFF::Load(FILE *fhd)
+{
+	CBaseLink::Load(fhd);
+}

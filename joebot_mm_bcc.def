@@ -1,0 +1,6 @@
+LIBRARY joebot
+EXPORTS
+ Meta_Attach = _Meta_Attach
+ Meta_Detach = _Meta_Detach
+ Meta_Init = _Meta_Init
+ Meta_Query = _Meta_Query

@@ -1,0 +1,135 @@
+######################################################################
+#
+#	joebot chat file
+#
+#	to use this file, rename it to texts.txt and copy it to your
+#	hl/cstrike directory
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	(Max. 50 Sentences per category and team
+#
+#	Oversatt till svenska av; [NoR]Mystik | mystik88an@hotmail.com
+#	Copyright 2001 - [NoR]Mystik
+#
+#	BOTNAME name of bot saying this stuff
+# 	TEAMMATEALIVE name of a teammate which is alive
+# 	ENEMYALIVE name of enemy which is alive
+#	CHATTER name of player who chatted
+# 	WEAPON name of own weapon
+# 	ALIVE ...
+# 	DEAD ...
+# 	RANDOM ...
+# 	VICTIM ...
+# 	MAP ...
+#
+# Adding interactive replies
+# start of section : [reply]
+# keywords : @KEY keyword1,keyword2
+# note : please don't leave spaces between keywords and commas, thx
+# phrase1
+# phrase2
+# phrase3
+# phrase4
+#
+#
+######################################################################
+
+##############################################
+# chat texts when the bomb is planted
+##############################################
+[bombplanted]
+<all>
+<te>
+	jippie!
+	bomben kommer att doda er alla !
+	vi campar ... dom kommer anda inte att hitta den
+<ct>
+	TEAMMATEALIVE, vet du var den ar ?
+	skit
+	var ar den ?
+##############################################
+# chat texts when a hostage is killed
+##############################################
+[hostdown]
+<all>
+	som i ett slakteri ... gor levande varelser till en hog med kott
+<te>
+	hehehe
+	ENEMYALIVE, vi kommer att gora det samma med dig !!!
+	om du har pengar, doda dem bara ... en dod gissla kan inte bli raddad av 
+dom javlarna ... hehe
+<ct>
+	vf gor du ?
+	skjut inte pa civila !
+	objektivet forstort - en mindre att radda ur skiten
+##############################################
+# chat texts of currently killing bots
+##############################################
+[kill]
+<all>
+	fick dej
+	fick dig, javla VICTIM
+	MUAHAHAHAHAAAHAA
+	BOTNAME kommer att doda er alla
+	Jag heter BOTNAME, men du kan kalla mig gud
+	Jag sa ju det : Om du tanker spela CS, slass da aldrig emot BOTNAME !!
+	Och nu ska jag forsoka doda ENEMYALIVE !
+	lol
+	det var latt
+	newbie
+	Jag gillar MAP
+<te>
+	Haha, wannabe - polis
+	Haha, wannabe - marin
+	Finns det fortfarande dom som tror, att terrorister inte kan fightas ?!
+<ct>
+	Den goda ar fortfarande den basta
+	Jag trodde ni hade tranings-lager i Arabien ?!
+##############################################
+# chat texts of dead bots
+##############################################
+[dead]
+<all>
+	Ar det nagra bottar har ??
+	Ah nej, idag ar det en dalig dag
+	Jag hatar campare
+	har nagon redan spelat de_rotterdam ? ganska bra ...
+	Jag hatar inte campare, men jag hatar dig, DEAD!
+	Skriv votemap 9 - Jag hatar den har banan
+	Gillar nagon den har 'MAP' ?
+	Jag kan inte riktigt den har banan
+	Sag ni nyheterna igar ?? - riktigt konstigt
+	Har du besokt http://joebot.counter-strike.de ?
+	har du sett www.fsg-preetz.de ?
+	ah, vi rostar emot ENEMYALIVE, han forstor hela spelet
+	ser han inte honom ?
+	varifran kommer du, DEAD ?
+	Tja, DEAD, vad hander?
+	ALIVE spelar riktigt bra
+	Jag ar saker pa att TEAMMATEALIVE kommer att klara sig !
+	jag tror att jag maste fixa mina NNs for att spela battre
+	hyllningar till botman - fadern av alla bots
+<te>
+	typisk counter attack
+<ct>
+	typisk terrorist attack ...
+##############################################
+# chat texts of bots remarking a team attack
+##############################################
+[teamattack]
+<all>
+	Var forsiktig
+	Ar du galen, TKPLAYER !?
+	f-n for, TKPLAYER
+	fan
+	ar mp_tkpunish pa ?!
+	TKPLAYER ar en javla teamkiller !!!
+	VF !!! Hej, TEAMMATEALIVE vi VALDTAR TKPLAYER
+	TKPLAYER, akta ditt arsle, dude !
+<te>
+	TKPLAYER ditt miffo, bli counter om du gillar att skjuta pa terrorister !
+<ct>
+	TKPLAYER ditt miffo, bli terrorist om du gillar att skjuta pa counters !
+

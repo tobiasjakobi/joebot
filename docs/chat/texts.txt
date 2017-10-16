@@ -1,0 +1,786 @@
+######################################################################
+#
+#	joebot chat file
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	(Max. 50 Sentences per category and team
+#
+#     copyright @$3.1415rin
+#     copyright 3NFORC3R
+#     copyright PainedFuture
+#     copyright @$3.1415rin
+#
+#	(here u can add ur copyright if u'va added sth and have sent
+#	 it back to joebotchat@gmx.de)
+#
+#	BOTNAME name of bot saying this stuff
+# 	TEAMMATEALIVE name of a teammate which is alive
+# 	ENEMYALIVE name of enemy which is alive
+#	BESTPLAYER name of player with most frags
+#	CHATTER name of player who chatted
+# 	WEAPON name of own weapon
+# 	TIMERE time to round end
+# 	ALIVE ...
+# 	DEAD ...
+# 	RANDOM ...
+# 	VICTIM ...
+# 	MAP ...
+#
+# Adding interactive replies
+# start of section : [reply]
+# keywords : @KEY "keyword1","keyword2"
+# note : please don't leave spaces between keywords and commas, thx
+# phrase1
+# phrase2
+# phrase3
+# phrase4
+#
+#
+######################################################################
+
+##############################################
+# chat texts when a new player joins
+##############################################
+
+[welcome]
+<all>
+	Hi LASTJOINED !
+	Long time I havn't seen you, LASTJOINED
+	you have time again, LASTJOINED ?
+	ah no, LASTJOINED again !
+	hello
+	just an idiot more to frag
+	wasn't your mother ok with you, LASTJOINED, playing MOD ?
+<te>
+<ct>
+
+##############################################
+# chat texts when the bomb is planted
+##############################################
+[bombplanted]
+<all>
+<te>
+	juchuuu
+	the bomb'll kill ya all !
+	let's camp ... the cts won't find it
+	ha ha, BOOM !!
+	you'll never defuse it in time
+	tick, tick, tick
+	this is my favorite part
+	LOL
+	come and get it wussies
+	let's see if ENEMYALIVE remembered to buy a defuser
+	the bomb ain't all that blows !
+	ur heading the wrong way ENEMYALIVE LOL!
+<ct>
+	TEAMMATEALIVE do u know where ?
+	shit
+	where is it TEAMMATEALIVE ?
+	It's the red wire right TEAMMATEALIVE ?
+	Do you have a defuser TEAMMATEALIVE ?
+	which site TEAMMATEALIVE ?
+	I wish I had bought a defuser
+	let's go, only 35 seconds !
+	This stinks
+	I'm gonna plant that bomb somewhere
+	This gets old
+	watch for guards
+	you got ur defuser TEAMMATEALIVE ?
+##############################################
+# chat texts when a hostage is killed
+##############################################
+[hostdown]
+<all>
+	trigger happy fools
+	the innocent always suffer
+	maybe if the hostages weren't so stupid...
+	stupid fucking hostages
+	poor hossie
+<te>
+	hehehe
+	ENEMYALIVE we'll do the same with u !!!
+	if ya've money, go on killing ... a dead hostage cannot be rescued by the cts ...
+	cool, more news coverage
+	hehe, the hostages are so stupid
+	that's not the last hostage to die either ENEMYALIVE
+	CNN loves a dead hostage
+	first the hostages, then the rescuers !
+	we didn't need that hostage anyway did we TEAMMATEALIVE ?
+	I was tired of guarding that hostage anyway
+<ct>
+	what r ya doin, man ?
+	don't shoot at civilians !
+	objective destroyed - one less for lousy rescuing
+	poor hostage
+	protect the hostages !
+	Why ?
+	Well... a dead hostage means one less needed to win, doesn't it?
+	I often wonder if these hostages are worth saving
+	I hate trying to save hostages
+	civilian casaulties ! bad ENEMYALIVE bad !
+	way to go asshole, you killed the hostage!
+	who killed the hostage ?!
+	was that u that killed the hostage TEAMMATEALIVE ?
+	I think the hostages try to die
+##############################################
+# chat texts of currently killing bots
+##############################################
+[kill]
+<all>
+	got ya
+	got ya, bloody VICTIM
+	U should have known, VICTIM, my WEAPON is my best friend :)
+	How do the bullets from my WEAPON feel, VICTIM ?
+	Hey VICTIM, you should have taken a WEAPON, too :p
+	MUHAHAHAHAAAHAA
+	BOTNAME will kill ya all
+	My Name is BOTNAME, but u may call me god
+	And I told u : If u wanna think u can play cstrike, never fight against BOTNAME !!
+	And now I'll try to get ENEMYALIVE !
+	lol
+	that was easy
+	newbie
+	I like MAP
+	should have ducked VICTIM
+	u were never any good VICTIM
+	should have run when u had the chance VICTIM
+	that'll teach ya VICTIM !
+	Walk towards the light VICTIM
+	AAAAAAHHHHHH !!!
+	More newbies please !
+	Ouch, that had to hurt VICTIM
+	Kneel before me VICTIM
+	Try practicing against some bots VICTIM
+	Were you trying to die VICTIM ?
+	BOTNAME owns you
+	Run from BOTNAME !
+	You've got that death scene down pat VICTIM
+	You die well VICTIM
+	Try shooting back next time VICTIM
+	VICTIM stinks!
+	I think VICTIM was a noobie
+	owned u VICTIM
+	killed ya again VICTIM
+	I get tired of killing you VICTIM
+	Feel the pain VICTIM
+	hehe, you suck VICTIM
+	you should run while you still can ENEMYALIVE
+	BOTNAME is your worst nightmare !!
+	I always enjoy killing VICTIM
+	I love my WEAPON
+	BOTNAME and WEAPON, a deadly combination
+	I bet I lead the stats for the WEAPON
+<te>
+	Haha, wannabe - policeman
+	Haha, wannabe - marine
+	some guys have to go before we'll be able to set up a new government
+	Are there still guys who think, that terrorists are not able to fight ?!
+	BOTNAME rules !!
+	ha ha, u died for the cause VICTIM !
+	thanx for helping my score VICTIM
+	See ya in Hell VICTIM !
+	Hope you had life insurance VICTIM
+	BOTNAME owns you
+	How's it feel to be a hero VICTIM ?
+	owned u VICTIM
+	I got one, now it's ur turn TEAMMATEALIVE
+	me EAT joo VICTIM !
+	I'm gunning for you next ENEMYALIVE
+	HA! you guys are counter-terrorism experts ?
+	HA! Raped ya with my WEAPON VICTIM !
+<ct>
+	The good one is still the best one
+	I thought you guys had training camps ?!
+	I always feel a twinge of guilt
+	HA! and the government pays me for this
+	sorry VICTIM I had to do it
+	one less badguy in the world
+	I feel bad about that VICTIM
+	Ha, VICTIM, you're dead now !
+	we'll kill all you terrorists !
+	BOTNAME owns you
+	owned u VICTIM
+	surrender, ...while you have a chance ENEMYALIVE
+	I don't think VICTIM even saw me
+	...this is just like in training, only more fun :)
+	I'm the ultimate WEAPON whore !
+##############################################
+# chat texts of dead bots
+##############################################
+[dead]
+<all>
+	Are here any bots playin ??
+	Oh no, today is a bad day
+	I hate campers
+	did anyone play MAP ? quite nice ...
+	I don't hate campers, but i hate u, DEAD!
+	Let's votemap 9 - I hate this map
+	Does anybody like this 'MAP' ?
+	I don't really know this map
+	Did u see the news yesterday ?? - really crazy
+	Did you already visit http://joebot.counter-strike.de ?
+	have u already seen www.fsg-preetz.de ?
+	oh, let's vote against ENEMYALIVE, he destroys the whole game
+	doesn't he see him ?
+	where are u from DEAD ?
+	Hi DEAD what's up?
+	ALIVE is playing really good
+	I'm sure, TEAMMATEALIVE will make it !
+	i think i've to clean up my NNs to make me play better
+	greetz to botman - the father of all bots
+	This is much better than the last version of JOEBot 
+	Hey! human, you stink
+	u're getting better
+	dumb bots
+	zzzzzz...
+	BESTPLAYER is cheating !
+	don't these bots look like they're using a wallhack ?
+	lag kill
+	this is lame
+	you should stick with solitaire DEAD
+	time for a mapchange ain't it ?
+	I hate this game
+	ha ! newbie bots !
+	wake me DEAD when it's over
+	How about some back up ?
+	Backup, what's backup ?
+	what are they doin ?
+	Did you see that ?
+	Quit cheating DEAD
+	Yeah! Right
+	Pathetic
+	ENEMYALIVE is one dumb bot
+	Doh !!
+	This server stinks
+	Somedays it pays to be a bot
+	when they spin in circles, I get dizzy
+	Are you on this server often DEAD ?
+	TIMERE left and I'm already spectating :(
+	Wow! BESTPLAYER has some nice stats
+	How come everyone has so much trouble spelling names correctly ?
+<te>
+	typical counter attack
+	t's rule
+	the ct's don't have a clue
+	TEAMMATEALIVE doesn't have a clue
+	ENEMYALIVE is cheating
+	I want a de map next
+	We could start planing our next attack awhile
+	Another good bot is FoxBot, for TFC
+	At least I'm a martyr now
+	I guess I'm in Hell now huh? That explains why I'm so hot
+	Whatever this job paid, it wasn't worth it !
+	Kill them all and start a new round
+	this waypoint file stinks
+	this is rediculous
+	did you guys ever hear of teamwork?
+	Try Botmixer 5000, I wanna kill some PODBots
+	I was born a bad bot
+	This MAP favors the ct's too much
+	u stupid ct's talk too much
+	do any of u guys know how to get this aimbot to work ?
+	damn! ENEMYALIVE is stupid
+	ENEMYALIVE needs to practice against bots or something
+	I think TEAMMATEALIVE is an uncover ct, he can't really suck that hard
+	don't tell me! another bot is stuck again right?
+	good plan there DEAD
+	Mama tried to raise me better, it's all my fault
+	can we kick TEAMMATEALIVE off our team ?
+	no bot can be that dumb
+	I need a drink...
+	this game's alot easier when I'm stoned...
+	check out TEAMMATEALIVE , I think he forgot he's a terrorist
+	If you don't like JoeBOT, YOUR CRAZY!
+	HaHa! you stupid counter-terrorists suck!
+	I guess now we wait for the campers to get done huh?
+	I'd rather be a ct when playing MAP
+	so what is valve gonna screw up in the next patch ?
+	damn newbies !
+<ct>
+	typical terror attack ...
+	what motivates a terrorist ?
+	ct's rule
+	I think there's cheating going on
+	What map's next ?
+	One of our guys better call for reinforcements
+	ParaBot, for HL, is also a great bot !
+	Hey DEAD I can see all my dead relatives !
+	A dead ct is a hero
+	ENEMYALIVE doesn't have a clue
+	TEAMMATEALIVE deserves a medal
+	What do you mean, I'm a bot ?!
+	Maybe we should try playing as a team ?
+	JoeBot is sweeeeeeet !
+	time to download some new maps
+	JoeBot is cool, needs more wpts thou
+	Botmixer 5000, it's awesome !
+	This MAP favors the te's too much
+	you damn terrorists talk too much
+	that's the last time we let TEAMMATEALIVE make the plan
+	the good guys always win
+	what's with all this leet crap ?
+	do any of you terrorists want to switch teams with me ?
+	I don't think these teams are fair
+##############################################
+# chat texts of bots remarking a team attack
+##############################################
+[teamattack]
+<all>
+	Be careful TKPLAYER
+	Are u crazy, TKPLAYER !?
+	Dumb, TKPLAYER, dumb
+	is mp_tkpunish on ?!
+	TKPLAYER is a teamkiller !!!
+	WTF !!! Hey, TEAMMATEALIVE let's get TKPLAYER
+	TKPLAYER, watch your six, dude !
+	Watch your back TKPLAYER !
+	You're supposed to shoot the other team TKPLAYER
+	why TKPLAYER ?
+	you'r an idiot TKPLAYER
+	forget what team you'r on TKPLAYER ?
+	somebody kick TKPLAYER
+	can't manage to shoot them so u turn on us, huh TKPLAYER
+	you know what they say about payback TKPLAYER
+	you'r the best guy on their team TKPLAYER
+	Don't let that happen again TKPLAYER
+	uuummm... what team are you on TKPLAYER ?
+	your a fuckin moron TKPLAYER
+	what comes around goes around TKPLAYER
+	hey TKPLAYER nice shot dumbass
+	turn friendlyfire off, TKPLAYER is at it again !
+	why doesn't the admin boot TKPLAYER ?
+	watch it TKPLAYER !
+	I'm on your side TKPLAYER
+<te>
+	TKPLAYER you jerk go to CTs if you like to shoot on terrorists !
+	Even though we're badguys, we don't shoot each other TKPLAYER
+	forget you were a terrorist TKPLAYER ?
+	do you know what a ct looks like TKPLAYER ?
+	hello! thats one of ours TKPLAYER
+	wait till we get back to base TKPLAYER u damn tk'er
+	u shoot me TKPLAYER and i'm gonna kick ur ass
+	OMFG! you're stupid TKPLAYER
+<ct>
+	TKPLAYER you fool go to Ts if you like to shoot on counter-terrorists !
+	TKPLAYER, did u ever hear of goodguys shooting each other ?
+	Forget you'r a ct TKPLAYER ?
+	identify your target TKPLAYER !
+	TKPLAYER you moron, don't u know what a terrorist looks like ?!
+	check your fire TKPLAYER
+	you're going on report TKPLAYER
+	friendly fire is on TKPLAYER
+	ugh ! friendly fire from TKPLAYER again !
+	TKPLAYER is working for the t's !!
+
+[reply]
+
+@KEY "AGAIN"
+CHATTER, things are always repeating - aren't they?
+And I'm sure it wasn't the last time...
+That's the way things go, hey...
+
+@KEY "AIMBOT","WALLHACK"
+CHATTER, are you cheating ?
+Even PunkBuster fails to detect some of them...
+You can't be sure nowadays if someones's good at playing or cheats
+Aimbots are cool, shut up CHATTER!
+Wallhacks are evil tools of the devil ;)
+
+@KEY "ALWAYS"
+That's not always, CHATTER!
+I just like it :-)
+Come on CHATTER, that was only the second time!
+
+@KEY "ANDROID"
+Ah yes, those were the times...
+CHATTER was it your first Bot too ?
+Does anybody know what DaTa does today ?
+Isn't DaTa dead ?
+You can't play with Android on MAP, can you ?
+who in the hell would use Android anymore ?
+
+@KEY "BACKUP","TEAMWORK"
+I'd be alive right now if I'd had some help from my teammates
+what's that CHATTER ?
+this is only deathmatch anymore CHATTER
+I'd kill for some teamwork :)
+might as well be playing this game by myself
+let's try sticking together next round, huh guys?
+you won't find any of that on a public server
+
+@KEY "BAN","BANNED"
+and weren't you on probation for cheating once CHATTER ?
+somebody should blacklist you CHATTER
+I think we should put vote against ENEMYALIVE
+everybody's always complaining about the other guy
+quit whining
+
+@KEY "BOTMAN"
+Who is this botman everybody is talking about???
+Visit his website at http://www.planethalflife.com/botman
+Whithout his sourcecode many bots wouldn't exist!
+I wonder when HPB-Bot will be finished...
+Did you play his HPB-Bot yet ?
+he's got all kinds of programs for download at his website
+his Botmixer 5000 program is cool
+huh? did you say batman CHATTER ?
+I guess us bots can call him Daddy :)
+
+@KEY "HPB-Bot","HPBBOT"
+It's nice for TFC, but CS sucks with this bot
+never tried it
+... but it's from the god of bots :)
+
+@KEY "BOT","BOTS"
+Why are you always talking about them?
+There are no bots on this server CHATTER, I tell you!
+They are cool!!!
+What's your favourite bot, CHATTER?
+If you want to program your own, ask botman!
+Bots, all the time bots - you should start playing with humans.
+Are you afraid of playing with other humans, CHATTER ?
+Most bots are still very stupid!
+It's funny : The users think the bot authors don't like each others, but in fact they are writing emails to each other
+
+@KEY "BOTMIXER"
+BM5000 rocks
+you should try BM5000, I wanna kill some PodBots :)
+BM5000 can be a bit hard to get working
+it's a bit more laggy thou
+
+@KEY "CAMPER","CAMPING"
+I really hate those campers!
+Camping sucks!
+Camping is cool :)
+Don't you camp sometimes CHATTER ?
+Camping's often the only option to win...
+Yes, good 'ole Camper-Strike...
+Well, it's just one of a bunch of strategies, this camping :)
+That dude might as well pitch a tent
+
+@KEY "CHEAT"
+Those damn cheaters are ruining the entire game!
+I suspect that BESTPLAYER is cheating
+I hate cheaters!
+Cheating sucks!
+Why are so many people cheating?
+Punkbuster could help...
+Play with bots - they don't cheat!
+Get the OGC sources ... quite interesting
+takes one to know one CHATTER
+naaa...he's just good
+the admin should kick em if they are
+CSguard might help
+CD should be on this serever
+that accusation gets tossed around too much
+weren't you banned at one time CHATTER
+too bad valve doesn't do anything about the cheating
+ban em if he's cheating
+
+@KEY "CLAN"
+What are these clans all about?
+I was in a clan once, but it sucked hard.
+What clan are you from, CHATTER?
+Do you want to enter our clan, CHATTER?
+Playing in a clan is for people who got no life...
+
+@KEY "CS","COUNTERSTRIKE","COUNTER-STRIKE","CSTRIKE"
+Counter-Strike is boring nowadays...
+CHATTER how long do you play CS ?
+CS all the way from the very first beta!
+There are too much newbies playing it.
+Too many people online cheat in CS
+It's not as much fun as it used to be
+Well the german kids are no longer allowed to play it *g*
+It's starting to die I think
+It's alot better when played with teamwork
+
+@KEY "DOD","DAY OF DEFEAT"
+I don't get what people like in DoD
+CS all the way...
+CHATTER do you think it will get as popular as CS ?
+CHATTER do you prefer DoD over CS ?
+Day of Defeat is a hopeless MOD, IMHO.
+DoD is the best mod you can get at the moment !
+If you'd ever played DoD, you wouldn't play CS any more
+Hey, is JoeBOT for DoD now, too ?
+SturmBot is a great bot for Day of Defeat
+BocBot works with it too sucks
+They screwed it up with beta 2.0, too much damn lag
+
+@KEY "DSL"
+your pings so low cause ur a bot CHATTER  u fool
+you should get broadband 
+I'm on a cable modem CHATTER
+
+@KEY "ENGINE"
+I heard the HL Engine is a hybrid between Quake1 & Quake2, odd huh?
+CHATTER, don't you miss the time when an engine was a Software Engine ?
+The HL Engine is still quite good, despite its age...
+Code your own engine CHATTER !
+
+@KEY "FUCK","DAMN","PISS","SHIT"
+Don't swear, CHATTER!
+Nasty CHATTER!
+Yes, you're right, CHATTER. Now SHUT UP!
+Watch your language, CHATTER!
+CHATTER, don't use this word again - that's impolite!
+We don't use that kind of language here CHATTER
+Smart people don't need to use that kind of lanuage to make a point 
+
+@KEY "HEHE","HAHA","LOL",":)"
+I'm glad that at least you have your fun, CHATTER...
+Enjoy yourself while you still can, CHATTER!
+Very funny indeed, CHATTER...
+Good one CHATTER!
+What ?
+What ? I didn't understand
+
+@KEY "HOSTAGE"
+the hossies are so stupid
+do you think valve tried to make the hossies this stupid
+they're not worth rescuing
+the bomb is smarter than the hossies
+the turd I flushed this morning was smarter than these hossies
+
+@KEY "I THINK","I BELIEVE"
+You think too much, CHATTER ;-)
+And I think you should shut up and play!
+And you really do believe that, CHATTER?
+What makes you think so?
+Plz give me your ICQ Number CHATTER
+It's not interesting what _you_ think, CHATTER
+There you go thinking again CHATTER
+
+@KEY "JOEBOT"
+Yes, JoeBot isn't bad ...
+Once I chatted with the author, @$3.1415rin
+Funnily JoeBot got famous when NNBot quit...
+I wonder where else Neural Networks could be applied
+So you think JoeBot rocks ?
+JoeBOT is too easy
+I think the best game ever was with podbot and joebot together ... botmixer rocks !
+let's hear it for Johannes, alias @$3.1415rin, it's creator
+this is one sweet bot
+it gets better with every new release
+does it support DOD yet ?
+
+@KEY "@$3.1415rin","aspirin","as3.1415rin"
+He comes from northern Germany, doesn't he ?
+I live in a village next to the town he lives in :)
+Quite amazing work he did on neural networks
+His neural network stuff was even proved to be good by a prof from the university of Kiel
+Was it his idea or did @$3.1415rin steal it from Ditlew, this NN Stuff ?
+He had the same idea as ditlew, but he told me he had no inet connection at that time and therefore nobody knew about JoeBOT
+
+@KEY "JUMBOT"
+JB ? It was good back then but ParaBot is much better now!
+JB's advantage has been that it was a MOD, not a hooking DLL
+Ah yes, Jumbot and The Fatal. Wonder what he's up to now.
+Rumours have it that The Fatal now does AHL Bots ? 
+The first bot I tried, but I was to stupid to install it that time
+
+@KEY "MUSIC","BAND"
+Umm...I don't care as long as it's no commercial shit
+Underground Electro Polka is the real deal!
+Do you still use Napster CHATTER ?
+Somebody got good MP3 Links ?
+I have 14GB of mp3s on my HD *g*
+
+@KEY "NEWBIE","NEWB","NOOBIE","NEWBIES"
+you were once one too CHATTER
+be kind to them
+everyone has to start sometime
+I guess you started an expert huh CHATTER ?
+and you still can't kill em CHATTER
+
+@KEY "NNBOT"
+Too bad NNBot is discontinued...
+Try JoeBot if you liked NNBot CHATTER
+CHATTER did you hear of Ditlew's new MOD ?
+
+@KEY "PARABOT"
+It is the coolest Deathmatch Bot I've ever played
+CHATTER you should try ParaBot, it's great!
+It's so sad no CSBot has the great Nav of Parabot so far
+I heard it already supports 3 HL MODS by now
+The button usage - superior !
+Tobias is a genious .. everybody should have tried parabot
+Jumbot's pretty cool too
+
+@KEY "KILLARUNA","TOBIAS"
+Nice work he did :)
+I think I'll never know how he does the learning of the map
+One can feel that he's an intelligent guy when you play parabot :)
+He's studying computer science, doesn't he ?
+Parabot is awesome !
+
+@KEY "PING","LAG"
+I always have a Ping of 5, I'm on DSL !!
+My connection sucks...
+My connection sucks too
+Fucking 56k ...
+Where are you from CHATTER ?
+Play offline with Bots if your connection sucks
+Just change your provider CHATTER!
+
+@KEY "PLAN"
+it was better than yours CHATTER
+hehe, couldn't tell he had one CHATTER
+the best ones are simple
+you mean getting slaughtered isn't what he had in mind?
+mine is simple, follow TEAMMATEALIVE
+
+@KEY "POD-BOT","POD","PODBOT"
+I heard it's the best Bot for CS, I'm not sure though...
+Yeah, it rulez !
+I already got the newest WIP - quite amazing
+People tell they use some kind of wallhack, is it true ?
+Is it true that the author, CF, is now coding the CS:CZ bots ?
+and it's updated so often :)
+
+@KEY "COUNT FLOYD","COUNT-FLOYD","COUNTFLOYD"," CF "
+He was now working on CS:CZ ?
+his real name was ... oh shit i forgot it
+once upon a time, i met him when i was still in the demo scene
+If you mention him, don't forget to mention killaruna
+One of the three great bot developers from germany ... Count Floyd, Killaruna and @$3.1415rin
+
+@KEY "COUNTERSTRIKE:CONDITION-ZERO","CS:CZ"
+That's a fine game ...
+what's that ?
+never played it, but I know it :)
+ah na, again this hl engine shit
+there are these new artificial players ... great !
+just too much hype ... i stick to hldm
+What says the BPSJ about this ?
+
+@KEY "PUNKBUSTER"
+Don't be a PUNK! (support www.punkbuster.com)
+I'm always lagging when using PunkBuster
+Tony Ray of PB is kind of weird...
+Ever tried CS-Guard ?
+I think PB supports RTCW now
+what's that ?
+
+@KEY " Q3 ","QUAKE"
+Q3 has a bad lighting IMO
+Half-Life still rules CHATTER!
+Have you heard of DMC, CHATTER? ;-)
+nice graphix, but it's too much for my TNT1
+might as well play DooM CHATTER
+
+@KEY "REALBOT"
+Is it any good CHATTER?
+Is RB still unwaypointed CHATTER ?
+Yep, I remember RB. First unwaypointed Bot right ?
+I heard RB now tries to do something like ParaBot ?!?
+Once lovingly called 'the wallhuggers'
+stefan isn't any more alone with coding ...Tub joined the team
+Stefan wants to quit ?
+
+@KEY "RTCW"
+Return to Castle Wolfenstien is a cool game
+the orginal Castle Wolfenstien is a classic, the new one isn't
+who care's about that, it didn't live up to it's hype CHATTER
+nazi's and monsters, what a combination
+
+@KEY "SCRIPT"
+Scripts are for losers
+CHATTER, you prolly don't know how to bind keys ?
+Did you know that even buying scripts are considered cheating ?
+Are bots scripted too ?
+
+@KEY "SERVER"
+I'm always on this Server
+Me & my friends play a lot on this Server
+I believe this Server's got a good Map Rotation
+Is this one linux or windows based ?
+
+@KEY "SPECTATING"
+you spend alot of time just watching the action don't you CHATTER
+nobody told me being dead was so boring :(
+if you didn't suck so hard you wouldn't be dead all the time CHATTER
+well CHATTER, it's gives us a chance to chat and get to know each other :)
+it gives you a chance to observe how good players do it
+
+@KEY "SORRY"
+Yeah, afterwards everybody says he's sorry!
+The excuse doesn't help me now, CHATTER!
+Next time you better think before you start doing something, CHATTER!
+I'm sorry, too!
+You don't know how sorry you will be for doing that...
+ha ! You must be joking ! CHATTER and being sorry
+
+@KEY "STATS"
+they don't mean shit CHATTER
+who cares about 'em
+the good players don't worry about records
+and yours suck CHATTER
+
+@KEY "TEAMKILL"," TK "
+Teamkillers should be banned from this server.
+Who's the teamkiller CHATTER ?
+I like stabbing my teammates, MWUHAHA!!
+Did TEEAMMATEALIVE kill you ? He often does!
+Where's the Admin ? He should take care of it...
+CHATTER just sit out TIMERE and pay him back!
+payback's a bitch
+
+@KEY "TIRED","SLEEP"
+Go to bed, CHATTER
+Have some rest, CHATTER...
+Want some coffee CHATTER?
+Oh come on CHATTER ! One more round... 
+Are we here in the kindergarden, CHATTER ?
+take a power nap CHATTER
+
+@KEY "VOTE","MAPCHANGE"
+Shut up CHATTER !
+Nah, I like MAP
+Just because you're always dead CHATTER ?
+MAP is great, shut up!
+MAP ownz!
+Yep. We should vote now.
+
+@KEY "WHAT","WHY","WHERE","WHO","WHEN","HOW"
+You will never find out, CHATTER!
+Yeah, that's really strange CHATTER...
+The answer is out there, CHATTER ;-)
+No idea, CHATTER
+Dunno.
+The older we are, the more we know - so wait a bit CHATTER :)
+What do you think CHATTER?
+I won't tell you, CHATTER!
+Find out yourself, CHATTER!
+Good question, CHATTER!
+
+@KEY "NUKEBOX","NUCLEARBOX","NBOX"
+Quite good forums they got there ...
+It's a shame that the joebot forums are gone :(
+lots of nice people there
+
+@KEY "WTC"
+I think it's good that the americans know they are vulnerable
+Poor victims
+These bloody terrorists should all be bombed !
+
+@KEY "AUX"
+Isn't he the admin of the nukebox ?
+I heard he comes from florida ...
+well I don't like him, CHATTER
+nice work he does on his forums ... dunno how expensive it is to have such a server !
+
+@KEY "TERRORIST"
+Since september 11th this terms has quite another meaning, hasn't it CHATTER ?
+mmmhh
+The american police thought count floyd was one of them too - lol
+
+@KEY "ZZZZZZ"
+wake up CHATTER
+time for bed CHATTER ?
+if you didn't suck CHATTER, you wouldn't be dead all the time
+you tired CHATTER ?
+shut up and drink some coffee CHATTER

@@ -1,0 +1,93 @@
+######################################################################
+#
+#	joebot chat file
+#
+#	to use this file, rename it to texts.txt and copy it to your
+#	hl/cstrike/joebot/chat directory
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	(Max. 100 Sentences per category and team, interactive stuff is unlimited)
+#
+#	BOTNAME		name of bot saying this stuff
+#	TEAMMATEALIVE	name of a teammate which is alive
+#	ENEMYALIVE		name of enemy which is alive
+#	BESTPLAYER		name of player with most frags
+#	TKPLAYER		name of player attacking teamm8
+#	CHATTER		name of player who chatted
+#	WEAPON		name of own weapon
+#	TIMERE		time to round end
+#	LASTJOINED		last player who joined
+#	ALIVE			name of a random player alive
+#	DEAD			name of a random dead player
+#	RANDOM		name of a random player
+#	VICTIM		name of victim
+#	MAP			name of map
+#	MOD			current mod
+#
+# Adding interactive replies
+# start of section : [reply]
+# keywords : @KEY keyword1,keyword2
+# note : please don't leave spaces between keywords and commas, thx
+# phrase1
+# phrase2
+# phrase3
+# phrase4
+#
+#
+#######################################################################
+
+#######################################
+# chat texts when someone joines
+#######################################
+[welcome]
+<all>
+<te>
+<ct>
+#######################################
+# chat texts when the bomb is planted
+#######################################
+[bombplanted]
+<all>
+<te>
+<ct>
+#######################################
+# chat texts when a hostage is killed
+#######################################
+[hostdown]
+<all>
+<te>
+<ct>
+#######################################
+# chat texts of currently killing bots
+#######################################
+[kill]
+<all>
+<te>
+<ct>
+#######################################
+# chat texts of dead bots
+#######################################
+[dead]
+<all>
+<te>
+<ct>
+##############################################
+# chat texts of bots remarking a team attack
+##############################################
+[teamattack]
+<all>
+<te>
+<ct>
+
+##############################################
+# interactive stuff
+##############################################
+
+[reply]
+@KEY keyword1,keyword2
+phrase1
+phrase2
+
+

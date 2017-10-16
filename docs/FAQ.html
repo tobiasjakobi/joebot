@@ -1,0 +1,167 @@
+<html><title>JoeBOT FAQ</title>
+<body bgcolor= lightgrey>
+<br>
+<table width=90% align=center bgcolor=white border=0><tr><td>
+<center>
+  <p><font face="Verdana, Arial, Helvetica, sans-serif" size="5">JoeBOT <b><i>F</i></b>requently 
+    <b><i>A</i></b>sked <b><i>Q</i></b>uestions</font> </p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>
+  
+  
+  1. 
+    Everybody talks about the console ... how do I get there ?</i></b></font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">First you 
+    should start Halflife with the parameter &quot;-console&quot;. If you have 
+    a shortcut for halflife, counterstrike or DoD, just right click on it and 
+    select properties. There you'll find an edit box containing the name of the 
+    executable. <i>( for example : &quot;c:\sierra\half-life\hl.exe&quot; )</i> 
+    Now you just add &quot;-console&quot; there, that you get <i>&quot;c:\sierra\half-life\hl.exe 
+    -console &quot;. </i>If you have a shortcut for Counterstrike for example 
+    it should then look like<i> &quot;c:\sierra\half-life\hl.exe -game cstrike 
+    -console&quot;. </i>When all this is done, you can access the console from 
+    within the game with the '^'-key, i.e. left of the &quot;1&quot;.</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>
+  
+  2. 
+    When I start a Multiplayer game all slots are filled up one after the other 
+    by bots. But I want to have a free slot and they'll even come &quot;back&quot; 
+    when I kick one !</b></i></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Just 
+          look in your cstrike/joebot/bot.cfg file. There you'll find an entry 
+          called &quot;max_bots&quot;. Set this value to 0 and no bot will appear 
+          automatically.</font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>
+		
+		3. 
+          I started a multiplayer game, but there are no other players ... what's 
+          wrong ?</i></b></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">When 
+          no bots are added automatically, you have to add them manually by typing 
+          &quot;addbot&quot; in the console. Then a bot will be added. For further 
+          information take a look at the readme.</font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>
+		
+		4. 
+          I already tried addbot, but then I always get the message that this 
+          is an unknown command ?!</b></i></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">This 
+          looks like the installation hasn't been really successful. Have you 
+          really selected your halflife directory for installing JoeBOT ?</font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>
+		
+		5. 
+          The bots are running through the maps, but they seem to fly, the legs 
+          are funny spread to the sides ! What did JoeBOT do to my beloved halflife 
+          ?</i></b> </font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">JoeBOT 
+          did nothing to your halflife. Just make sure you have the newest 
+          version of Halflife, at least 1.1.0.4, for CS1.1 at least 1.1.0.6</font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>
+		
+		6. 
+          I like to play as a counterterrorist against a whole team of terrorists. 
+          I already managed it to add only terrorist bots (&quot;addbot 1&quot;) 
+          , but after some rounds, some of them change to my team. What do I have 
+          to do to avoid this ?</b></i></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Just 
+          open your console and type &quot;mp_autoteambalance 0&quot; and &quot;mp_limitteams 
+          0&quot;. Now you won't have this problem anymore. If you want to change 
+          this variables in every game, you can also just add this 2 commands 
+          to ur cstrike/autoexec.cfg</font></p>
+
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>
+		
+		7. 
+Do Flashbangs and Smokegrenades affect the bots ? ... and how ?</b></i></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"> Yes, 
+          the bots are affected by both types of grenades, flashbangs and smokegrenades. 
+          After a flashbang attack they won't see anything for some time, this 
+          is very similar to the effect on human players. Higher skilled bots 
+          will try to shoot where they have heard or seen an enemy before being 
+          blinded.<br>
+          The effect of smokegrenades is faked. It's _really_ difficult to detect 
+          all the single smoke puffs, therefore it's seen as a plane of smoke 
+          in which the grenade lies. If the enemy bot is behind a smoke grenade, 
+          it won't be able to detect you instantly, you have appr. 4 seconds to 
+          run in the sight of an enemy behind a smokegrenade without being detected. 
+          But of course the radius of the grenade is limited and you'll be detected 
+          almost instantly by muzzle flashs, i.e. when you shoot yourself, no 
+          matter what direction. ( btw, this is the same with being prone in DoD, 
+          but the time of not being detectable is configurable in bot_skill.txt 
+          ) </font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>
+		
+		8. 
+          How can I run <a href="http://www.metamod.org">metamod</a> with JoeBOT 
+          ?</i></b></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i>First 
+          : It is possible to run JoeBOT with Metamod :-)</i><br>
+          ok, now how to do this : first you install JoeBOT, then you install 
+          Metamod. You might have noticed now, that you got the functionality 
+          of Metamod, but you cannot get the Bots. So why ? <br>
+          The Answer is simple : Metamod is now between the game and the mod - 
+          dll, the place the bot - dll normally has. Therefore we somehow gotta 
+          tell Metamod, that it should load the joebot.dll into this dll chain 
+          as well. We do this by adding a command to the commandline when starting 
+          hl ( how to do this ? take a look at the question about the console 
+          :) ) : It's &quot;+localinfo mm_gamedll ../joebot/joebot.dll&quot; ( 
+          of course without the quotes ). The same for the linux ppl, you only 
+          have to replace the .dll with .so.<br>
+          Easy, isn't it ?!</font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">And 
+          if you still have problems, sometimes you need to move the .dll or .so 
+          from the hlds/joebot to the hlds/cstrike/joebot folder for example. 
+          Then you also need to remove the ../ in the commandline at the localinfo 
+          commandline command.</font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>
+		
+		9. 
+          How to run JoeBOT with <a href="http://www.planethalflife.com/botman/">botman</a>'s 
+          <a href="http://www.planethalflife.com/botman/botmixer.shtml">BotMixer5000</a> 
+          ?</i></b></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">First 
+          you should install all the bots you wanna use together in one game. 
+          Then you install the BotMixer by botman, go to the half-life/botmixer 
+          folder and execute the install.bat file in the respective folder.<br>
+          Now you go to your cstrike/ folder and edit the botmixer.cfg. There 
+          you have to define where to find the dlls ( or the .so for the linux 
+          ppl again ). Botman obviously wasnt careful when creating the line for 
+          the joebot, it has to be &quot;joe ../joebot/joebot.dll&quot; there 
+          of course ( again, without the quotes ! ).<br>
+          If you want to deinstall botmixer before installing another bot, e.g., 
+          please deinstall it with the deinstall.bat file from the botmixer folder, 
+          otherwise you'll have serious problems, because when installing botmixer, 
+          some files have to be renamed, and if you are not 100% sure what's done, 
+          leave this work to the batch files, and you can become old with your 
+          halflife installation.<br>
+          Of course you can also install a bot without deinstalling botmixer, 
+          but then, take a look at the cstrike/liblist.gam before installing the 
+          bot, make a copy for example, and then restore it after the installation 
+          of the bot.<br>
+          <i><b>Metamod + BotMixer : </b></i>Hey, that's possible as well :D. 
+          Just install everything as usual without metamod, then install metamod, 
+          and do the same as with the normal metamod installation and one bot. 
+          But the commandline has to be modified, now you shouldnt point to a 
+          bot - dll, but to the botmixer.dll in the cstrike/dlls folder.<br>
+          <i><b>Problems with BotMixer : </b></i>My game always crashes when I 
+          try to play joebot with the botmixer. Why ? --- Well, get the newest 
+          version of joebot and everything will be cool dude ! <font size="-2">( 
+          at least I hope so, nobody's perfect )</font></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Why 
+          is this bot called JoeBOT ? That name doesn't sound very creative !</b></i></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">LOL, 
+          no it's not at all creative. When I began writing my bot, I wanted to 
+          call it NNBot, but then some weeks later I realized that there was already 
+          a bot called NNBot. So I decided to name it temporarily JoeBOT, derived 
+          from my real name, Johannes. And till now it hasn't been changed ....</font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Hey, 
+          stupid names you got there for your bots ... Miststueck, Karla, etc. 
+          .... WTF is that ?</b></i></font></p>
+        <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">*g* 
+          First only some ppl from my school knew JoeBOT. The names are all nicknames 
+          for pupils from my class or teachers.</font></p>
+</center>
+</table>
+<br>
+</body>
+</html>

@@ -1,0 +1,26 @@
+Create a Feedforward NeuralNet
+with 3 layers
+3 neurons on layer #0
+3 neurons on layer #1
+1 neurons on layer #2
+and that's all about the basic topology
+Set the bias of neuron 0 on layer 0 to 0.000000
+Connect neuron 0 on layer 0 with neuron 0 on layer 1 with 0.089985
+Connect neuron 0 on layer 0 with neuron 1 on layer 1 with 2.160398
+Connect neuron 0 on layer 0 with neuron 2 on layer 1 with -0.187618
+Set the bias of neuron 1 on layer 0 to 0.000000
+Connect neuron 1 on layer 0 with neuron 0 on layer 1 with -0.570984
+Connect neuron 1 on layer 0 with neuron 1 on layer 1 with 0.715427
+Connect neuron 1 on layer 0 with neuron 2 on layer 1 with -0.612794
+Set the bias of neuron 2 on layer 0 to 0.000000
+Connect neuron 2 on layer 0 with neuron 0 on layer 1 with 1.806571
+Connect neuron 2 on layer 0 with neuron 1 on layer 1 with -0.157420
+Connect neuron 2 on layer 0 with neuron 2 on layer 1 with 2.155664
+Set the bias of neuron 0 on layer 1 to 1.274111
+Connect neuron 0 on layer 1 with neuron 0 on layer 2 with 0.935178
+Set the bias of neuron 1 on layer 1 to 0.777270
+Connect neuron 1 on layer 1 with neuron 0 on layer 2 with -1.393603
+Set the bias of neuron 2 on layer 1 to 0.739181
+Connect neuron 2 on layer 1 with neuron 0 on layer 2 with 1.723929
+Set the bias of neuron 0 on layer 2 to -1.184349
+and that was the whole net :D

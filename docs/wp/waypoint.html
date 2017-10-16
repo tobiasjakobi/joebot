@@ -1,0 +1,241 @@
+<html>
+<body bgcolor=#000000 text=#d0d0d0>
+<h3 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Description 
+  of Waypoint System</font></h3>
+
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><u>What are Waypoints ?
+  :</b></font></p></u>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Waypoint files 
+  ( *.wpj ) contain the knowledge of each bot of a map. The Joebot is able to 
+  play CS without waypoints, but it'll just run to the next wall and follow the 
+  wall . A good waypoint file is therefore the basis for a good CS - match.<br>The bots will navigate the map with their primary goal based on waypoints but also rather short distance actions like seeking cover are based on waypoints. Sometimes even grenade throwing is at least partly based on waypoints. Therefore not only a good coverage of the map for <i>large scale</i> navigation is needed, but also <i>hiding places</i> behind crates are useful to waypoint.
+
+<p><br>
+  Till now all the waypoint stuff has to be done manually except adding starting 
+  points. In the next time, I'll try to implementate a system, which can learn 
+  the map.</font></p>
+
+
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><u>General Information 
+  :</b></font></p></u>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Red Line : A path 
+  leading away<br>
+  Yellow Line : A path leading toward u</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Team specific waypoint 
+  means, that this waypoint exists only for one team. The other team cannot use 
+  it.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Ladder Waypoints 
+  : Set at least each a waypoint at the ends of a ladder. There can be more waypoints 
+  in between, but they need not.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">(<i><b>UNITS :</b></i> 
+  A normal player model in Counterstrike is 75 Units high, normal running speed 
+  is 250 Units per second, I think)</font></p>
+<table align=center width="90%" border=1>
+  <tr> 
+    <th><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Commands </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      on/off</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Displays/Hides 
+      Waypoints </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      add</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">adds waypoint 
+      with no special flags, if there aren't any special entities around </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      addstdwp</STRONG></font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">This command 
+      adds wp to the places, where the starting points are. u just have to connect 
+      them to the others</font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      delete</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> Removes Waypoint 
+      </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      crouch</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles a 
+      flag to crouch here. The main line of the WP is a bit more green.<br>
+      <IMG height=192 src="pics/generalcrouch.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      ladder</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles a 
+      flag that here is a ladder. For waypointing ladder, set two waypoints at 
+      both ends of the ladder and evtl. some in the middle.<br>
+      <IMG height=192 src="pics/generalladder.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      hostage/bomb</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag, that you'll find the target there. A red cross over the WP is created.<br>
+      <IMG height=192 src="pics/generalhostage.jpg" width=256 border="0"> </font> 
+<tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      blockhostage/bh</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag, that bots with hostages are not running here. Two green lines are shown.<br>
+      <IMG height=192 src="pics/generalbh.jpg" width=256 border="0"> </font> 
+
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      rescue</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag for rescue zone. A green cross over the WP is created.<br>
+      <IMG height=192 src="pics/generalrescue.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      sniper</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag to camp at this location. The set flag results in two blue lines 
+      displayed on top of the WP<br>
+      <IMG height=192 src="pics/countersniper.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      aim</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag to aim at this locationwhen snipering or camping. This waypoint isn't 
+      used for navigation on the map, it's only to make the bots concentrate on 
+      a location.<br>
+      <IMG height=192 src="pics/generalaim.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      dontavoid</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag to supress the avoid behavior, which makes the bot avoid obstacles.<br>
+      <IMG height=192 src="pics/counterda.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      dontavoidfall/daf</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag to supress the avoid fall behavior, which makes the bot jumping over 
+      pits or avoid falling down.<br>
+      <IMG height=192 src="pics/generaldaf.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      visit</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Toggles (XOR) 
+      a flag to visit this location once in a while. The set flag results in four 
+      green lines on top of the WP<br>
+      <IMG height=192 src="pics/generalvisit.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      te/terror</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Sets the next 
+      wp within 100 units to team specific for the terrorist force. The WP contains 
+      now a light red line perpendicular to the ground on the top.<br>
+      <IMG height=192 src="pics/terrorsniper.jpg" width=256 border="0"> </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      ct/counter</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Sets the next 
+      wp within 100 units to team specific for the counter - terrorist force. 
+      The WP contains now a light blue line perpendicular to the ground on the 
+      top. ( see picture of <EM>waypoint sniper </EM> ) </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      nt/noteam</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Resets any 
+      changes made by <EM>waypoint ct/te. </EM>Now a blue line is shown at top 
+      (see picture <EM>of waypoint rescue</EM> ) </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      test</STRONG></font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">This command 
+      analysis the wp structure a bit and gives u hints for a good wp-file.</font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>waypoint 
+      info</STRONG></font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">This gives 
+      u the index of the current waypoint.</font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>pathwaypoint 
+      create1/create2</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Using this 
+      command you've to type <EM>pathwaypoint create1 </EM>at the beginning of 
+      your new path and mark the end of this path by typing <EM>pathwaypoint create2</EM>. 
+      Note that paths are <STRONG><b><i>NOT</i></b> </STRONG>bidirectional ! </font> 
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG><b>autowaypoint 
+      on/off </b></STRONG></font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Places every 
+      200 Units a new waypoint. If <i><b>autopath </b></i>is on, too, paths will 
+      be added automatically. If autowaypointaddjump is on, a jump waypoint will 
+      be added where the autowaypointing human player jumped.<br>
+      Additionally paths will be added where u run along and where are no paths 
+      at that time.</font> 
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif"><b>autowaypointaddjump/awpaj 
+      on/off</b></font>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif">When this is 'on', 
+      a jump waypoint will be added where the human autowaypointer jumped. ( of 
+      course only active when autowaypoint is active :) )</font>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG><b>autopath</b></STRONG><b> 
+      on/off</b></font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">When u switch 
+      this on, to every added wp all possible path will be added.</font><font face="Verdana, Arial, Helvetica, sans-serif"> 
+      Paths won't be added to ladder waypoints, this has to be done manually</font> 
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><STRONG>pathwaypoint 
+      remove1/remove2</STRONG> </font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3">You'll know, 
+      if you've read <EM>pathwaypoint create1/create2 </EM></font></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b>waypoint 
+      load/save</b></font> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="3"> 
+      ... </font></b> </font> 
+</table>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><b><u>Notes : </u></b></font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><b>Autowaypoint on : </b>This 
+  function automatically adds waypoints when the nearest waypoint is at least 
+  200 Units away ( on ladders 75 units ). It'll automatically add paths between 
+  waypoints u went from to. Jump waypoints will automatically be added when u 
+  jump. So be careful with jumping while autowaypointing.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><b>Ladder waypoints :</b> 
+  The bots will have less problems when u place at least two waypoints on the 
+  ladder. One at each end, waypoint in between can be added as well. No matter 
+  if <i><b>autopath</b></i> is on or off, ladder waypoints will not automatically 
+  be connected. You have to connect them manually using the <b><i>pathwaypoint 
+  create1</i></b> and <b><i>pathwaypoint create2</i></b> commands, or you just 
+  can run along the waypoints on the ladder and paths will be automatically added 
+  when autowaypoint is on.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><b>dontavoid waypoints :</b> 
+  When the bots wanders throught the map, it'll avoid walls, to avoid getting 
+  stuck in doors, e.g.. This feature isn't useful when the bot should climb on 
+  boxes.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><b>dontavoidfall waypoints 
+  :</b> The bots have an internal system which avoids falling down somewhere. 
+  But there may be situations where you don't want this ( holes in a roof where 
+  u want to get thru e.g.) . Then you can set this flag to the related waypoints.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><b>reset waypoints : </b>Reset 
+  waypoints are some kind of temporal solution for a shitty problem. When a bot 
+  falls down somewhere it takes some time till he realizes, that he cannot reach 
+  the next waypoint. To force the bot to stop trying every time the nearest waypoint 
+  to it has to be a reset waypoint. Then it resets the index of the next waypoint 
+  and tries to get a new one.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><b>Aiming waypoints :</b> 
+  When a bot is snipering, it'll look to all visible waypoints one after another. 
+  When you want to force the bot to look somewhere else, too, but you don't want 
+  to place there a waypoint which can be also used for navigation, or where such 
+  a waypoint is stupid ( high in the air ) aiming waypoints can be useful.</font></p>
+<u><font face="Verdana, Arial, Helvetica, sans-serif"><b>Information on Autowaypointing and advanced movement system ( movement recording ) :</b><br><br></u>
+Normally you can waypoint using <i>waypoint add</i> and/or <i>autowaypoint on</i>. If you use <u>autowaypointing</u>, it's often useful to switch off automatic path creation via <i>autopath off</i>. A basis for waypointing are often the <u>standard locations</u>, being waypointed by <i>waypoint addstdwp</i>.<br>
+The quality of autowaypointed waypoints for a map doesnt have to be worse than the manually created ones, but there is the danger of just running around with autowaypoint on and calling that waypointing and presenting these so called waypoints to others. But waypointing is somewhat more, you have to observes the bots playing, place some sniper waypoints ( although this might sometimes be also detected by the bots itself, but why shouldn't we help them :) ), place some dontavoid waypoints when a bot should run near a wall. Advanced movements take even more time to debug ( usage is <i>debuggoal</i> is reasonable ! ).
+<br>
+Navigation problems of bots are often also based on bad waypoints. The most visible problems are sometimes on cs_ maps when you forgot to place a rescue point waypoint somewhere.
+<br>
+<br>
+If you want the bots to reach places which are difficult to reach, you can use normal <u>jump waypoints</u> or jump waypoints with recorded movements. When you switched on autowaypointing <u>advanced jump waypoints</u> also containing these recorded moves will be added when you jump and if they are really necessary. The test which is done if this jump was necessary is sometimes a bit conservative, so you can override the test by <i>autowaypoint testjump off</i>. This test is mainly useful when you have switched on <u>autowaypointing for all players</u> ( <i>autowaypoint all/human</i> ) and you cannot control where and when they are jumping.<br><br>
+Of course this automatic adding of jump waypoints can be <u>switched off</u> by <i>autowaypointaddjump/awpaj on/off </i> ( awpaj is an abbreviation ) and sometimes you just don't want advanced movements as long as they are sometimes causing some <u>strange effects</u> like bots in boxes, so you can switch this off, too and just add normal jump waypoints if enabled : <i>advancedmovements/advm on/off </i>. ( advm is again an abbreviation )<br><br>
+<u>The maximum of recordable movements</u> is almost unreachable, it's as high as the maximum number of waypoints, at the moment that's 4096. The maximum duration of a ADVM is 2 seconds, the frequency of recording is 10 Hz, just for information.<br>
+
+</body>
+</html>

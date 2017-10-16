@@ -1,0 +1,236 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+EBOX DIALOG DISCARDABLE  0, 0, 467, 253
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit the Joebot Pattern ..."
+FONT 8, "Arial"
+BEGIN
+    PUSHBUTTON      "Save Pattern",IDC_SAVE,235,125,50,14
+    PUSHBUTTON      "Exit",IDCANCEL,235,225,50,14
+    LISTBOX         IDC_PATTERNLIST,7,19,55,81,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Pattern # :",IDC_STATIC,7,7,34,8
+    COMBOBOX        IDC_CHEALTH,80,30,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Health :",IDC_STATIC,80,20,26,8
+    LTEXT           "Distance :",IDC_STATIC,145,20,33,8
+    COMBOBOX        IDC_CDISTANCE,145,30,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "EWeapon",IDC_STATIC,206,22,32,8
+    COMBOBOX        IDC_CEWEAPON,206,30,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Weapon :",IDC_STATIC,270,20,35,8
+    LTEXT           "Ammo :",IDC_STATIC,332,20,24,8
+    COMBOBOX        IDC_CAMMO,332,30,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CWEAPON,270,30,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Crouch :",IDC_STATIC,80,70,28,8
+    LTEXT           "Jump :",IDC_STATIC,145,70,22,8
+    LTEXT           "Tactics :",IDC_STATIC,206,70,28,8
+    LTEXT           "MoveType :",IDC_STATIC,270,70,39,8
+    LTEXT           "Strafe :",IDC_STATIC,332,70,24,8
+    COMBOBOX        IDC_CCROUCH,80,80,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CJUMP,145,80,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CTACTICS,206,80,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CMOVETYPE,270,80,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CSTRAFE,332,80,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Inputs",IDC_STATIC,70,10,390,44
+    GROUPBOX        "Outputs",IDC_STATIC,70,60,315,41
+    PUSHBUTTON      "Add Pattern",IDC_ADD,235,165,50,14
+    PUSHBUTTON      "Delete Pattern",IDC_DELETE,295,165,50,14
+    DEFPUSHBUTTON   "Load Pattern",IDC_LOAD,295,125,50,14
+    GROUPBOX        "NNSimOutput",IDC_STATIC,5,120,218,115
+    EDITTEXT        IDC_LOG,10,130,205,101,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "Reset NN",IDC_RESETNN,235,185,50,14
+    PUSHBUTTON      "Train NN",IDC_TRAINNN,295,185,50,14
+    PUSHBUTTON      "Save as Text",IDC_SAVETEXT,235,145,50,14
+    PUSHBUTTON      "Apply changes",IDC_APPLY,218,105,55,14
+    LTEXT           "",IDC_TPROGRESS,7,238,23,8
+    EDITTEXT        IDC_MAXERROR,360,185,40,12,ES_AUTOHSCROLL
+    LTEXT           "Max Error",IDC_STATIC,360,175,32,8
+    LTEXT           "Epochs",IDC_STATIC,33,238,25,8
+    EDITTEXT        IDC_RESETS,360,155,40,12,ES_AUTOHSCROLL
+    LTEXT           "Max Resets",IDC_STATIC,360,145,39,8
+    LTEXT           "Epochs to R",IDC_STATIC,360,115,40,8
+    EDITTEXT        IDC_MAXTRIES,360,125,40,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Info",IDC_INFO,360,225,50,14
+    PUSHBUTTON      "Cancel",IDC_CANCEL,295,225,50,14,WS_DISABLED
+    PUSHBUTTON      "Save NN",IDC_SAVENN,235,205,50,14
+    PUSHBUTTON      "Load NN",IDC_LOADNN,295,205,50,14
+    PUSHBUTTON      "Propagate",IDC_PROPAGATE,147,105,50,14
+    COMBOBOX        IDC_CSITUATION,395,30,48,45,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Situation",IDC_STATIC,395,20,28,8
+END
+
+INFO DIALOGEX 0, 0, 200, 86
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,75,65,50,14
+    LTEXT           "This Program is designed to give a simple possibility to edit the training pattern of the JoeBOT. You can as well edit the NNTrain.pta ( The ASCII Pattern file ) and use this for training the net ) .",
+                    IDC_STATIC,7,7,186,36
+    LTEXT           "Author : @$3.1415rin",IDC_STATIC,62,47,76,14,SS_SUNKEN | 
+                    WS_BORDER,WS_EX_CLIENTEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "EBOX", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 460
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 246
+    END
+
+    "INFO", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+EBOX DLGINIT
+BEGIN
+    IDC_CHEALTH, 0x403, 1, 0
+"\000" 
+    0
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "nakUDead\0"
+            VALUE "FileDescription", "pattern\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "pattern\0"
+            VALUE "LegalCopyright", "Copyright © 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "pattern.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "nakUDead pattern\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

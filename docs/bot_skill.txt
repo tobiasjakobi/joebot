@@ -1,0 +1,51 @@
+#
+# joebot bot skill file
+#
+# please don't change the structure of this file
+#
+# copyright 2001 @$3.1415rin alias Johannes Lampel
+#
+#
+# VSC : Speed of changing the direction
+# VSM : Momentum for changing direction
+# REA : Reaction time
+# STH : values over 90 mean they don't have to estimate ur position, but the know the exact position
+# ITP : Instant turn probability
+# DIS : distance to overlook instantly		// at bots with sniper weapons this is 2 times
+# TPD : milliseconds it takes to look further 1000 units
+# PDI : distance to overlook instantly									|| prone
+# PTD : milliseconds it takes to look further 1000 units						|| prone
+# REC : Amount of recoil when the bot should stop shooting for some short time ( amount is tan(RecoilAngle) * fEnemyDistance )
+#
+# Note that PDI and PTD are added to the normal delay DIS and TPD
+# 
+# (2 b extended)
+#
+
+SKILL 0
+{
+VSC 10
+VSM 70
+REA 1.0
+STH 0
+ITP 0 
+DIS 500
+TPD 1000
+PDI 250
+PTD 3000
+REC 50
+}
+
+SKILL 100
+{
+VSC 100
+VSM 1
+REA 0.0
+STH 100
+ITP 100
+DIS 2000
+TPD 10
+PDI 1000
+PTD 1000
+REC 20
+}

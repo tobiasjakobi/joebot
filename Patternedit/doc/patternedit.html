@@ -1,0 +1,85 @@
+ 
+<div align="center"> 
+  <h1><font face="Verdana, Arial, Helvetica, sans-serif"><b>Documentation of Patternedit</b></font></h1>
+  <h3><font face="Verdana, Arial, Helvetica, sans-serif">(c) Johannes Lampel (@$3.1415rin)</font></h3>
+  <p><font face="Verdana, Arial, Helvetica, sans-serif"><i><font size="2">-= Based 
+    on LampelSoft Neuronale Netze Simulator 2.2 =-</font></i></font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><u>1. 
+    Introduction:</u></b></font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">This program 
+    is designed to create .ptt - pattern files for training the combat artificial 
+    neural network of the JoeBOT. You can train nets within the program as well, 
+    but this can be done from the HL-console, too. First of all I'll start with 
+    a little theory about ANNs.</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><u>2. 
+    Some theory:</u></b></font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">The combat 
+    net of the JoeBOT is a 6-n-n-5 feedforward network. It is trained with backpropagation. 
+    ( + flat spot elimination )<br>
+    Every ANN is based on some artificial neurons. Their example are biological 
+    neurons, but they have been dramatically simplyfied, to get a good performance 
+    on computers and to make the math behind it all simpler. In this ANN the neurons 
+    are organized in layer, whereas there are different types of Layers :<br>
+    1. The input layer : The input for the neural network is set here.<br>
+    2. The hidden layers : They extend the capabilities of the neural net ( There 
+    has not to be a hidden layer )<br>
+    3. The output layer : The output layer provides the calculated output of the 
+    whole neural network.</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+    Every artificial neuron has like the biological ones inputs and outputs. There 
+    are connected among each other. These connections have a weight, i.e. some 
+    inputs are more important for the neuron. When the net is propagated, that 
+    means, when there is an input at the input layer and these signals are transmitted 
+    via the weighted connections to the next layer. The neurons there add all 
+    their inputs regarding the weight of the related connections, process the 
+    activation function where the bias of each neuron plays an important role 
+    and at last the activation is given to the output function ( often an identical 
+    function f(x) = x ) and this output is transmitted via the connections to 
+    the next neurons ... and so on. This is the so called recall phase.<br>
+    The other very important phase is the learning phase. Here the net gets it 
+    knowledge. To train this net, I use a supervised learning algorithm, backpropagation.<br>
+    You give input pattern to the neural network and you provide the related output 
+    pattern as well. The task of the learning algorithm is now to change the weigths 
+    and the biases within the net to reach the optimum, where the propagated input 
+    is the same as the wanted output.</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">With this 
+    program you can edit these pattern the net has to learn.</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">This is a 
+    combat net : ( in this case a 6-7-7-5 net )<br>
+<center>    <img src="nncombat.gif" width="661" height="432" align="absmiddle"></center></font></p>
+  <p align="left">&nbsp;</p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><b><u>How 
+    to use the program :</u></b></font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><center><img src="patteredit.gif" width="707" height="468"></center><i><b>Apply 
+    changes :</b></i> ...<br>
+    <b><i>Propagate : </i></b>you can define a input for the net in <i>'inputs' 
+    </i> . This is given to the nn and it calculates the output. This function 
+    is just to test how the net reacts on unknown pattern</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Load 
+    Pattern : </b></i>Loads pattern from NNtrain.ptt.<br>
+    <i><b>Save Pattern :</b></i> Saves pattern to NNTrain.ptt.<br>
+    <i><b>Save as Text :</b></i> Saves this text as NNTrain.pta in a from humans 
+    readable format.<br>
+    <b><i>Add Pattern :</i></b> ....<br>
+    <b><i>Delete Pattern :</i></b> ....<br>
+    <b><i>Reset NN :</i></b> Sets all weight of the net ( connection weights and 
+    biases ) to random values.<br>
+    <b><i>Train NN :</i></b> Trains the NN with the given pattern to the defined 
+    maximum error per pattern. Backpropagation is an interative algorithm, therefore 
+    all pattern have to be trained for more than one time. When training all pattern 
+    once, this is called one epoch. When the number of epochs is bigger than the 
+    <i>'epochs to R'</i> the net is resetted and the training begins new.<br>
+    <b><i>Save NN :</i></b> saves net to nn.br2 .... u can replace the one in 
+    cstrike/joebot/ when u think u trained a good net<br>
+    <b><i>Load NN :</i></b> ....<br>
+    <i><b>Exit :</b> </i>.... ;)</font></p>
+  <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b><u>Additional 
+    Information :</u></b></i><br>
+    All Inputs to the NN in the game are values between -1 and 1. For example 
+    the tactics entry : The output in the bot is only seen as active when it's 
+    over .75. So when you define a pattern and the bot shouldn't really hide, 
+    use +none, which means -1. only none is just 0 which should be sufficient 
+    in most situations, too.<br>
+    The errors of each pattern while the training process is stored in learnlog.html. 
+    There you can see which pattern the net was not able to learn.</font></p>
+</div>

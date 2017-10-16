@@ -1,0 +1,136 @@
+######################################################################
+#
+#	joebot Tagalog chat file
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	(Max. 50 Sentences per category and team
+#
+#       copyright Gau[dicks]
+#	http://www.gau-dicks.cityslide.com
+#       Gau_brian@eudoramail.com 
+#
+#	(here u can add ur copyright if u'va added sth and have sent
+#	 it back to joebotchat@gmx.de)
+#
+#	BOTNAME name of bot saying this stuff
+# 	TEAMMATEALIVE name of a teammate which is alive
+# 	ENEMYALIVE name of enemy which is alive
+#	CHATTER name of player who chatted
+# 	WEAPON name of own weapon
+# 	ALIVE ...
+# 	DEAD ...
+# 	RANDOM ...
+# 	VICTIM ...
+# 	MAP ...
+#
+# Adding interactive replies
+# start of section : [reply]
+# keywords : @KEY keyword1,keyword2
+# note : please don't leave spaces between keywords and commas, thx
+# phrase1
+# phrase2
+# phrase3
+# phrase4
+#
+#
+######################################################################
+
+##############################################
+# chat texts when the bomb is planted
+##############################################
+[bombplanted]
+<all>
+<te>
+	kabooooom!!!
+	mamatay kayong lahat sa bomba!
+	tara magtago na tayo ... hindi na nila makikita iyon
+<ct>
+	TEAMMATEALIVE, nasaan na ?
+	anak ng teteng!
+	Tarantado ka ENEMYALIVE! 
+##############################################
+# chat texts when a hostage is killed
+##############################################
+[hostdown]
+<all>
+	ops! May namatay na naman na inosente!
+<te>
+	di mo ba alam ENEMYALIVE, idol namin Abu Sayaf
+	ENEMYALIVE, ikaw naman ang yayariin namin!!!
+	sige patayin nyo na lang yang hostage! tutal mura lang naman yan!
+<ct>
+	Puta wag nyo silang idadamay!
+	tarantado kayo mga terorista kayo!
+	wala na tayong sasagipin TEAMMATEALIVE
+	sayang din yun pera din yun
+##############################################
+# chat texts of currently killing bots
+##############################################
+[kill]
+<all>
+	huli ka
+	huli ka! ang bobo mo kasi VICTIM
+	Japeks kasi baril mo VICTIM saan mo nabili yan?
+	Ako si BOTNAME ang papatay sa inyong lahat!
+	SUKI VICTIM! HAHAHAHA
+	sabi ko naman sa iyo mag practice ka pa!
+	ikaw naman ENEMYALIVE ang susunod dito kay VICTIM!
+	ang bobobobobobobobobo mo VICTIM
+	isa nanamang bobito ang nasawi sa aking mga kamay!
+	bobito
+	kaya itong MAP ang paborito ko eh!
+	Kailangan mo munang paturo kay L1quid VICTIM!
+<te>
+	kulang ka kasi sa suweldo! VICTIM
+	Ha ha ha! Mga bobong pulis!
+	pasensya na pulis patolang VICTIM, kailangan talaga!
+	Ano kayo ngayon! Kami ang Abu Sayaf!
+<ct>
+	Mga pare, pasensya na! Trabaho lang.
+	Akala ko ba ay nagsanay kayo sa Basilan VICTIM?
+##############################################
+# chat texts of dead bots
+##############################################
+[dead]
+<all>
+	May mga addbot ba dito?
+	Ang sama ng araw ko ngayon!
+	sa lahat ng abangero p**ng ina nyo!
+	Tumahimik ka na nga lang DEAD
+	kailan ba tayo lilipat ng mapa?
+	Bilisan nyo mga kupal!
+	pasalamat sila hindi ko to kabisado!
+	napuntahan niyo na ba yung http://joebot.counter-strike.de ?
+	sino dito nag nakita na yung http://www.nuclearbox.com/ubb/cgi-bin/
+	server pakisipa nga si DEAD naasar na ako sa kanya!
+	yari ka sa akin mamaya! papakainin kitang sg!
+	ang bobo mo siguro DEAD kaya ka namatay
+	anday nito ni ALIVE may cheat siguro to!
+	galingan mo TEAMMATEALIVE!
+	magandang araw sa iyo Botman!
+<te>
+	mamaya abangan na lang natin sila!
+	mang ii-snipe na lang ako! 
+<ct>
+	sugod tayo mamaya mga kapatid
+	chuva chuchu! sugurin natin sila mamaya!
+##############################################
+# chat texts of bots remarking a team attack
+##############################################
+[teamattack]
+<all>
+	puta ano ka ba!
+	baliw ka ba, TKPLAYER !?
+	fu, TKPLAYER
+	fu ka sa earth TKPLAYER
+	paki-kick naman si TKPLAYER!
+	puta ka talaga TKPLAYER! yari ka sa amin ni TEAMMATEALIVE!
+	Isusumbong kita kay LIAO, TKPLAYER!
+<te>
+	lumipat ka na lang sa Counter TKPLAYER
+	lilipat ako mamaya sa Counter! Pagiinitan kita TKPLAYER
+<ct>
+	puta ka TKPLAYER, lumipat ka nalang sa Tero
+	lilipat ako mamaya sa Tero! Pagiinitan kita TKPLAYER

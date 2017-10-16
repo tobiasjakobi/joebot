@@ -1,0 +1,596 @@
+-------------------------------------------------
+-                                               -
+-  J O E B O T   B Y   @ $ 3 . 1 4 1 5 r i n    -
+-                                               -
+-  a s 3 . 1 4 1 5 r i n @ j o e b o t . n e t  -
+-                                               -
+-        http://joebot.bots-united.com          -
+-                                               -
+-------------------------------------------------
+
+Current Leading Developer on Sourceforge/joebot
+
+- @$3.1415rin a.k.a. Johannes Lampel
+
+
+Current Developer on Sourceforge/joebot
+
+- cruft
+
+----------------------------------------------------------------------------------------------
+-- This Bot is based on botman's HPB_bot - template code - http://planethalflife.com/botman --
+----------------------------------------------------------------------------------------------
+
+JoeBOT 1.6.5.3
+- fixed : chat message crash caused by recent steam update
+- fixed : game radio message trapping caused by recent steam update
+
+JoeBOT 1.6.5.2
+- Added : preliminary shield support
+- fixed : awp weapon select conflict with waypoint command
+- fixed : entity indexing
+- fixed : index range errors with max players/bots
+- fixed : more round start/end initialization bugs
+- fixed : removed FL_THIRDPARTYBOT fix (no longer needed)
+- fixed : updated engine funcs to match hlsdk
+
+JoeBOT 1.6.5.1
+- fixed : camping bug related to round start/end initialization
+
+JoeBOT 1.6.5
+- Metamod plugin dll released
+- CS 1.6 compatible (shield use not implemented yet)
+- CS 1.5 backward compatible (set cvar jb_cstrike 1)
+- Added jb_* cvars to control all global settings
+- Added joebot.cfg cvar config file as alternative to bot.cfg
+- fixed : joebot server command no longer needs '|' delimiter
+- fixed : bots don't jump during freezetime
+- fixed : crash with waypoint unreachable unsigned int range
+
+JoeBOT 1.6.3
+- fixed : compatibility with HL 3.1.1.1/4.1.1.1
+- fixed : crash on exit with some linux+win98 installations
+- number of names in bot_names.txt is now unlimited.
+
+- Watz's fixes
+- - fixed : crash with too long waypoint file paths+names.
+- - fixed : crash with long names and personality files
+- - fixed : crash with certain weapons with high ammo counts
+
+JoeBOT 1.6.2
+- Windows Version is now botmixer compatible too
+- burst fire is configurable via skill system
+- Fixed problems with min_bots
+- some little perfomance issues
+
+JoeBOT 1.6.1 - october 15th, 2002
+- FIXED problems with
+- - joinwhuman_res on/off
+- - compensating recoil
+- - team specific chat message ( they are ignored for the interactive chat )
+- - some other little bugs
+- - faster buying
+
+/*********************************************************************************************
+**********************************************************************************************
+** 
+** From Version 1.6.1. on JoeBOT isnt only developed by @$3.1415rin. The project has been
+** moved to http://sourceforge.net/projects/joebot
+** So if you have anything important to add and know how to code, apply for developer status :)
+**
+**********************************************************************************************
+*********************************************************************************************/
+
+JoeBOT 1.6 - July 2002
+- FIXED : Problems with min_bots
+- FIXED : Problems with names in chat
+- FIXED : Kick bots and '#round_draw' message where it's not right
+- FIXED : Problems with really long ( > 16kB ) names, skill or chat files
+- FIXED : Hostage rescue issues
+- FIXED : Some sizebuf_t issues
+- FIXED : Bots stuck inside walls
+- FIXED : Problems with waypoint loading after several map changes ( thx to killaruna and CF )
+- Added commands : ( for details see readme.html )
+- - fillserver
+- - bot_spray on/off
+- - bot_ichat [off/dead/alive/all]
+- - randomwpload
+- - joinwhuman_max on/off
+- - joinwhuman_res on/off
+- Improved enemy detection
+- - improved effect of smokegrenades on bots
+- - humanlike detection of prone enemies ( DoD )
+- Improved teamplay
+- Improved chat
+- Optimised grenade usage
+- Improved hiding based on visibility table
+- Optimized replay of advanced movements and decision on jump waypoints in general
+- Optimized .wst files
+- Improved waypoint analysis
+- Detection of camouflage nets while autowaypointing with autopath on
+- A bit lower memory usage, because there is now a 'chatfile-server' - same chat files are only once in memory
+- Extended botmenu ( thx to [csbots]devil for translating the french stuff :) )
+- On average a 4 times faster wayfinding function :)
+- some cs1.4 issues like
+- - not moving when planting the bomb
+- - TEs don't try to take back hostages which are not at their places
+
+JoeBOT 1.5.1 - January 26th 2002
+- configurable buy probabilities
+- improved teamplay
+- improved grenade selection
+- if a way can be followed by hostages is no longer determined by crouch waypoints, there is a new type of waypoint
+- FIXED : type of memory leak with fakeclients, thx to Count Floyd and Leon Hartwig
+- FIXED : Circling around waypoints
+- FIXED : Welcome messages appearing before "#game commencing"
+- FIXED : variable reset time when crouching
+- FIXED : Problems with max_bots and respawning bots - these problems mainly resulted in wrong names,skills etc.
+- FIXED : Bad sniping performance
+- FIXED : some general crashing issues
+- FIXED : bug that bots don't shoot when there is a high level difference
+- FIXED : crashing if there are too less parameter with a command
+- FIXED : dedicated server console commands and parameters are now seperated by '|'
+- FIXED : some bugs in personality system
+
+JoeBOT 1.5 - Dec. 2nd 2k++
+- compatible with cs1.3 and botmixer
+- lower cpu usage in general ( esp. higher fps at roundstart )
+- Dedicated server commands have now to begin with joebot to be compatible with botmans BOTMIXER5000
+- restructured all BotAI functions ( no effect for you, but it's easier for me to extend sth. )
+- rewrote the Neural Network Simulator ... it's now 4 times as fast as before
+- optimized "avoid stuck" - function
+- optimized autowaypointing function - now close to a always active system
+- new jump system - for new commands, see readme.html
+- optimized buy routines
+- new personality system
+- - ... with a little editor tool for bots
+- - configurable stuff :
+- - - skill
+- - - pref team
+- - - pref class
+- - - pref weapon
+- - - chat file
+- - - aggressiveness
+- - - speaking 1337
+- - - etc.
+- better configurable skill system
+- - high skilled bots don't have to estimate your position, they know it, but only short time after they've seen you
+- - added variables to handle reaction times related to distance and state of enemy ( e.g. in DoD : prone )
+- rewrote the whole task system resulting in better performance for little pauses in 'missions' to pick up a weapon e.g.
+- bots sometimes use spraypaints
+- better grenade support
+
+JoeBOT 1.4.5 - June 21st 2k++
+- FIXED : basecamping bug
+- FIXED : Less TKs
+- FIXED : They change their pitch the right way
+- FIXED : swimming works ok
+- FIXED : shooting thru walls ( they won't start shootin thru very thick walls )
+- FIXED : no waypoint usage when having no freezetime in the first 2-3 seconds 
+- FIXED : they won't buy all at the same time -> no more long round start lags
+- added a configurable skill system 
+- added a jump waypoint 
+- extended chat system ( sometimes they forget letters in names or they speak 1337 ) thx for idea to hamst0r
+- extended the number of functions which can be used on dedicated servers and in the bot.cfg 
+- improved aiming system ( it's harder to beat them ) 
+- improved autowaypoint function -> it's now autowaypointing ladders, jump waypoints are automatically added when u jump ( only if wanted -> autowaypointaddjump) 
+- with the "waypoint save" command the directory in which the file can be specified
+
+- ... some other little changes ...
+
+( known bugs : sometimes they don't use the right names of other bots )
+
+
+JoeBOT 1.4 - May 30th 2k++ - 1740
+- started as_ map support ... (don't exspect too much)
+- they use a 'experience' system for navigating,camping and sniping
+- silenced weapons, grenades and the knife are only heard when close
+- better teamplay
+- go_go_go is now only 'heard' by bots nearby - 'storm the front' is for all
+- bots will sometimes use the radio command "go_go_go" themselves
+- they open doors with buttons if needed
+- new aiming system
+- bots will be readded after map change
+- maps of unknown type will be handled as cs maps
+- new commands
+- - bottkpunish on/off -> should bots shoot at tkler ?
+- - botmom -> syntax like old botacc ... see readme.txt
+- - botvs  -> ... as well
+- - some more commands ... see readme.txt
+- FIXED : planting bomb when having seen no enemy works now
+- FIXED : falling down from high places bug
+- FIXED : fast switching of knife and secondary in some situations
+- FIXED : some other little stuff
+
+JoeBOT 1.3 - May 6th 2k++ - 1527
+- botmenu is extended and hopefully fixed
+- better directory structure for waypoints - u can add a new waypoint directory by adding the directoryname to /joebot/wpjs/dir.txt
+- bots should only run ways on which the hstages can follow.
+- they'll be more 'intelligent' when getting stuck in doors
+- bots will run with the knife at the start of a round
+- they won't use grenades that often
+- less pingponging between bombspots
+- fixed some problems with beakable - shooting
+- the chat frequency can be set via the botchat command
+- bots strafe while running to see left and right if they suspect an enemy there
+- added a jump system, which tests if a bot can jump over a 'pit'. This is useful with the windows in cs_italy
+- readded system which shoots on breakables if bored ... some time ago i ripped that out, cause i didn't like it ... now i readded it, improved it a bit and's cool
+- I took some time to train the NNs better
+- added support for training the neural network from a predefined file named nntrain.pta in without an external program. for details see readme.txt
+
+JoeBOT 1.2.2 - Apr 22nd 2k++ - 1808
+- the number of frags isn't decremented when endround
+- waypoint delete works now for aiming waypoints, too
+- a bit more teamplay based on radio commands
+- - bots with sniper weapons will call for cover
+- - when a ct is near a bombspot after the bomb has been planted, and there is no bomb, he'll say 'sector clear'
+- I updated the waypoint.html
+- u can rename the wpj files for using them on other, similar maps without getting an error message, just a warning
+
+JoeBOT 1.2.1 - Apr 20th 2k++ - 2045
+- bot menu should now be available not only near to wps, but there are still some problems
+- they won't jump while planting the bomb
+- they sometimes shoot teamkillers
+- planting bomb and defusion is now better ... the reason was a really _stupid_ mistake of me !!!
+
+JoeBOT 1.2 - Apr 19th 2k++ - 1411
+- new navigation system which allows to have lots of wp, cause it's not based on backtracking.
+- bots will sometimes shoot there, where they think an enemy hides
+- extended command line parameters for addbot ... see readme.txt
+- new command ... autopath ... automatically adding paths when adding a wp is added can be switched on/off
+- new command ... endround ... this command makes all bots executing the kill command and so ending the round
+- new command ... botinfo ... this command shows some information about the bots
+- new command ... waypoint test ... gives u probably some hints for a good wp-file
+- new command ... waypoint makepaths ... calculates paths. U should do this every time u have edited the wps. U'll have the same effect be saving and loading the wps, but makepaths does not affect your saved files (good for testing)
+- information about wp can be put into (map).txt which will be shown at start of a game
+- defusion works better (they won't jump just before starting defusion)
+- a lot of other bugfixes
+
+JoeBOT 1.1.2 - apr 13th 2k++ - 1214
+- when u say go go go, the bots will play very agressivily the next ~15 seconds
+- the level of aggressivity of every bot changes from situation to situation. p.ex. the bot will get more aggressive, when he has killed someone
+- moved joebot.dll from cstrike/dlls to cstrike/joebot
+- moved bot.cfg from cstrike/ to cstrike/joebot
+- inserted a kind of floyd algorithm, which isn't already used for navigation, therefore it has no effect on playing till now
+- bots throw less grenades against boxes
+- added command 'mix_names [on/off]'
+
+JoeBOT 1.1.1 - Apr 5th 2k++ - 2101
+- added a new type of waypoint : "waypoint dontavoid". Normally the bots will avoid any obstacle within 75 units. esp. for 'ladders' made from boxes like the one to the vent in militia this isn't productive. Therfore this wp flag supresses the avoid function.
+- the difference between aggressive and defensive bots is bigger
+
+JoeBOT 1.1 - Apr 4th 2k++ - 2109
+- Added a personality system, with which u can define the behavior of a bot in bot_names.cpp
+- - separated by a '\t', i.e. a tab, u define if the bot should be agressive (<agg>), defensive (<def>) or normal (<nor>)
+- - next string separated by a tab is the favourite weapon, which is the weapon bought most of the times and has the best accuracy with this bot
+- they won't turn away from enemy when hiding except looking for suspicious sound sources
+
+JoeBOT 1.0.3 - Apr. 1st 2k++ - 2105
+- improved ladder handling
+- - they don't jump off the ladder when they just started to climb
+- - they don't try to go with more than 1 player on a ladder
+- - cs_militia is really playable
+- they have a anti - teamkill system, which prevents them from attacking teammates
+- new command : "pistolonly [on/off]"
+
+JoeBOT 1.0.1 - Mar 30th 2k++ - 2216
+- cpu usage is a lot lower
+- bots have a pickup system, i.e. they pick up any primary, if they have none, they'll pick up a AK47 or M4A1 when they've a machine gun, an AWP when they got a sniper rifle, but no AWP. They don't pick sniper rifles in every case, cause this would end in a total sniper war.
+
+JoeBot 1.0 - Mar 29th 2k++
+- fully CS 1.1 compatible (except wps for cs_siege)
+- better weapon buying routine
+- they throw grenades even when they are defensive.... that was kind of strange
+- bots don't say 'enemy down' when they killed a teammate
+- implementated a new internal message system ( bot_client.cpp and engine.cpp are extended )
+- bots react on radio commands
+- - "cover me"          - they give u cover -> to be improved
+- - "follow me"         - they follow u -> to be improved
+- - "u take the point"  - they stop following ur command ( like cover, follow etc )
+- - "enemy spotted"     - bored bots will come and see
+- - "hold this position - bots will hold their positions for about 30 secs
+- - "go go go"          - bots will stop camping
+- - "storm the front"   -          || 
+- cpu usage when in buyzone is a lot lower
+- nn is extended to 6-7-7-5
+- bots sometimes say 'enemy spotted' when this enemy hasn't been seen for a long time
+- remade the wps of de_aztec, converted the de_dust3.wpj to de_dust2.wpj
+- user menu to administrate bots and wp's (command : botmenu)
+- de_scud_2k1 is quite nice, therefore i made wps
+- running speed is weapon dependent
+- when the bots are bored and their weapon has a silencer, it uses it ...
+- ladder handling is sometimes improved, but there are still a lot of probs - but militia is playable
+
+JoeBot Alpha 2.4 - Ma 11 2k++
+- totally new aiming system - bots should aim better with g3sg1 and sg550
+- new commands ... see readme.txt
+- fixed bridge bug in de_aztec
+- improved ladder handling
+- defusing works now almost 100%
+
+JoeBot Alpha 2.3             - Feb 19 2k++ 17:48
+- new chatsystem ... for details see texts.txt
+
+JoeBot Alpha 2.2             - Feb 19 2k++ 17:48
+- Structure of nn changed ... NN knows the weapon of the enemy (5-6-6-5)
+- "forget to shoot" - bug fixed
+- bots don't continue hiding, when enemy is dead
+- they turn away from flashbangs
+- some other little changes
+
+JoeBot Alpha 2.1             - Feb 8 2k++ 14:26
+- New tasks to decide on for the NN
+- - NN is now 5-7-5, that's a bit smaller than the old 5-6-6-5 net, although the task should be more difficult
+- - NN decides when to hide
+- I think i _really_ got the bug in the sniper routine ...
+- lower CPU usage in combat situations
+- it took quite long till I found the right message, but now the freezetimebug is fixed
+
+JoeBot Alpha 2.0             - Jan 13 2k++ 22:30
+- fixed crash bug in sniper routine - I hope so ...
+- still probs in de_aztec ...
+- better tactics :
+- - they try to get out of the view of their enemy, when they have low health or only a little amount of ammo in the current clip
+- - they don't attack when they see, that they got no sniper weapon, are not close to the enemy and the enemy does not see them and when they're in a bad situation, i.e. low health, need to reload or need to change to a better weapon
+
+JoeBot Alpha 1.7             - Jan 10 2k++ 16:44
+- names of bots can be changed in bot_names.txt in your cstrike dir
+- they don't say "say ..."
+- restructured reading files ( names, chat ...)
+- fixed some bugs
+- the bots still have problems in de_aztec, cause they think they can fall throught the holes of the bridge, and the sometimes get stuck when trying to get out of the water
+
+JoeBot Alpha 1.6.2           - Jan 7 2k++ 12:58
+- improved 'hearing' system:
+- - bots can hear step from invisible players and they look there when camping
+- - they can hear a lot more, when they're camping
+- - todo : they should try to view the enemy they cannot see, when not camping
+
+JoeBot Alpha 1.6.1           - Jan 5 2k++ 12:07
+- fixed bug in sniper routine (was sometimes crashing)
+
+JoeBot Alpha 1.6             - Jan 4 2k++ 23:22
+- improved camping 
+- - not only turning -> only looking to directions with wps
+- - other weapon handling
+- - fix : they leave the campingspot after fighting - fixing bug, that bots snipering somewhere away from 'right' place
+- new command
+- - waypoint aim : wp ONLY for camping bots aiming
+
+JoeBot Alpha 1.5             - Jan 1 2k++
+- got http://joebot.cstrike.de
+- last night I added a simple chat system ( texts can be edited in texts.txt - the system should be easy to understand ) - but i havn't written good texts ...
+- problem with campingspot - approaching fixed ( esp. in cs_italy )
+- a lot of internal changes to get a lower cpu-usage ( esp. botman incoherence of team indicating variables )
+- Still problems with mapchanges
+- waypoints are only displayed for the one who typed waypoint on
+- new command
+- - botchat [on/off]
+- - edown [on/off]		- cause some ppl were tired of the message "Enemy down"
+
+JoeBot Alpha 1.4.0           - Dec. 30 23:58
+- 100% hostage 'using' - thx to Tobias
+- Bots can 'use' more than 1 hostage
+- improved ladder handling
+- fixed some other problems ...
+- new commands
+- - kickbots ct
+- - kickbots te
+- - kickbots all
+
+JoeBot Alpha 1.3.4           - Dec. 28 13:56
+- fixed some ladder problems ( esp. in cs_assault )
+- improved 'using hostage' code
+- no more problems with radio commands
+- (just counted the number of lines of the code : 28.000)
+- they don't try to destroy func_breakable entities with grenades ...
+- they don't shake when snipering
+
+JoeBot Alpha 1.3.3           - Dec. 27 23:45
+- after the bomb's planted, cts leave their camping spots in case they're camping 
+- they go directly to the next bomb target
+
+
+JoeBot Alpha 1.3.2           - Dec. 26 11:32
+- bots can defuse bombs
+- still problems with map change
+- they destroy func_breakable - entities in their way
+
+
+JoeBot Alpha 1.3.1           - Dec. 25 13:20
+- bots are not running against walls for a long time
+
+
+JoeBot Alpha 1.3.0           - Dec. 23 17:21
+- improved anti collision code
+- known bugs
+- - bots cannot use ladder - I don't know why, 'cause they could
+- - sometimes they don't use hostages
+- - they don't defuse bombs
+- - sometimes they run against walls
+- - they don't avoid grenades
+
+
+JoeBot Alpha 1.2.8           - Dec. 22 21:14
+- rewrote whole ladder handling code
+- improved strafing
+
+
+JoeBot Alpha 1.2.7           - Dec. 21 21:45
+- they're now blinded by flash bangs
+
+
+JoeBot Alpha 1.2.6           - Dec. 19 21:01
+- fixed some bugs
+- - 1.7 Meg ming compiling
+- - hopefully crouch bug with ming
+
+
+JoeBot Alpha 1.2.5           - Dec. 12 16:06
+- they use grenades
+- first they buy weapons, then grenades (a little bit 'unnice' in a former and nonlogged version)
+- ct have no problems with guarding c4
+- cts still don't defuse bombs - I think I've to write this surely little code segment
+- pause time of aug decreased
+- set grenades to a 50% pause probability to allow throwing without any additional code
+
+
+JoeBot Alpha 1.2.2           - Dec. 11 2000 17:45
+- They remark, when sb is shooting on them, even if they aren't hit
+
+
+JoeBot Alpha 1.2.1           - Dec. 10 2000 22:01
+- improved sniper weapon handling
+- they're now able to hear steps and they'll turn and shoot - haha what a nice present for the 2nd Advent
+- they go more or less directly to camping sites, if they've a good sniper weapon
+- new c4 pickup code for te
+- ct have problems guarding the c4
+- new wp - file : de_nuke
+- still no solution for going down ladders
+- added anti-collision routine for going to special entities like c4, hostages ...
+- followed Met@l_MC's suggestion of making the bots less jump
+
+
+JoeBot Alpha 1.2.0           - Dec. 9 2000 23:01
+- Added reaction time
+- Added better support for sniper weapons
+- - They buy more sniper weapons (awp, g3sg1, sg550)
+- - They stay at their camp spots, when they've a good sniper weapon, while fighting an enemy
+- - They have a longer delay for sniper weapons - to aim better and move more slowly to avoid a decrease of accuracy
+- Nice effect - If you're drunk and want to cs angainst nn based bots, just remove some neurons and their level of competence concerning cs is decreased to yours ;-)
+- worked on wp - files : cs_assault, cs_italy, cs_siege, de_dust, de_prodigy, de_cbble, cs_estate (, de_train)
+- bots dont want to go ladders down !!?
+
+
+JoeBot Alpha 1.1.6           - Dec. 5 2000 21:16
+- Fixed some rescue problems and the decision on ways to go with hostages
+- ripped out all tfc stuff ( ~16kb less dll - size)
+
+
+JoeBot Alpha 1.1.5           - Dec. 3 2000 21:42
+- They rescue hostages
+- They try to get to bombs laying on the ground ( I dont know why they've problems )
+- They don't really have feedback when 'using' hostage and dont know which hostages are going to be rescued - Is there a nice message, I havn't seen ??
+
+
+JoeBot Alpha 1.1.4           - Dec. 1 2000 23:18
+- Terrors can plant bombs (A nice feature, because now we've december, christmas and all this 'nice' shit, there u've to get 
+some entertainment), but the counters cannot defuse 'em yet.
+- Ladders are still problematic
+- (reorganized some code (wp+stuck))
+- problems :
+- - At some starts of rounds bots run against walls, fall down where no WPs are ...
+- - Camping bots don't start turning around (sometimes)
+- - changing map -> all bots leave
+
+
+JoeBot Alpha 1.1.3           - Nov. 30 2000 23:42
+- Bots can climb up ladders - and not too bad, but down ....
+
+
+JoeBot Alpha 1.1.2           - Nov. 29 2000 20:51
+- Bots can climb up ladders and sometimes down - but it's far away from a perfect solution
+
+
+JoeBot Alpha 1.1.1           - Nov. 28 2000 16:53
+- New anti colision code based on a second nn
+
+
+JoeBot Alpha 1.1.0           - Nov. 26 2000 13:54
+- Fixed some crouch problems - could esp. be seen in cs_siege near the hostage place with this little tunnel on the ground
+- Added support for team specific waypoints & changes in WP - visualization system
+- - waypoint counter/ct	// ... & light blue top
+- - waypoint terror/te	// ... & light red top
+- - waypoint noteam	// ... & blue top
+
+
+JoeBot Alpha 1.0.5           - Nov. 23 2000  8:58
+- Bots got 'real' names
+- Bots are going to nearest camppoint if they go to a sniper
+
+
+JoeBot Alpha 1.0.4           - Nov. 22 2000 21:32
+- Bots go to the place, where they have seen their last enemy : Now they count the wps in one way to eveluate the distance. 
+One consequence is to have a rather similar distance between waypoints - Do not use just one wp outside the house for each 
+corner (->cs_estate), but ~ 200 Units one wp
+- Changed some internal stuff to make it easier to declare if the way should be the shortest or randomize. (Function as param 
+(pointer to deciding function))
+
+
+JoeBot Alpha 1.0.3           - Nov. 21 2000 19:37
+- Bots go to place, where the last en has been seen - But they don't use the shortest way, so they might run throught the 
+whole map
+- Probability of sniper places, bombs, hostages and rescue zone ways in deciding where to go, changed
+
+
+JoeBot Alpha 1.0.2           - Nov. 20 2000 21:08
+- Bots camp
+- Bots shoot after map change - the reason was PauseShoot(pBot) and pBot->f_PauseShoot
+- bots still cannot plant bombs or rescue hostages
+
+
+JoeBot Alpha 1.0.1           - Nov. 19 2000 15:25
+
+- After creating a WP - File for cs_italy the max number of ways to find was set to 500 to give the bots the possibility to 
+go all ways (althought it costs about 1 MB of RAM and some ways are still a bit improbable)
+- Now this bot is not only for the human player compatible with cs1.0: the bots buy the new weapon and know how to handle 
+them.
+- BUG : after map change bots don't shoot
+- Better visualization of paths - paths going from you are yellow, paths going to you are red
+- new or updated wpj's cs_italy, cs_estate, cs_assault, de_dust
+- bots still cannot plant bombs or rescue hostages
+- new commands
+- - waypoint hostage	// these commands toggle (->XOR) the waypoint related flags
+- - waypoint rescue
+- - waypoint bomb -> has to be wazpoint hostage
+- - waypoint sniper
+
+
+JoeBot Alpha 1.0             - Nov. 16 2000 15:00
+( Sorry for not writing version information the last time. I just had no time, but I coded something . . . .  Here is the 
+result)
+
+- Waypoint system uses now backtracking to reach certain locations.
+- Unfortunately, they can't climb ladders yet.
+- Some minutes ago, I added compatibility for CS 1.0 (just ~ 4 lines for linking ents and about 20 for knowledge of bots 
+concerning this weapons)
+- They buy the mac, mp5, xm1014, ak47, para, m3, sg552, deagle ...
+- They go to hostages and bomb places, but they cannot take hostages with them or plant / defuse a bomb.
+- They've a kind of anti fall code. It prevents some falls, but doesn't work while strafing or fast jumping. It's just about 8 lines, but it's sufficient for this time
+- Bots stopped to jump a lot
+- Bots don't run against walls sliding a bit to one side, they turn then
+- Bots don't attack enemies at distances of >50 with a knife
+
+
+JoeBot Alpha 0.1             - Oct. 26 2000 1:23
+
+- Bots can identify the buy zone, therefore they are able to buy weapons
+- Principally, they know the range of each weapon. Because this value is given to the NN, and because I haven't spend much 
+time on training a good net, they don't really use this knowledge
+- They know how much ammo they have currently in their clips, so they decide to change weapons in some situations
+- The bots do not always think, that they've a knife. The iState in Current_weapon in the HPB - code signalises if you have 
+the weapon. This hasn't been tested in botman's version. (I had to search some time for this 'bug' ... shit :-(
+- Hostages are unknown beings
+- ... And Bombs, too
+- They've a Waypoint System!!!!! But it's very simple ( < 50 lines of code), so there are a lot of problems ( ladders, 
+tunnels ...), but right now I'm just too tired
+- Some WP - S. Command
+-	waypoint on/off			// shows waypoints 
+-	waypoint add/delete		// ... (ya'll know)
+-	waypoint load/save		//		||
+-	pathwaypoint create1		// starting path
+-	pathwaypoint create2		// connects WP1 and WP where you "create1"
+-	pathwaypoint delete1		// similar
+-	other commands :
+-	botshoot on/off			// very nice for coding
+- ... ( I'm sure I forgot a lot )
+
+JoeBot version Alpha -10000  - Oct. 20 2000 0:56
+
+(Just to see)
+- no waypoints
+- no reaction to type, distance ... of enemy, because I dont know how to get this information and therfore the NN don't get it, but they shoot
+- I've changed the HPB - stuck test stuff a bit
+- bots don't buy anything, because they don't know where
+- They can't plant bombs, ...
+- In general, they're as stupid as ... (I don't want to insult certain persons) but they've real artificial neural networks, should be adaptable to situations ( At least, when I'm analyzing the inputs, categorizes it with SOMs and choose the right data), this is even more than some of my teachers are able to perform ...

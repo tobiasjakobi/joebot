@@ -1,0 +1,122 @@
+######################################################################
+#
+#	joebot chat file
+#
+#	to use this file, rename it to texts.txt and copy it to your
+#	hl/cstrike directory
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	(Max. 50 Sentences per category and team)
+#
+#       Traduction en français : www.ajeux.com | webmaster@ajeux.com
+#       copyright 2001 - [CxR]Ez4Me2KU
+#	BOTNAME name of bot saying this stuff
+# 	TEAMMATEALIVE name of a teammate which is alive
+# 	ENEMYALIVE name of enemy which is alive
+#	CHATTER name of player who chatted
+# 	WEAPON name of own weapon
+# 	ALIVE ...
+# 	DEAD ...
+# 	RANDOM ...
+# 	VICTIM ...
+# 	MAP ...
+#
+# Adding interactive replies
+# start of section : [reply]
+# keywords : @KEY keyword1,keyword2
+# note : please don't leave spaces between keywords and commas, thx
+# phrase1
+# phrase2
+# phrase3
+# phrase4
+#
+#
+######################################################################
+
+#######################################
+# chat texts when the bomb is planted
+#######################################
+[bombplanted]
+<all>
+ahh, enfin on va voir bouger les campouses.
+<te>
+yiiihhhaaa !
+Vous allez tous crever ct de merde
+Vive le camping sauvage autour de la bombe !
+Venez ct, on vous attend !
+crevez, charogne !
+ca va peter.
+<ct>
+TEAMMATEALIVE, elle est ou cte saloperie ?
+et merde
+grouillez-vous, faut defuser cte bombe.
+#######################################
+# chat texts when a hostage is killed
+#######################################
+[hostdown]
+<all>
+<te>
+eheheh
+ENEMYALIVE, y va t'arriver la meme chose.
+TEAMMATEALIVE, tue aussi un hotage, ca en fera un que les ct pourront pas recuperer. LoL
+Ouups, i did it again comme dirait l'aut' salope.
+<ct>
+eh mec, tu fait quoi ???
+ne tuez pas les civils !
+objectif detruit. un de moins pour cte putain de mission de recup.
+connards... notre vengeance sera terrible.
+#######################################
+# chat texts of currently killing bots
+#######################################
+[kill]
+<all>
+Boom, dans la tete VICTIM.
+Ouups, je t'aurais pas mis une balle dans la tete, la ?
+tu m'en veux pas, mec ?
+desole VICTIM, mais je devais le faire...
+tu arreteras de tuer mes coequipiers maintenant
+et pan !
+<te>
+Et un flic de moins !
+voila un ct qui nous fera plus chier.
+Alors l'odre a du mal a se faire respecter ?
+mince alors il avait un uniforme ;)
+<ct>
+Le monde aura une crapule de moins.
+tu sauras qui est le plus fort maudis terro.
+#######################################
+# chat texts of dead bots
+#######################################
+[dead]
+<all>
+y'a des bots qui jouent la ?
+c pas un super jour aujourd'hui pour moi :(
+bon, je vais arreter de jouer avec les pieds maintenant...
+il m'a tué alors que je me curais le pied avec les dents
+j'y peux rien si on m'a coupe 6 doigts pendant le vietnam...
+alllez jeter un coup d'oeil a www.ajeux.com, qui a tout pour Counter-Strike
+vivement le match de foot de ce soir, non ?
+<te>
+allez terros, faut se reveiller maintenant !
+ils nous ont bien eus ces ct de daube
+<ct>
+allez ct, faut se reveiller maintenant !
+put1, on s'est fait laminer par ces terros !
+##############################################
+# chat texts of bots remarking a team attack
+##############################################
+[teamattack]
+<all>
+ehhh, fait gaffe !
+t'es con ma parole TKPLAYER !
+arrete put1 de teamkiller !
+pquoi t'as fait ca TKPLAYER ?
+<te>
+TKPLAYER passe ct si tu veux fragger du terro !
+eh, TKPLAYER, vise des skins de ct, pas de terro, merde.
+<ct>
+eh, TKPLAYER, vise des skins de terro, pas de ct, merde.
+
+

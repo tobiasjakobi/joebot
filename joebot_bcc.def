@@ -1,0 +1,4 @@
+LIBRARY joebot
+EXPORTS
+ GetEntityAPI = _GetEntityAPI
+ GetNewDLLFunctions = _GetNewDLLFunctions

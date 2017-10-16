@@ -1,0 +1,91 @@
+######################################################################
+#
+#	joebot chat file
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	(Max. 50 Sentences per category and team
+#
+#	copyright @$3.1415rin
+#	(here u can add ur copyright if u'va added sth and have sent
+#	 it back to joebotchat@gmx.de)
+#
+# BOTNAME name of bot saying this stuff
+# TEAMMATEALIVE name of a teammate which is alive
+# ENEMYALIVE name of enemy which is alive
+# ALIVE ...
+# DEAD ...
+# RANDOM ...
+# VICTIM ...
+# MAP ...
+#
+#
+######################################################################
+
+#######################################
+# chat texts when the bomb is planted
+#######################################
+[bombplanted]
+<all>
+<te>
+	ich truk schon lang ein klein und unscheinliches kaestelein mit mir ...
+<ct>
+	ich gedaenkte, solch solch schlaechtes tuhn zu melden
+	ich werde meinen aeußerst starken geist bemühen des Übels quelle zu finden
+#######################################
+# chat texts when a hostage is killed
+#######################################
+[hostdown]
+<all>
+	warum muesset ihr denen das antuhn ?
+	man toetet doch keinen glaeubigen Christenmenschen !
+	Gott segne euch
+<te>
+<ct>
+#######################################
+# chat texts of currently killing bots
+#######################################
+[kill]
+<all>
+	dieser lecherliche helt sei verbannet
+	Den saienden sai das Leben geschenket !
+	Dis war den nun sain zeit auf erden
+	Ich mag dis MAP, da sie vorzüglich fuer uns interessen sein tuht
+	der herr sai mit dir
+<te>
+	in den jaren hab ich vil leut getoetet, solch unglueckhaftigen schatz nie vernommen
+	nun, der ernst der lage scheinet vilen nicht klar zu sain
+	und du, VICTIM, waehntest dich auf der guten Saite der Macht ?
+	schon gedachte ich boeses zu tuhn
+<ct>
+	der boese gaist hat dich haimgesucht ...
+	du saist ein wunderlich nigromanta ...
+	des boesen menschen's geist gen hoelle sinkt
+#######################################
+# chat texts of dead bots
+#######################################
+[dead]
+<all>
+ Ein Anwalt begrüßt eine Telefonzelle , obwohl er nüchtern ist.
+ Ein 73-jähriger Kriegsveteran beklagt sich über den Eiffelturm , denn die Keksdose ist alle.
+ Ein Anwalt verprügelt seine gute alte Seemannskiste nach Rückgabe der Klassenarbeit.
+ Ein Anwalt kauft seinen aufgebrauchten Klebestift wegen starken Blasendruckes.
+ Ein Casanova beschimpft seinen aufgebrauchten Klebestift anstelle des Tannenbaums.
+ Indiana Jones zerkratzt eine Betonmischmaschine , denn die Keksdose ist alle.
+ Robbie Williams malt seinen aufgebrauchten Klebestift im Zeitalter des großen Koboldaufstandes an.
+ Ottfried Fischer klagt seinen Computer zur Strafe an.
+ Ein dummes Alien begafft seine zerkratzte Thermoskanne wegen starken Blasendruckes.
+ Ein wütender Teddybär bewässert die spotzende Kaffeemaschine anstatt zu verhandeln.
+ Eine Blondine fotografiert die Freiheitsstatue auf dem Schlachtfeld.
+ Lara Croft verteidigt sich gegen die Freiheitsstatue , weil sie gerade Lust dazu hat.
+ Ein verzweifelter Westernheld konserviert seinen alten Schwarz-Weiß-Fernseher in der Badewanne.
+ Der Habicht küsst eine unschuldige Tesafilmrolle kurz bevor die Geisterstunde beginnt.
+ Der lachende Dritte beklagt sich über eine fetttriefende Bratwurst , obwohl er nüchtern ist.
+ Der blutige Baron zersägt Susi Sorglos , weil er gerade Lust dazu hat.
+ Der blutige Baron sucht den ermittelnden Kommissar wegen Untreue.
+ Robbie Williams verteidigt die spotzende Kaffeemaschine anstelle des Tannenbaums.
+ Ein hundsgemeiner Joghurtscheißer fotografiert Susi Sorglos kurz bevor die Geisterstunde beginnt.
+<te>
+<ct>
+

@@ -1,0 +1,221 @@
+# ---------------------------------------------------------------------------
+# Definitions
+# ---------------------------------------------------------------------------
+!if "$(CFG)" == ""
+ CFG = release_mm
+!endif
+
+BASE_DLLNAME = joebot
+!if "$(CFG)" == "release_mm"
+ DLLNAME = $(BASE_DLLNAME)_mm
+ OBJDIR = dlls\release\win32\mm_bcc
+!elif "$(CFG)" == "debug_mm"
+ DLLNAME = $(BASE_DLLNAME)_mm
+ OBJDIR = dlls\debug\win32\mm_bcc
+!elif "$(CFG)" == "release_std"
+ DLLNAME = $(BASE_DLLNAME)
+ OBJDIR = dlls\release\win32\std_bcc
+!elif "$(CFG)" == "debug_std"
+ DLLNAME = $(BASE_DLLNAME)
+ OBJDIR = dlls\debug\win32\std_bcc
+!endif
+
+DLL = $(OBJDIR)\$(DLLNAME).dll
+
+SDKDIR = C:\HLDev\sdk\multiplayer
+JOEBOTDIR = C:\HLDev\bots\joebot\src
+MMDIR = C:\HLDev\server\metamod\src\1.17
+CSDIR = C:\Program Files\Steam\SteamApps\cruft@hotmail.com\counter-strike\cstrike\joebot
+SERVERDIR = C:\HLServer\cstrike\joebot
+SERVERDIR_CS15 = C:\Program Files\Half-Life\cstrike\joebot
+
+BCCDIR = c:\tools\borland\bcc55
+BINDIR = $(BCCDIR)\bin
+INCDIR = $(BCCDIR)\Include
+LIBDIR = $(BCCDIR)\lib
+LIB = $(LIBDIR);$(LIBDIR)\psdk
+
+CC = $(BINDIR)\bcc32
+RC = $(BINDIR)\brcc32
+AS = $(BINDIR)\tasm32
+LD = $(BINDIR)\ilink32
+RM = del
+CP = copy
+MD = mkdir
+
+# includes
+BASECFLAGS = -I$(JOEBOTDIR)\engine -I$(JOEBOTDIR)\common\
+ -I$(JOEBOTDIR)\pm_shared -I$(JOEBOTDIR)\NNSim\som\
+ -I$(JOEBOTDIR)\NNSim -I$(JOEBOTDIR)\dlls -I$(INCDIR)
+
+!if "$(CFG)" == "release_mm" || "$(CFG)" == "debug_mm"
+EXTRA_CFLAGS = -I$(MMDIR)\metamod -DUSE_METAMOD
+!endif
+
+!if "$(CFG)" == "debug_mm" || "$(CFG)" == "debug"
+CFLAGS = -v $(BASECFLAGS) $(EXTRA_CFLAGS) -D_DEBUG
+!else
+CFLAGS = -4 -O2 -v- $(BASECFLAGS) $(EXTRA_CFLAGS)
+!endif
+
+RCFLAGS = -idlls
+!if "$(CFG)" == "release_mm" || "$(CFG)" == "debug_mm"
+RCFLAGS = $(RCFLAGS) -dUSE_METAMOD
+!endif
+
+LDFLAGS = -c -aa -q -Gn -Tpd -m
+
+SRC_DLLS =\
+ dlls\basemem.cpp\
+ dlls\bot_client.cpp\
+ dlls\bot_cs.cpp\
+ dlls\bot_names.cpp\
+ dlls\bot.cpp\
+ dlls\bot_wpdir.cpp\
+ dlls\bot_wpstat.cpp\
+ dlls\CBotBase.cpp\
+ dlls\CBotCS_combat.cpp\
+ dlls\CBotCS_navigate.cpp\
+ dlls\CBotCS.cpp\
+ dlls\CBotDOD_combat.cpp\
+ dlls\CBotDOD_navigate.cpp\
+ dlls\CBotDOD.cpp\
+ dlls\CCommand.cpp\
+ dlls\ChatBot.cpp\
+ dlls\ChatHostData.cpp\
+ dlls\ChatHost.cpp\
+ dlls\Chat.cpp\
+ dlls\CLTMem.cpp\
+ dlls\Commandfunc.cpp\
+ dlls\CParser.cpp\
+ dlls\CPersonality.cpp\
+ dlls\CRadio.cpp\
+ dlls\CSDecals.cpp\
+ dlls\CSkill.cpp\
+ dlls\CState.cpp\
+ dlls\CSTMem.cpp\
+ dlls\CTask.cpp\
+ dlls\dll.cpp\
+ dlls\engine.cpp\
+ dlls\Gnome.cpp\
+ dlls\h_export.cpp\
+ dlls\LListElem.cpp\
+ dlls\namefunc.cpp\
+ dlls\NNWeapon.cpp\
+ dlls\util.cpp\
+ dlls\waypoint_advdataimpl.cpp\
+ dlls\waypoint.cpp\
+ dlls\WorldGnome.cpp\
+
+SRC_NNSIM =\
+ NNSim\Activations.cpp\
+ NNSim\BaseLinkFF.cpp\
+ NNSim\BaseLink.cpp\
+ NNSim\BaseNeuralNetFF.cpp\
+ NNSim\BaseNeuralNet.cpp\
+ NNSim\BaseNeuronFF.cpp\
+ NNSim\BaseNeuron.cpp\
+ NNSim\BasePatternElemFF.cpp\
+ NNSim\BasePatternElem.cpp\
+ NNSim\BasePatternFF.cpp\
+ NNSim\BasePattern.cpp\
+ NNSim\BaseWeightFF.cpp\
+ NNSim\BaseWeight.cpp\
+ NNSim\LinkBPropM.cpp\
+ NNSim\LinkBProp.cpp\
+ NNSim\NeuralNetBPropM.cpp\
+ NNSim\NeuralNetBProp.cpp\
+ NNSim\NeuronBPropM.cpp\
+ NNSim\NeuronBProp.cpp\
+ NNSim\NNSimService.cpp\
+ NNSim\PatternBProp.cpp\
+ NNSim\PatternElemBProp.cpp\
+ NNSim\WeightBPropM.cpp\
+ NNSim\WeightBProp.cpp\
+
+SRC_SOM =\
+ NNSim\som\CqSOM2d.cpp\
+ NNSim\som\fNBorKernel.cpp\
+ NNSim\som\nVec.cpp\
+ NNSim\som\SOMPatternElem.cpp\
+ NNSim\som\SOMPattern.cpp\
+
+TMPDIR = $(OBJDIR)\\
+TMP_DLLS = $(SRC_DLLS:dlls\=$(TMPDIR))
+TMP_NNSIM = $(SRC_NNSIM:NNSim\=$(TMPDIR))
+TMP_SOM = $(SRC_SOM:NNSim\som\=$(TMPDIR))
+
+OBJ_DLLS = $(TMP_DLLS:.cpp=.obj)
+OBJ_NNSIM = $(TMP_NNSIM:.cpp=.obj)
+OBJ_SOM = $(TMP_SOM:.cpp=.obj)
+
+OBJ = $(OBJ_DLLS) $(OBJ_NNSIM) $(OBJ_SOM)
+
+# ---------------------------------------------------------------------------
+# Targets
+# ---------------------------------------------------------------------------
+all: $(OBJDIR) $(DLL)
+ 
+release: release_mm release_std
+
+debug: debug_mm debug_std
+
+release_mm:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=release_mm"
+
+release_std:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=release_std"
+
+debug_mm:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=debug_mm"
+
+debug_std:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=debug_std"
+
+release_install:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=release_mm" install
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=release_std" install
+
+debug_install:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=debug_mm" install
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=debug_std" install
+
+release_clean:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=release_mm" clean
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=release_std" clean
+
+debug_clean:
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=debug_mm" clean
+	$(BINDIR)\$(MAKE) -f Makefile.bcc "CFG=debug_std" clean
+
+clean:
+	-$(RM) $(OBJDIR)\*.obj
+	-$(RM) $(OBJDIR)\*.res
+	-$(RM) $(OBJDIR)\$(DLLNAME).map
+	-$(RM) $(OBJDIR)\$(DLLNAME).tds
+	-$(RM) $(DLL)
+
+install: $(CFG)
+	$(CP) $(DLL) "$(CSDIR)\$(DLLNAME).dll"
+	$(CP) $(DLL) "$(SERVERDIR)\$(DLLNAME).dll"
+	$(CP) $(DLL) "$(SERVERDIR_CS15)\$(DLLNAME).dll"
+
+# ---------------------------------------------------------------------------
+# Rules
+# ---------------------------------------------------------------------------
+$(DLL): $(OBJ) $(OBJDIR)\linkfunc.obj $(OBJDIR)\$(BASE_DLLNAME).res
+	$(LD) -L$(LIB) $(LDFLAGS) c0d32.obj $(OBJ) $(OBJDIR)\linkfunc.obj, \
+	$@, $(OBJDIR)\$(DLLNAME).map, import32.lib cw32mt.lib, \
+	$(DLLNAME)_bcc.def, $(OBJDIR)\$(BASE_DLLNAME).res
+
+$(OBJDIR):
+	-$(MD) $(OBJDIR)
+
+$(OBJDIR)\linkfunc.obj: dlls\linkfunc.cpp
+	$(CC) $(CFLAGS) -u- -o$@ -c dlls\linkfunc.cpp
+
+$(OBJDIR)\$(BASE_DLLNAME).res: dlls\$(BASE_DLLNAME).rc
+	$(RC) $(RCFLAGS) -fo$@ dlls\$(BASE_DLLNAME).rc
+
+{dlls;NNSim;NNSim\som}.cpp{$(OBJDIR)}.obj:
+	$(CC) $(CFLAGS) -o$@ -c $<

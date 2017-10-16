@@ -1,0 +1,159 @@
+######################################################################
+#
+#	joebot chat file (Russian)
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	I'm not responsible for the content of this file. (@$3.1415rin)
+#
+#	(Max. 50 Sentences per category and team
+#
+#       copyright @$3.1415rin
+#	copyright 3NFORC3R
+#       copyright Snowman® 
+#       copyright Spectrum
+#
+#	(here u can add ur copyright if u'va added sth and have sent
+#	 it back to joebotchat@gmx.de)
+#
+#	BOTNAME name of bot saying this stuff
+# 	TEAMMATEALIVE name of a teammate which is alive
+# 	ENEMYALIVE name of enemy which is alive
+#	CHATTER name of player who chatted
+# 	WEAPON name of own weapon
+# 	ALIVE ...
+# 	DEAD ...
+# 	RANDOM ...
+# 	VICTIM ...
+# 	MAP ...
+#
+# Adding interactive replies
+# start of section : [reply]
+# keywords : @KEY keyword1,keyword2
+# note : please don't leave spaces between keywords and commas, thx
+# phrase1
+# phrase2
+# phrase3
+# phrase4
+#
+#
+######################################################################
+
+##############################################
+# chat texts when the bomb is planted
+##############################################
+[bombplanted]
+<all>
+<te>
+	xexexe!
+	Vi shas vse podoxnete !
+	Davaite kamperit!
+             Tuk-Tak-Tuk-Tak... xe-xe! :)
+<ct>
+	TEAMMATEALIVE, gde eta ebanaya bomba???
+	4epT...
+	blia, gde ona?
+             Daite mne 5 sec. 4to6 naiti&razminirivat bomby.
+
+##############################################
+# chat texts when a hostage is killed
+##############################################
+[hostdown]
+<all>
+	kakoy debil?
+             Mudak golimui, ti na xep hostage'a ubil?!
+<te>
+	xexexe
+	ENEMYALIVE, mi s toboy toge sdelaem eto! ;) !!!
+	esli u vas babok doxera  - to vpered! Mochite zalognikov i dalshe! :)
+<ct>
+	kakogo XEPA ti eto sdelal? 
+	smotri kuda streliaesh, snaiper xyeB!
+	da xpen s nim! Menshe spasat nado budet!
+##############################################
+# chat texts of currently killing bots
+##############################################
+[kill]
+<all>
+	poluchi
+	poluchi, vonuchiy VICTIM
+	GAGAGAGAGAGAGA!!!!!
+	BOTNAME ubiet vas BCEX!
+	moe imia BOTNAME, no vi mogete zvat menia bor! :)
+	ti tupoy urod i nedostoin dage sortir u menia, BOTNAME 'a, chistit! !!
+	A seichas ya prikonchu ENEMYALIVE !
+	lol
+	sho 2 baita pereslat!
+	zaebis
+	mne nravitsia MAP
+             XA-XA-XA-XA! ia y6uJI VICTIM!!! ia MACTEP!!!
+             Yeah! Ia y6uJI Victim! Dergis ENEMYALIVE, ia uge idy k tebe!
+             HoBu4Ku...
+             Mne bilo v kaif tebia zamochit', VICTIM.
+             Lohi, lohi, i vse tshedushnie oni...
+<te>
+	Xaxa, oblomis kontr!
+	Xaxa, oblomis, pexotinec figov!
+	Policai figov, othaval?!
+             Nasha gizn - eto vsego-lish chey-to frag! :)
+	Kto eshe dumaet chto terri ne znaut dage s kakogo mesta y kalasha pulia viletaet ?!
+<ct>
+	Xoposhui terr - mertviy terr!
+	Mi budem kamperit v Arabii ?!
+             Y6eu Tepopa - cnacu nJIanety. Greenpeace.  
+
+##############################################
+# chat texts of dead bots
+##############################################
+[dead]
+<all>
+	Tut boti igraut? ??
+	Segodnia xepoviy den!
+	Camper's must die!
+	kto - nibud igral na de_rotterdam? Dovolno neplohaya mapa...
+	Ya ne nenavizu kamperov, no ya nenavizu tebia, DEAD!
+	Davaite votemap 9 - xuevaya karta
+	Kogo - nibud pret karta 'MAP' ?
+	Ya etu kartu vashe ne znau... :(
+	Smotreli novosti vchera? - polniy pizdec!
+	A vi uge bili na http://joebot.counter-strike.de ?
+	vi videli www.fsg-preetz.de ?
+             davaite kick'nem ENEMYALIVE, on ne daet normalno igrat!
+	vi ego videli? ?
+	ti otkuda, DEAD ?
+	Privet, DEAD, kak dela?
+	ALIVE kruto igraet!
+	Ya uveren chto TEAMMATEALIVE sdelaet ix! !
+	Xbatut materitsia - adminu pogaluus!
+	privet botman'y - pape vsex botov! :))
+             4EPT, }I{PATb OXOTO... 
+             Kto-nibud smotrel Simpsonov vchera?
+             Xe-xe, mne nravitsai bit' meptvim! :)))
+             ENEMYALIVE opiat shnirit! Davaite kicknem ego, kto server?
+<te>
+	tipichnaya ataka controv...
+             Contri cocynku.
+             Contri JIY3EPbI!
+<ct>
+	tipichnaya ataka terrov...
+             Terori cocynku.
+             Terori JIY3EPbI!
+##############################################
+# chat texts of bots remarking a team attack
+##############################################
+[teamattack]
+<all>
+	Okuratney!
+	Sovsem sdurel, TKPLAYER !?
+	Ti tupar, TKPLAYER
+	tupar
+	vklucheno - li mp_tkpunish ?!
+	TKPLAYER ebaniy ubiica svoih !!!
+	WTF !!! Ey, TEAMMATEALIVE davai RAPE TKPLAYER
+	TKPLAYER, sledi za sobo, urodec! !
+	TKPLAYER ! Sha podoydu i no golove dam!
+<te>
+	TKPLAYER pizduy k contram, esli terrov mochit hochesh!
+<ct>
+	TKPLAYER pizduy k terram, esli kontrov mochit hochesh!

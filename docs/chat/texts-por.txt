@@ -1,0 +1,295 @@
+######################################################################
+#
+#	joebot chat file
+#
+#	to use this file, rename it to texts.txt and copy it to your
+#	hl/cstrike directory
+#
+#	plz don't remove any 'tags', cause this would result in
+#	interchanging between categories.
+#
+#	(Max. 50 Sentences per category and team)
+#
+#       Tradução em Português : www.odpclan.n3.net | g.a.p@ig.com.br
+#       copyright 2002 - [ODP] G.A.P | ICQ#: 7234061
+######################################################################
+
+##############################################
+# chat texts when the bomb is planted
+##############################################
+[bombplanted]
+<all>
+<te>
+	awawawawa
+	A Bomba matara vcs todos!!!
+	vamos camp ... os cts naum o encontrarao
+	ha ha, BOOM !!
+	vc nunca desarmarao a bomba em tempo.
+	tick, tick, tick
+	esta eh minha parte favorita
+	Ha Ha Ha
+	venha nos pegar
+	vamos ver se o ENEMYALIVE lembrou de comprar o kit pra desarmar
+	a bomba naum eh tudo q explode!!!
+	vc esta indo pro lugar errado ENEMYALIVE hehe!
+<ct>
+	TEAMMATEALIVE vcs sabem onde?
+	merda
+	onde tem TEAMMATEALIVE ?
+	eh o fio vermelho, certo TEAMMATEALIVE ?
+	vc tem o desarmador TEAMMATEALIVE ?
+	qual o local TEAMMATEALIVE ?
+	eu queria ter comprado o kit de desarmar bombas
+	vamos, apenas 35 segundos !
+	Isto fede
+	Onde sera q colocaram a bomba?
+	esse truke eh velho
+	Rapido! antes que ela exploda
+	pegou seu desarmador TEAMMATEALIVE ?
+##############################################
+# chat texts when a hostage is killed
+##############################################
+[hostdown]
+<all>
+	felizes idiotas
+	os inocentes sempre sofrem...
+	talvez, se os refens naum fossem tao estupidos...
+	Refens stupidos fudidos
+<te>
+	hehehe
+	ENEMYALIVE nos faremos o mesmo com vc !!!
+	se tem dinheiros continue matando..um refem morto naum pode ser resgatado pelos CTs
+	Legal, mais escudos humanos
+	hehe, os refens sao tao estupidos
+	este naum eh o ultimo refem que morreu ENEMYALIVE
+	CNN ama refens mortos
+	primeiro os refens, depois os herois !
+	nos naum precisavamos daquele refem mesmo ne TEAMMATEALIVE ?
+	eu tava cansado de vigiar aquele refem mesmo
+<ct>
+	
+	cara, oq vc tah fazendo ?
+	naum atire nos civis !
+	objetivo destruido - um a menos a ser salvo
+	pobre refem
+	protejam os refens !
+	Pq ?
+	bem... um refem morto significa meldalha a menos, certo?
+	eu sempre me pergunto se vale a pena resgatar estes refens
+	eu odeio salvar refens
+	Proteja os civis ! Mau ENEMYALIVE mau !
+	seu cuzao, vc matou um refem!
+	quem matou o refem ?!
+	foi vc quem matou o refem TEAMMATEALIVE ?
+	acho q os refens estao tentando morrer
+##############################################
+# chat texts of currently killing bots
+##############################################
+[kill]
+<all>
+	peguei vc
+	peguei vc, VICTIM inutil
+	MUHAHAHAHAAAHAA
+	BOTNAME matara vcs todos
+	Meu nome eh BOTNAME, mas pode me chamar de DEUS
+	E eu disse a vc: Se pensa poder jogar CS, nunca lute contra BOTNAME !!
+	vou tentar pegar o ENEMYALIVE !
+	HA HA HA
+	Isso foi facil demais
+	newbie
+	Eu gosto de MAP
+	VICTIM, vc eh muito pato
+	vc nunca foi muito bom VICTIM
+	Devia ter corrido quando teve a chance VICTIM
+	Isso ensinara a vc VICTIM !
+	Caminhe em direcao a luz VICTIM
+	AAAAAAHHHHHH !!!
+	Mais newbies por favor !
+	Ai, isso deve doer VICTIM
+	ajoelhe-se diante de mim VICTIM
+	tente praticar com alguns bots VICTIM
+	vc estava tentando morrer VICTIM ?
+	BOTNAME eh seu dono!
+	fuja de BOTNAME !
+	viu como acabou tudo VICTIM
+	vc morre bem VICTIM
+	tente atirar pelas costas na proxima vez VICTIM
+	VICTIM fede!
+	eu acho VICTIM era pato
+	tenho vc VICTIM
+	matei vc de novo VICTIM
+	to cansado de matar vc VICTIM
+<te>
+	Haha, cheio de querer ser - policial
+	Haha, cheio de querer ser - soldado
+	alguns caras tem que morrer antes que eles coloquem um novo governo
+	ha aqui mais alguem que acha que os terroristas naum sao capazes de lutar??!
+	BOTNAME domina !!
+	ha ha, vc morreu por uma causa VICTIM !
+	obrigado por ajudar no meu placar VICTIM
+	vejo vc no inferno VICTIM !
+	espero que tenha seguro de vida VICTIM
+	BOTNAME possui vc
+	como se sente sendo um heroi VICTIM ?
+	tenho vc VICTIM
+	Peguei um, agora eh a sua vez TEAMMATEALIVE
+<ct>
+	O Bom ainda eh o melhor
+	Seus campers do caraho!!
+	Esta culpa me corroi por dentro
+	HA! e o governo ainda me paga por isso
+	desculpe VICTIM eu tive q fazer isso
+	menos um bandido no mundo
+	sinto mal sobre isso VICTIM
+	Ha, VICTIM, vc eh um martir agora !
+	nos mataremos todos vcs terroristas !
+	BOTNAME eh seu dono
+	possuo vc VICTIM
+##############################################
+# chat texts of dead bots
+##############################################
+[dead]
+<all>
+	aqui tem algum bot jogando ??
+	Ah naum, hj eh um dia ruim
+	Eu ondeio campers
+	alguem ja jogou de_sandrush ? eh firmeza ...
+	Eu naum odeio campers, mas eu odeio vc, DEAD!
+	vamos votar no mapa 9 - Eu odeio este aqui
+	alguem aqui gosta de 'MAP' ?
+	Eu naum conheco este mapa direito
+	Vc viu as noticias ontem ?? - Incrivel
+	vc jah visitou http://joebot.counter-strike.de ?
+	vc jah viu www.fsg-preetz.de ?
+	ei, vamos votar contra ENEMYALIVE, ele estraga o jogo
+	ele naum o viu ?
+	de onde vc eh DEAD ?
+	Oi DEAD e ai?
+	ALIVE esta jogando super bem
+	tenho certeza, TEAMMATEALIVE conseguira !
+	odeio morrer com bala perdida
+	saudacoes a botman - o pai de todos os bots
+	esta versao eh muito melhor que a antiga de JOEBot 
+	Ei! humano, vc fede
+	vc esta melhorando
+	bots burros
+	zzzzzz...
+	ENEMYALIVE esta tapaceando !
+	naum parece q este bots estao usando wallhack ?
+	lag mata
+	eh lamentavel
+	morra DEAD inutil
+	hora de mudar o mapa certo ?
+	eu odeio este jogo
+	ha ! seu Bots newbies !
+	acorde-me DEAD quando isso acabar
+	E sobre a cobertura ?
+	Cobertura, o que eh cobertura?
+	o que eles estao fazendo ?
+	vc viu aquilo ?
+	desista de trapacear DEAD
+	Yeah! certo
+	Patetico
+	ENEMYALIVE eh um bot burro
+	Aff !!
+	este servidor fede
+	um dia ele pagara por ser um bot
+	nem vi de onde veio o a bala
+<te>
+	tipico atake CT
+	Terror dominda
+	os CTs naum tem uma pista
+	TEAMMATEALIVE naum tem uma pista
+	ENEMYALIVE esta trapaceando
+	eu quero um mapa DE na proxima
+	enquanto isso, poderiamos planejar nosso proximo ataque
+	Um outro bot bom eh o FoxBot, para TFC
+	Pelo menos eu sou um martir agora
+	Eu acho q to no inferno ne? Isso explica porque estou tao quente
+	Naum importa se este trampo eh pago, naum vale a pena !
+	Mate todos eles e comecem uma nova rodada
+	este arquivo de waypoint fede
+	isto eh ridiculo
+	vcs jah ouviram falar em trabalho em equipe?
+	Tente Botmixer 5000, eu quero matar alguns PODBots
+	Eu nasci um bot mal
+	este MAP favorece muito os CTs
+	estupidos!! CTs falam de mais
+	algum de vcs sabe com o aimbot funciona? ?
+	Droga! ENEMYALIVE eh burro
+	hey! onde estao todas aquelas virgens que me prometeram ?!
+	ENEMYALIVE precisa praticar contra alguns bots ou alguma outra coisa
+	acho q TEAMMATEALIVE eh um CT com problemas mentais
+	Naum me diga! outro bot esta preso de novo certo?
+	bom plano DEAD
+<ct>
+	tipico ataque terrorista ...
+	o que motiva os terroristas?
+	CTs dominam
+	acho que alguem esta usando cheat
+	qual eh o proximo mapa?
+	Um dos nossos devia chamar reforcos
+	ParaBot, pra HL, eh um otimo bot tb !
+	Hey DEAD Eu posso ver todos os meus parentes mortos!hehe
+	Um CT morto eh um heroi, um T morto eh apenas um morto
+	ENEMYALIVE naum tem uma pista
+	TEAMMATEALIVE merece uma medalha
+	o q vc quer dizer, eu sou um bot ?!
+	talvez nos devessemos jogar como um time
+	JoeBot eh panico!
+	hora de baixar mais mapas
+	JoeBot eh bom, mas precisa de mais waypoints
+	Botmixer 5000, Eh incrivel!
+	o MAP favorece os te's
+	vc falam muito terroristas estupidos
+	esta eh a ultima vez q TEAMMATEALIVE faz o plano
+	Ei DEAD vc naum tinha sido banido por cheating ?
+##############################################
+# chat texts of bots remarking a team attack
+##############################################
+[teamattack]
+<all>
+	tome cuidado TKPLAYER
+	ta loko, TKPLAYER !?
+	burro, TKPLAYER, burro
+	O mp_tkpunish esta ligado?!
+	TKPLAYER eh um teamkiller !!!
+	Hey, TEAMMATEALIVE vamos pegar o TKPLAYER
+	TKPLAYER, cuidado ai mane !
+	porra TKPLAYER !
+	eh pra atirar no outro time TKPLAYER
+	por que TKPLAYER ?
+	vc eh um estupido TKPLAYER
+	esqueceu de que lado esta TKPLAYER ?
+	alguem ai, kick TKPLAYER
+	naum consegue atirar neles entaum atira em nos, hum TKPLAYER
+	vc sabe o q eles dizem em troco ne TKPLAYER?
+	vc eh o melhor cara do time deles TKPLAYER
+	naum faca isso de novo TKPLAYER
+	uuummm... que time vc esta TKPLAYER ?
+	q merda TKPLAYER
+	seu doente TKPLAYER
+	Porra TKPLAYER vc atirou em mim cuzao
+	Mude para friendlyfire off, TKPLAYER esta no nosso time !
+	por que o adm naum chuta o TKPLAYER ?
+	cuidado onde atira TKPLAYER !
+	to do seu lado TKPLAYER
+<te>
+	TKPLAYER seu cuzao, vai pros CTs se vc gosta de atirar em terroristas!
+	Sei que somos maus, mas naum precisamos atirar em nossa propria equipe TKPLAYER
+	esqueceu q eh um terrorista TKPLAYER ?
+	vc sabe com que um CT se parece TKPLAYER ?
+	Aloo! Sou um dos seus TKPLAYER
+	espera ate voltarmos pra base TKPLAYER cuzao
+	se atirar em mim mais uma vez TKPLAYER eu vou chutar a sua bunda
+<ct>
+	TKPLAYER seu idiota, passe pros Ts se vc gosta de atirar nos counter-terrorists !
+	TKPLAYER, vc jah ouviu sobre algum mocinho atirando no proprio time ?
+	esqueceu q eh um ct TKPLAYER ?
+	olhe por onde atira TKPLAYER !
+	TKPLAYER seu doente, naum sabe com o q os terroristas se parecem ?!
+	olhe primeiro quem eh antes de atirar TKPLAYER
+	vc pagara por isso TKPLAYER
+	friendly fire esta ligado TKPLAYER
+	ugh ! friendly fire de TKPLAYER de novo !
+	TKPLAYER esta trabalhando para os t's !!

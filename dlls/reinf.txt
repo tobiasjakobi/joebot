@@ -1,0 +1,13 @@
+bot is killed :
+	- delearn : 1
+
+bot is alive :
+	- bot killed another bot
+		- learn : 1
+	- bot hasn't killed another bot :
+		- other bot got away
+			- delearn : .3
+		- bot hides
+			- learn : .5
+		
+	
