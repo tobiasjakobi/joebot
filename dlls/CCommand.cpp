@@ -23,7 +23,7 @@
 // Johannes.Lampel@gmx.de
 // http://joebot.counter-strike.de
 
-//#include <iostream.h>
+//#include <iostream>
 #include <string.h>
 
 #include "extdll.h"

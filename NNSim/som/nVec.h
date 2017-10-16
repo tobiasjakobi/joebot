@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <memory.h>
-#include <iostream.h>
+#include <iostream>
 
 enum nVecTypes{
 	nVT_copy=0,

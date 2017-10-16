@@ -111,7 +111,7 @@ int CSTMem :: IsInMem(edict_t *pEdict2S){
 	}
 	return -1;
 }
-#include <iostream.h>
+#include <iostream>
 bool CSTMem :: Process(edict_t *pEdictP,bool bSeeThru){
 	if(f_NUpdate < gpGlobals->time){
 		f_NUpdate = gpGlobals->time + .2;

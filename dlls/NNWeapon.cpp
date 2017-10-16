@@ -23,7 +23,7 @@
 // Johannes.Lampel@gmx.de
 // http://joebot.counter-strike.de
 
-//#include <iostream.h>
+//#include <iostream>
 #include <stdio.h>
 #include <string.h>
 

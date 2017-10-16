@@ -31,7 +31,7 @@
 // waypoint.cpp
 //
 
-#include <iostream.h>
+#include <iostream>
 #include <time.h>
 
 #ifdef _WIN32

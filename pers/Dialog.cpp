@@ -395,7 +395,7 @@ int CBotNames :: Load(const char *szFileName){			// load names into ram ...
 	return true;
 }
 
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

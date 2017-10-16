@@ -4,7 +4,7 @@
 
 #include "BasePattern.h"
 #include <memory.h>
-#include <iostream.h>
+#include <iostream>
 #include <time.h>
 
 //////////////////////////////////////////////////////////////////////

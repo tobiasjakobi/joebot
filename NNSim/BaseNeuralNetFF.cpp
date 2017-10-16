@@ -4,7 +4,7 @@
 
 #include "BaseNeuralNetFF.h"
 #include <memory.h>
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include <math.h>
 

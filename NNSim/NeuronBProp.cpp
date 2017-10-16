@@ -34,7 +34,7 @@ void CNeuronBProp :: Calc(void){
 	m_dAct = m_pfAct(m_dNet - m_dBias);
 	m_dOut = m_dAct;				// identity as output function
 }
-#include <iostream.h>
+#include <iostream>
 void CNeuronBProp :: CalcDelta(void){
 	if(m_bHidden){
 		long lIN;

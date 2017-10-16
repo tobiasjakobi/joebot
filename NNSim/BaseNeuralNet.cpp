@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "BaseNeuralNet.h"
-#include <iostream.h>		// to remove
+#include <iostream>		// to remove
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>

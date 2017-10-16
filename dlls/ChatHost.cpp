@@ -22,7 +22,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include <iostream.h>
+#include <iostream>
 
 #include "extdll.h"
 #include "util.h"

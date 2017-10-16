@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
-#include <iostream.h>
+#include <iostream>
 #include <math.h>
 #include <time.h>
 #include <string.h>

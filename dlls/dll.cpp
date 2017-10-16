@@ -31,7 +31,7 @@
 // dll.cpp
 //
 
-#include <iostream.h>
+#include <iostream>
 #include <time.h>
 
 #include "extdll.h"

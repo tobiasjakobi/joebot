@@ -21,7 +21,7 @@
 #ifndef __CDATA_H
 #define __CDATA_H
 
-#include <iostream.h>
+#include <iostream>
 
 class CData{
 	friend class CDataVisu;

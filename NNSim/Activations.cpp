@@ -1,6 +1,6 @@
 #include "Activations.h"
 
-#include <iostream.h>
+#include <iostream>
 #include <math.h>
 
 #define _HASH_BORDER 3
