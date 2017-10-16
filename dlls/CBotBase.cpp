@@ -1916,7 +1916,7 @@ float CBotBase :: ChangePitch( void )
 	
 	idealSpeed = (ideal - current);
 	idealSpeed = idealSpeed*c;
-	aNow = exp(log(a) * g_msecval / 50.f);
+	aNow = pow(a, g_msecval / 50.f);
 	fViewSpeedPitch = fViewSpeedPitch*aNow + idealSpeed*(1.f-aNow);	// a+b=1, etwa a = 0.8, b=0.2
 	
 	current += fViewSpeedPitch * 1/*pEdict->v.pitch_speed*/ * (g_msecval/50.f);
@@ -1954,7 +1954,7 @@ float CBotBase :: ChangeBodyPitch( void )
 	
 	idealSpeed = (ideal - current);
 	idealSpeed = idealSpeed*c;
-	aNow = exp(log(a) * g_msecval / 50.0f);
+	aNow = pow(a, g_msecval / 50.0f);
 	fAngleSpeedPitch = fAngleSpeedPitch*aNow + idealSpeed*(1.0f-aNow);	// a+b=1, etwa a = 0.8, b=0.2
 	
 	current += fAngleSpeedPitch * 1.0f * (g_msecval/50.0f);
@@ -2016,7 +2016,7 @@ float CBotBase :: ChangeYaw( void ){
 	
 	idealSpeed = (ideal - current);
 	idealSpeed = idealSpeed*c;
-	aNow = exp(log(a) * g_msecval / 50.0f);
+	aNow = pow(a, g_msecval / 50.0f);
 	fViewSpeedYaw = fViewSpeedYaw*aNow + idealSpeed*(1.0f-aNow);	// a+b=1, etwa a = 0.8, b=0.2
 	
 	current += fViewSpeedYaw * /*pEdict->v.yaw_speed*/1.0f * (g_msecval/50.0f);
@@ -2080,7 +2080,7 @@ float CBotBase :: ChangeBodyYaw( void ){
 	
 	idealSpeed = (ideal - current);
 	idealSpeed = idealSpeed*c;
-	aNow = exp(log(a) * g_msecval / 50.0f);
+	aNow = pow(a, g_msecval / 50.0f);
 	fAngleSpeedYaw = fAngleSpeedYaw*aNow + idealSpeed*(1.0f-aNow);	// a+b=1, etwa a = 0.8, b=0.2
 	
 	current += fAngleSpeedYaw * 1.0f * (g_msecval/50.0f);
