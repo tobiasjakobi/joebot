@@ -12,8 +12,8 @@ ifeq ($(OS),Windows_NT)
  OBJDIR_RELEASE = $(OBJDIR_RELEASE_WIN32)
 else
  SDKDIR = /home/netgames/install/hl/sdk/multiplayer
- JOEBOTDIR = /home/netgames/install/hl/bots/joebot/src
- MMDIR = /home/netgames/install/hl/server/metamod/src/1.17
+ JOEBOTDIR = /home/liquid/HostSystem/sourcecode/joebot
+ MMDIR = /home/liquid/HostSystem/sourcecode/metamod-p-code
  OBJDIR_DEBUG = $(OBJDIR_DEBUG_LINUX)
  OBJDIR_RELEASE = $(OBJDIR_RELEASE_LINUX)
 endif
