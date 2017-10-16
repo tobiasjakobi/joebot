@@ -514,7 +514,7 @@ void GameDLLInit( void )
 	}
 
 	// prop nets  -  kind of precaching
-	//cout << NNCombat << endl << NNColl << endl << endl;
+	//std::cout << NNCombat << endl << NNColl << endl << endl;
 	NNCombat->Propagate();
 	NNColl->Propagate();
 
@@ -893,7 +893,7 @@ FILL_FULL
 	else 
 		iFillTeam = 4;			// later 1 is added
 	
-	//cout << iNeed2Fill<<"-"<<iPAll<<"-"<<gpGlobals->maxClients <<endl;
+	//std::cout << iNeed2Fill<<"-"<<iPAll<<"-"<<gpGlobals->maxClients <<endl;
 	for (int ischl = 0; iNeed2Fill && ischl < 32; ischl++, iNeed2Fill--){
 		if(!bots[ischl]){
 			SBInfo[ischl].name[0] = '\0';
@@ -903,7 +903,7 @@ FILL_FULL
 			SBInfo[ischl].bot_class = -1;
 			SBInfo[ischl].respawn_state = RESPAWN_NEED_TO_RESPAWN;
 			SBInfo[ischl].kick_time = gpGlobals->time;
-			//cout << "^";
+			//std::cout << "^";
 		}
 	}
 	respawn_time = 0;
@@ -961,7 +961,7 @@ void TrainNN(edict_t *pEntity){
 		for(lschl=0;lschl < MAX_TRIES;lschl++){
 			NNCPattern.LearnEpochMM();
 			lEpoch++;
-			//cout << lEpoch << " ";cout.flush();
+			//std::cout << lEpoch << " ";std::cout.flush();
 			dError = NNCPattern.dMaxErrorMax;
 			if(dError < _MAXERROR)
 				break;
@@ -1331,10 +1331,10 @@ void ShowInfo(void){
 void StartFrame( void )
 {
 	//try{
-	//cout << RANDOM_LONG(0,10) << endl;
-	//cout << 1.f/gpGlobals->frametime<<endl;
+	//std::cout << RANDOM_LONG(0,10) << endl;
+	//std::cout << 1.f/gpGlobals->frametime<<endl;
 	lbeam = 0;
-	//cout << "-------------------------------------------------------------------------------"<<endl;
+	//std::cout << "-------------------------------------------------------------------------------"<<endl;
 	if (gpGlobals->deathmatch)
 	{
 		edict_t *pPlayer;
@@ -1425,7 +1425,7 @@ void StartFrame( void )
 			g_b5th=true;
 			if(mod_id == CSTRIKE_DLL||mod_id == CSCLASSIC_DLL)
 				g_fRoundTime = gpGlobals->time - g_fRoundStart;
-			//cout << gf_5th << endl;
+			//std::cout << gf_5th << endl;
 			gf_5thd = gpGlobals->time - gf_5th + .2f;
 			gf_5th = gpGlobals->time + 0.2f;
 			
@@ -1453,25 +1453,25 @@ void StartFrame( void )
 				if(!bDedicatedWelcome
 					&& gpGlobals->time > _PAUSE_TIME){
 					bDedicatedWelcome = true;
-					cout << "*************************************************************" << endl;
-					cout << "*************************************************************" << endl;
-					cout << "                                                           **" << endl;
-					cout << "              JoeBOT is running on this Server             **" << endl;
-					cout << "                                                           **" << endl;
-					cout << "*************************************************************" << endl;
-					cout << "*************************************************************" << endl;
-					cout << "**" << endl;
-					cout << "** JoeBOT "<< _JOEBOTVERSION << endl;
-					cout << "** (c) Johannes Lampel alias @$3.1415rin"<<endl;
+					std::cout << "*************************************************************" << endl;
+					std::cout << "*************************************************************" << endl;
+					std::cout << "                                                           **" << endl;
+					std::cout << "              JoeBOT is running on this Server             **" << endl;
+					std::cout << "                                                           **" << endl;
+					std::cout << "*************************************************************" << endl;
+					std::cout << "*************************************************************" << endl;
+					std::cout << "**" << endl;
+					std::cout << "** JoeBOT "<< _JOEBOTVERSION << endl;
+					std::cout << "** (c) Johannes Lampel alias @$3.1415rin"<<endl;
 					if(g_bMyBirthday){
-						cout << "** who celebrates his "<<g_lAge<<". birthday today ! <<<<<<<<<<<"<<endl;
+						std::cout << "** who celebrates his "<<g_lAge<<". birthday today ! <<<<<<<<<<<"<<endl;
 					}
-					cout << "**"<<endl;
-					cout << "** Please read the readme.html carefully before asking for"<< endl;
-					cout << "** support via as3.1415rin@bots-united.com - thx" << endl;
-					cout << "**" << endl;
-					cout << "*************************************************************" << endl;
-					cout << "*************************************************************" << endl;
+					std::cout << "**"<<endl;
+					std::cout << "** Please read the readme.html carefully before asking for"<< endl;
+					std::cout << "** support via as3.1415rin@bots-united.com - thx" << endl;
+					std::cout << "**" << endl;
+					std::cout << "*************************************************************" << endl;
+					std::cout << "*************************************************************" << endl;
 				}
 				int i;
 				edict_t *pEnt;
@@ -1908,7 +1908,7 @@ void StartFrame( void )
 							char c_team[5];
 							char c_class[5];
 							
-							//cout << " ------------------- respawning after map change - wanting to respawn" << endl;
+							//std::cout << " ------------------- respawning after map change - wanting to respawn" << endl;
 							
 							snprintf(c_skill, sizeof(c_skill), "%i", SBInfo[index].bot_skill);
 							snprintf(c_team, sizeof(c_team), "%i", SBInfo[index].bot_team);
@@ -1949,7 +1949,7 @@ void StartFrame( void )
 					// then add another bot using the default skill level...
 					if ((count < int(jb_botsmax->value)) && (int(jb_botsmax->value) != -1) && (count < gpGlobals->maxClients))
 					{
-						//cout << " ------------------- creating bot due to max_bots" << endl;
+						//std::cout << " ------------------- creating bot due to max_bots" << endl;
 						// enter the game if jb_entergame is set or if humans are in the game
 						if(CVAR_BOOL(jb_entergame) || UTIL_PlayerCount(COUNT_HUMAN)){
 							BotCreate( NULL, NULL, NULL, NULL, NULL);
@@ -1987,7 +1987,7 @@ void StartFrame( void )
 			   // then add another bot using the default skill level...
 			   if ((count < int(jb_botsmax->value)) && (int(jb_botsmax->value) != -1))
 			   {
-			   cout << " ------------------- creating bot due to max_bots" << endl;
+			   std::cout << " ------------------- creating bot due to max_bots" << endl;
 			   BotCreate( NULL, NULL, NULL, NULL, NULL);
 			   }
       }*/

@@ -1496,7 +1496,7 @@ bool bc_test(edict_t *pEntity,int iType,const char *arg1,const char *arg2,const 
 	while(pent = UTIL_FindEntityByClassname(pent,"info_player_start")){
 		if(pent){
 			WaypointFlood(pent->v.origin,0);
-			cout << "fuck" << endl;
+			std::cout << "fuck" << endl;
 			break;
 		}
 	}

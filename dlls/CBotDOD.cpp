@@ -1096,7 +1096,7 @@ void CBotDOD :: Think5th(void){
 		&& current_weapon.iId>=0&&current_weapon.iId<32
 		&& float(current_weapon.iClip) / float(WeaponDefs.ipClipSize[DOD_DLL][current_weapon.iId]) < .3){
 		Task.AddTask(BT_RELOAD,gpGlobals->time + 3.0,0,0,0);
-		//cout << "reload" << endl;
+		//std::cout << "reload" << endl;
 	}
 	
 	/*if(i_FOV != 90
@@ -1294,8 +1294,8 @@ void CBotDOD :: Think1(void){
 
 void CBotDOD :: Think(void){
 	//f_max_speed = 200;
-	//cout << pEdict->v.view_ofs.Length()<<endl;
-	//cout << STRING(pEdict->v.netname) << endl;
+	//std::cout << pEdict->v.view_ofs.Length()<<endl;
+	//std::cout << STRING(pEdict->v.netname) << endl;
 	edict_t *pent=0;
 	static char item_name[200];
 	int index = 0;

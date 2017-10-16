@@ -253,7 +253,7 @@ void CBotCS :: Init(void){
 	if(g_iMapType == MT_AS){
 		if(!TEq(fLastVIPScan,gpGlobals->time,2)){
 			fLastVIPScan = gpGlobals->time;
-			//cout << "searching for vip" << endl;
+			//std::cout << "searching for vip" << endl;
 			g_pVIP = 0;
 			for (int i = 0; i < gpGlobals->maxClients; i++){
 				edict_t *pEnt = INDEXENT(i + 1);
@@ -1504,7 +1504,7 @@ void CBotCS :: Think5th(void){
 		&& float(current_weapon.iClip) / float(WeaponDefs.ipClipSize[mod_id][current_weapon.iId]) < .3)
 	{
 		//Task.AddTask(BT_RELOAD,gpGlobals->time + 3.0,0,0,0);
-		//cout << "reload" << endl;
+		//std::cout << "reload" << endl;
 		lButton|=IN_RELOAD;
 	}*/
 	
@@ -1630,7 +1630,7 @@ void CBotCS :: Think1(void){
 			&& f_LastFight + 2.5 < gpGlobals->time
 			&& float(current_weapon.iClip) / float(WeaponDefs.ipClipSize[mod_id][current_weapon.iId]) < .3){
 			//Task.AddTask(BT_RELOAD,gpGlobals->time + 3.0,0,0,0);
-			//cout << "reload" << endl;
+			//std::cout << "reload" << endl;
 			lButton|=IN_RELOAD;
 			f_DenyWChange = gpGlobals->time + 2.5f;
 		}
@@ -1790,8 +1790,8 @@ void CBotCS :: Think1(void){
 }
 
 void CBotCS :: Think(void){
-	//cout << pEdict->v.view_ofs.Length()<<endl;
-	//cout << STRING(pEdict->v.netname) << endl;
+	//std::cout << pEdict->v.view_ofs.Length()<<endl;
+	//std::cout << STRING(pEdict->v.netname) << endl;
 	edict_t *pent=0;
 	static char item_name[200];
 	int index = 0;
@@ -1850,7 +1850,7 @@ void CBotCS :: Think(void){
 		RUN_PLAYER_MOVE( pEdict, pEdict->v.v_angle, f_move_speed,
 			0, 0, lButton, 0, byte(g_msecval));
 		
-		//cout << "deadthinkend" << endl;
+		//std::cout << "deadthinkend" << endl;
 		return;
 	}
 #ifdef _DEBUG
@@ -1886,7 +1886,7 @@ void CBotCS :: Think(void){
 		//b5th=false;
 		moved_distance = 2.0;
 	}
-	//cout << "thinke5th"<<endl;
+	//std::cout << "thinke5th"<<endl;
 	
 	// save current position as previous
 	v_prev_origin = pEdict->v.origin;
@@ -2426,7 +2426,7 @@ void CBotCS :: Think(void){
 	
 	//BotFixIdealYaw(pEdict);
 	
-	//cout << "thinkend" << endl;
+	//std::cout << "thinkend" << endl;
 	
 	return;
 }
@@ -2693,7 +2693,7 @@ long CBotCS :: WeaponModel2ID(const char *szModel){
 		return CS_WEAPON_P90;
 	if(FStrEq(szModel,"tmp.mdl"))
 		return CS_WEAPON_TMP;
-	if(FStrEq(szModel,"scout.mdl"))
+	if(FStrEq(szModel,"sstd::cout.mdl"))
 		return CS_WEAPON_SCOUT;
 	if(FStrEq(szModel,"sg552.mdl"))
 		return CS_WEAPON_SG552;

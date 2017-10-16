@@ -196,7 +196,7 @@ void CPersonality :: Save(char *szName){
 	fprintf(fhd,"# \n");
 	fprintf(fhd,"# weapon names are :\n");
 	fprintf(fhd,"# \n");
-	fprintf(fhd,"# weapon_scout\n");
+	fprintf(fhd,"# weapon_sstd::cout\n");
 	fprintf(fhd,"# weapon_xm1014\n");
 	fprintf(fhd,"# weapon_mac10\n");
 	fprintf(fhd,"# weapon_aug\n");

@@ -312,10 +312,10 @@ void NNWeapon :: Init(void){
 			continue;*/
 		fPBuyProb[CSTRIKE_DLL][lschl] = fLast + fTemp[lschl] / fSum * 100.0f;
 		fLast = fPBuyProb[CSTRIKE_DLL][lschl];
-		//cout << fLast << endl;
+		//std::cout << fLast << endl;
 		if(fTemp[lschl] == .0)
 			fPBuyProb[CSTRIKE_DLL][lschl] = 0;
-		//cout << fPBuyProb[CSTRIKE_DLL][lschl] << endl;
+		//std::cout << fPBuyProb[CSTRIKE_DLL][lschl] << endl;
 	}
 	
 	// do DoD stuff		-------------									DoD--------------
@@ -393,9 +393,9 @@ void NNWeapon :: LoadFile(const char *szFileName){
 				if(strlen(weapon_defs[lschl].szClassname)){
 					if(szAct = strstr(szFileContent,weapon_defs[lschl].szClassname)){
 						snprintf(szName,sizeof(szName),"%s %%f",weapon_defs[lschl].szClassname);
-						//cout << szName << endl;
+						//std::cout << szName << endl;
 						sscanf(szAct,szName,&fPBuyProb[mod_id][lschl]);
-						//cout << fPBuyProb[mod_id][lschl] << endl;
+						//std::cout << fPBuyProb[mod_id][lschl] << endl;
 					}
 				}
 			}

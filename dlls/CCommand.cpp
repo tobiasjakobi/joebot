@@ -151,11 +151,11 @@ bool CCommands ::Exec(edict_t *pEntity,int iType,const char *cmd,const char *arg
 	if(!arg3)arg3="";
 	if(!arg4)arg4="";
 
-	//cout << cmd <<" --- "<<arg1<<" --- "<<arg2<<" --- "<<arg3<<" --- "<<arg4<<endl;
+	//std::cout << cmd <<" --- "<<arg1<<" --- "<<arg2<<" --- "<<arg3<<" --- "<<arg4<<endl;
 
 	iter = m_LCommands.begin();
 	while(iter != m_LCommands.end()){
-		//cout << (*iter).szName << endl;
+		//std::cout << (*iter).szName << endl;
 		if((strlen((*iter).szName)
 				&&FStrEq((*iter).szName,cmd))
 			||(strlen((*iter).sz2Name)

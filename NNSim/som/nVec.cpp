@@ -74,7 +74,7 @@ const nVec & nVec :: operator = (const nVec & NParam){
 		return ((const nVec &)(*this));
 	}
 	catch(IncompatibleVectors IV){
-		cerr << " 'IncompatibleVectors' thrown by = " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
+		std::cerr << " 'IncompatibleVectors' thrown by = " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
 		throw (IV);
 	}
 }
@@ -90,7 +90,7 @@ const nVec & nVec :: operator +=(const nVec & NParam){
 		}
 	}
 	catch(IncompatibleVectors IV){
-		cerr << " 'IncompatibleVectors' thrown by += " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
+		std::cerr << " 'IncompatibleVectors' thrown by += " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
 		throw(IV);
 	}
 	return ((const nVec &)(*this));
@@ -107,7 +107,7 @@ const nVec & nVec :: operator -=(const nVec & NParam){
 		}
 	}
 	catch(IncompatibleVectors IV){
-		cerr << " 'IncompatibleVectors' thrown by -= " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
+		std::cerr << " 'IncompatibleVectors' thrown by -= " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
 		throw(IV);
 	}
 	return ((const nVec &)(*this));
@@ -140,7 +140,7 @@ nVec nVec :: operator +(const nVec &NParam){
 			return TmpVec;
 	}
 	catch(IncompatibleVectors IV){
-		cerr << " 'IncompatibleVectors' thrown by + " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
+		std::cerr << " 'IncompatibleVectors' thrown by + " << lCDim << " + " << NParam.lCDim <<" : "<< &NParam <<endl;
 		throw(IV);
 	}
 	return 0;			// error if this is executed
@@ -157,7 +157,7 @@ nVec nVec :: operator -(const nVec &NParam){
 		return TmpVec;
 	}
 	catch(IncompatibleVectors IV){
-		cerr << " 'IncompatibleVectors' thrown by - " << lCDim << " + " << NParam.lCDim << " : "<< &NParam <<endl;
+		std::cerr << " 'IncompatibleVectors' thrown by - " << lCDim << " + " << NParam.lCDim << " : "<< &NParam <<endl;
 		throw(IV);
 	}
 	return 0;			// error if this is executed

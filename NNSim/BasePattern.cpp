@@ -71,7 +71,7 @@ bool CBasePattern::SaveFile(const char *szFileName)
 	fhds = fopen(szFileName,"wb");
 
 	if(!fhds){
-		cout << "couldn't write file : "<<szFileName<<endl;
+		std::cout << "couldn't write file : "<<szFileName<<endl;
 		return false;
 	}
 
@@ -88,7 +88,7 @@ bool CBasePattern::SaveFileText(const char *szFileName)
 	fhds = fopen(szFileName,"w");
 
 	if(!fhds){
-		cout << "couldn't write file : "<<szFileName<<endl;
+		std::cout << "couldn't write file : "<<szFileName<<endl;
 		return false;
 	}
 
@@ -140,7 +140,7 @@ void CBasePattern :: Save(FILE *fhd){
 
 	fwrite(&lType,sizeof(long),1,fhd);
 	fwrite(&lNumPattern,sizeof(long),1,fhd);
-	//cout <<lNumPattern<<endl;
+	//std::cout <<lNumPattern<<endl;
 	
 	for(long lschl = 0;lschl < lNumPattern;lschl++){
 		ppPattern[lschl]->Save(fhd);
@@ -151,7 +151,7 @@ void CBasePattern :: SaveText(FILE *fhd){
 	long lType = 0;
 
 	fprintf(fhd,"%li\n%li\n\n\n",lType,lNumPattern);
-	//cout <<lNumPattern<<endl;
+	//std::cout <<lNumPattern<<endl;
 	
 	for(long lschl = 0;lschl < lNumPattern;lschl++){
 		ppPattern[lschl]->SaveText(fhd);

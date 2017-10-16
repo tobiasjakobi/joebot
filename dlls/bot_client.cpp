@@ -375,7 +375,7 @@ void BotClient_Valve_SayText(void *p, int bot_index){
 			// make it lowercase;
 			UTIL_strlwr(szSayText);
 
-			//cout << szSayText;
+			//std::cout << szSayText;
 		}
 	}
 }
@@ -649,7 +649,7 @@ void BotClient_CS_SetFOV(void *p, int bot_index)
 {
 	if (msg_state == 0){
 		bots[bot_index]->i_FOV = *(int*)(p);
-		//cout << bots[bot_index]->i_FOV << endl;
+		//std::cout << bots[bot_index]->i_FOV << endl;
 	}
 }
 
@@ -855,7 +855,7 @@ void BotClient_Valve_DeathMsg(void *p, int bot_index)
 	else if (msg_state == 2)
 		iHeadShot = *(int*)p;		// true when headshot
 	else if(msg_state == 3){		// (char*)p would be name of weapon
-		//cout << (char*)p << endl;
+		//std::cout << (char*)p << endl;
 		char szWeaponclass[32];
 		long lKWeapon;
 		strcpy(szWeaponclass,"weapon_");
@@ -921,7 +921,7 @@ void BotClient_CS_DeathMsg(void *p, int bot_index)
 
 void BotClient_DOD_DeathMsg(void *p, int bot_index)
 {
-	//cout << "nak" << endl;
+	//std::cout << "nak" << endl;
 	static int killer_index;
 	static int victim_index;
 	static edict_t *victim_edict,*killer_edict;
@@ -932,7 +932,7 @@ void BotClient_DOD_DeathMsg(void *p, int bot_index)
 	else if (msg_state == 1)
 		victim_index = *(int *)p;  // ENTINDEX() of victim
 	else if(msg_state == 2){		// (char*)p would be name of weapon
-		//cout << (char*)p << endl;
+		//std::cout << (char*)p << endl;
 		char szWeaponclass[32];
 		long lKWeapon;
 		strcpy(szWeaponclass,"weapon_");

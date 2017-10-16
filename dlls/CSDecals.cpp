@@ -102,7 +102,7 @@ void CSDecals :: Load(void){
 			
 			fclose(fhd);
 			Preprocess(szFileContent);		// remove uninteresting stuff
-			//cout << szFileContent<<endl;
+			//std::cout << szFileContent<<endl;
 		
 			szAct = szFileContent;
 			
@@ -115,7 +115,7 @@ void CSDecals :: Load(void){
 					&& szTmp
 					&& szTmp != szAct){
 					strncpy(szSDecals[lNum],szAct,szTmp-szAct);
-					//cout << szSDecals[lNum]<<endl;
+					//std::cout << szSDecals[lNum]<<endl;
 					lNum++;
 
 					szAct = szTmp;

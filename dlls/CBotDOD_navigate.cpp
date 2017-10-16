@@ -225,7 +225,7 @@ bool CBotDOD :: HeadTowardWaypoint(void){
 				// bot has reached temporary goal. That means that now has to be tested if this is the far goal, too
 				if(iNearWP == iFarGoal){
 					//WaypointDrawBeam(pEdictPlayer,pEdict->v.origin,pEdict->v.origin+Vector(0,50,50),10,10,0,200,0,200,10);
-					//cout << "reached fargoal" << endl;
+					//std::cout << "reached fargoal" << endl;
 					if(Task.current
 						&& (Task.current->lType & BT_CAMPATGOAL)
 						&& Task.current->lAdd == iNearWP){
@@ -233,7 +233,7 @@ bool CBotDOD :: HeadTowardWaypoint(void){
 						Task.NextTask();
 						//Task.current->lType |= BT_DEL;
 						if(f_noCamp < gpGlobals->time){
-							//cout << "reached campatgoal" << endl;
+							//std::cout << "reached campatgoal" << endl;
 							Task.AddTask(BT_CAMP,fDuration,0,0,0);
 							//DEBUG_CLIENTCOMMAND(pEdict,"say %f",Task.current->fAdd);
 							InitCamp();
@@ -249,12 +249,12 @@ bool CBotDOD :: HeadTowardWaypoint(void){
 						//f_Camp = gpGlobals->time + 1000.0f; // just stay there till the bomb explodes
 						Task.AddTask(BT_CAMP,gpGlobals->time + 1000.0,0,0,0);
 
-						//cout << "waiting for bomb to explode" << endl;
+						//std::cout << "waiting for bomb to explode" << endl;
 					}
 					if(Task.current){
 						if(Task.current->lType & BT_GOTO){
 							if(Task.current->lAdd == iFarGoal){
-								//cout << "reached task goal" << endl;
+								//std::cout << "reached task goal" << endl;
 								Task.NextTask();
 							}
 						}
@@ -321,7 +321,7 @@ bool CBotDOD :: HeadTowardWaypoint(void){
 						|| iNextWP == iNearWP
 						|| iNextWP > WAYPOINT_UNREACHABLE/2){
 						DEBUG_CLIENTCOMMAND(pEdict,"say lost way");
-						//cout << "unreachable" << endl;
+						//std::cout << "unreachable" << endl;
 						ResetWPlanning();
 						
 						if(Task.current){
@@ -448,7 +448,7 @@ bool CBotDOD :: HeadTowardWaypoint(void){
 												GOrder.lTypeoG = CS_WEAPON_HEGRENADE;
 											GOrder.VAim = waypoints[i2TT].origin;
 											GOrder.lState = 1;
-											//cout << "----------------------------- enemyesp ------------------------------"<<endl;
+											//std::cout << "----------------------------- enemyesp ------------------------------"<<endl;
 										}
 									}
 								}
@@ -529,11 +529,11 @@ void CBotDOD :: FindRoute(int iNearWP){
 		WAYINFO wayinfo1;
 		WAYINFO wayinfo2;
 	};
-	//cout << sizeof(foundway) * 250<<endl;
+	//std::cout << sizeof(foundway) * 250<<endl;
 	edict_t *pToUse;
 	if(iNearWP == iFarGoal){
 		// bot has reached his 'final' destination, therefore delete this and return
-		//cout << "findroute : reached goal location " << endl;
+		//std::cout << "findroute : reached goal location " << endl;
 		ResetWPlanning();
 		return;
 	}
@@ -602,10 +602,10 @@ void CBotDOD :: FindRoute(int iNearWP){
 					precount++;
 				}
 				else{
-					//cout << "counting overflow in findroute - "<<_MAXTEMPDIV<<endl;
+					//std::cout << "counting overflow in findroute - "<<_MAXTEMPDIV<<endl;
 				}
 			}
-			//cout << "count has reached : "<<count<<endl;
+			//std::cout << "count has reached : "<<count<<endl;
 			// remove near wps
 			
 			index = 0;
@@ -654,7 +654,7 @@ void CBotDOD :: FindRoute(int iNearWP){
 				index ++;
 			}
 
-			//cout << precount << " : "<<count<<" : ";
+			//std::cout << precount << " : "<<count<<" : ";
 			index = 0;
 			while(index < count){
 				ConvertFloyd2Way(bot_teamnm,iNearWP,indexes[index].index,&indexes[index].Way1);
@@ -757,7 +757,7 @@ void CBotDOD :: FindRoute(int iNearWP){
 				}
 				index--;
 			}
-			//cout << count << endl;
+			//std::cout << count << endl;
 			
 			if(count){
 				iGoal = indexes[RANDOM_LONG(0, count - 1)].index;
@@ -887,11 +887,11 @@ bool CBotDOD :: DecideOnWay(void){
 		lTypeOWW = WW_VDEF;
 	}
 	
-	//cout << Task.current << " - " << Task.lNOT << endl;
+	//std::cout << Task.current << " - " << Task.lNOT << endl;
 	ResetWPlanning();
 	
 	if(Task.current){			// first of all -> is there a order to fulfill ??
-		//cout << "there is a task : " << Task.current->lType <<endl;
+		//std::cout << "there is a task : " << Task.current->lType <<endl;
 		if(Task.current->lType & BT_GOTO){
 			ResetWPlanning();
 			
@@ -903,13 +903,13 @@ bool CBotDOD :: DecideOnWay(void){
 			else{
 				iWantedDiv = (int)(Task.current->p);
 			}
-			//cout << "performing task : goto" << endl;
+			//std::cout << "performing task : goto" << endl;
 			return true;
 		}
 		else{
 			// just take the next task. if u don't want a task to be deleted by this routine just add a if(){ structure above
 			//Task.NextTask();
-			//cout << "nimptask -> next " << endl;
+			//std::cout << "nimptask -> next " << endl;
 		}
 	}
 	else{
@@ -962,7 +962,7 @@ bool CBotDOD :: DecideOnWay(void){
 				int ischl = 0;
 				int iWPN = WaypointFindNearest(pEdict,500);
 				for(ischl = 0;g_DODFlags[ischl].pEdict;ischl++){
-					//cout << "-";cout.flush();
+					//std::cout << "-";std::cout.flush();
 					if(!g_DODFlags[ischl].iFlag 
 						|| g_DODFlags[ischl].iFlag != bot_teamnm){
 						fDistance = WaypointDistanceFromTo(iWPN,WaypointFindNearest(g_DODFlags[ischl].vOrigin,pEdict,10000,bot_teamnm),bot_teamnm);
@@ -970,7 +970,7 @@ bool CBotDOD :: DecideOnWay(void){
 							fNearest = fDistance;
 							VNearest = g_DODFlags[ischl].vOrigin;
 							bFound = true;
-							//cout << "found one"<<endl;
+							//std::cout << "found one"<<endl;
 						}
 					}
 				}
@@ -998,7 +998,7 @@ bool CBotDOD :: DecideOnWay(void){
 				return true;
 			}
 			else
-				cout << "noflagstuff,cause of -1" << endl;
+				std::cout << "noflagstuff,cause of -1" << endl;
 			return true;
 		}
 	}

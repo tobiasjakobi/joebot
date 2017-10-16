@@ -123,7 +123,7 @@ VOID TrainNN (PVOID pvoid)
 				dError = Pattern.m_dMaxError;
 				if(dError < dMaxError)
 					break;
-				//cout << dError;
+				//std::cout << dError;
 			}
 			if(bCalc){
 			end = clock();

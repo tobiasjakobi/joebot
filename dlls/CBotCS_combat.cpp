@@ -224,7 +224,7 @@ void CBotCS :: Fight( void ){
 		f_ducktill = gpGlobals->time +.5;
 	}
 	// OJump
-	//cout << dCombatNNOut[OJump] << endl;
+	//std::cout << dCombatNNOut[OJump] << endl;
 	if(dCombatNNOut[OJump] > 0.75){
 		//DEBUG_CLIENTCOMMAND(pEdict,"say NNJUMP");
 		if(!(pEdict->v.button & IN_JUMP)

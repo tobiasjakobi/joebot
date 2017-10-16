@@ -323,7 +323,7 @@ int CWPStat::Save(void){
 		fwrite(&d.FItem,sizeof(WPStatITEM),lNWPfWPV,fhd);
 		if(lNWPfWPV>0)
 			fwrite(pWPV,sizeof(long),lNWPfWPV*lNWPfWPV/16+16,fhd);
-		//cout << lNWPfWPV << endl;
+		//std::cout << lNWPfWPV << endl;
 
 		fclose(fhd);
 		return true;
@@ -647,7 +647,7 @@ void CWPStat :: CalcWP(long lWP,long lWP2){
 	//SetVisible(lWP2,lWP,lSet);
 #ifdef _DEBUG
 	if(lSet != GetVisible(lWP,lWP2))
-		cout << "error" << endl;
+		std::cout << "error" << endl;
 #endif
 }
 

@@ -67,7 +67,7 @@ CChat *CChatHost :: GetChat(const char *szNameP){
 
 	UTIL_BuildFileName(szName, sizeof(szName), "joebot/chat/%s", szNameP);
 
-	//cout << "wanting "<<szName<<endl;
+	//std::cout << "wanting "<<szName<<endl;
 	CChatHostData *p = 0,*pp = 0;
 
 	p = pData;

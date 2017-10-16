@@ -132,7 +132,7 @@ bool CSTMem :: Process(edict_t *pEdictP,bool bSeeThru){
 		Shift();
 		for(i=0;i<iCount;i++){
 			if(!IsAlive(pData[i].pEdict))
-				cout << "!" << endl;
+				std::cout << "!" << endl;
 		}
 		return true;
 	}

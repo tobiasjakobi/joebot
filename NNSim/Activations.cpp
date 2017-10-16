@@ -25,7 +25,7 @@ CActivation :: CActivation(){
 	long lschl;
 	long lP = 0;
 #ifdef __NNSIM_TEXT
-	cout << "NNSIM : Intializing Activation lookup table ";cout.flush();
+	std::cout << "NNSIM : Intializing Activation lookup table ";std::cout.flush();
 #endif
 	
 	max = _HASH_BORDER * _HASH_NUMBER * 2;
@@ -40,7 +40,7 @@ CActivation :: CActivation(){
 #ifdef __NNSIM_TEXT
 		while(lP<lschl){
 			lP += max/10;
-			cout <<".";cout.flush();
+			std::cout <<".";std::cout.flush();
 		}
 #endif
 
@@ -53,7 +53,7 @@ CActivation :: CActivation(){
 		plogS[lschl]= foNActlogS(f);
 	}
 #ifdef __NNSIM_TEXT
-	cout << " finished" << endl;
+	std::cout << " finished" << endl;
 #endif
 }
 

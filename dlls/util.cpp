@@ -335,7 +335,7 @@ void UTIL_HostSay( edict_t *pEntity, int teamonly, char *message )
 	int   sender_team, player_team;
 	edict_t *client;
 	bool bIsBAlive = IsAlive(pEntity);
-	//cout << message << endl;
+	//std::cout << message << endl;
 	
 	// make sure the text has content
 	for ( pc = message; pc != NULL && *pc != 0; pc++ )

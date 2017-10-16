@@ -369,7 +369,7 @@ bool CBotCS :: HeadTowardSpEnt(void){
 			}
 		}
 		else if(FStrEq(szClassname,"armory_entity")){
-			//cout << "-";
+			//std::cout << "-";
 			if(FStrEq("models/w_hegrenade.mdl",STRING(pEnt->v.model))
 				&& !(bot_weapons & (1<<CS_WEAPON_HEGRENADE))){
 				Goto(pEnt->v.origin);
@@ -397,7 +397,7 @@ bool CBotCS :: HeadTowardSpEnt(void){
 						|| FStrEq("models/w_ak47.mdl",STRING(pEnt->v.model))
 						|| FStrEq("models/w_m4a1.mdl",STRING(pEnt->v.model))
 						|| FStrEq("models/w_aug.mdl",STRING(pEnt->v.model))
-						|| FStrEq("models/w_scout.mdl",STRING(pEnt->v.model))
+						|| FStrEq("models/w_sstd::cout.mdl",STRING(pEnt->v.model))
 						|| FStrEq("models/w_awp.mdl",STRING(pEnt->v.model))
 						|| FStrEq("models/w_sg552.mdl",STRING(pEnt->v.model))
 						|| FStrEq("models/w_g3sg1.mdl",STRING(pEnt->v.model))
@@ -672,7 +672,7 @@ bool CBotCS :: Bored(void){
 				if(tr.pHit){
 					int itndex = ENTINDEX(tr.pHit);
 					char *szDecal = SDecals.GetRandomDecal();
-					//cout << szDecal << endl;
+					//std::cout << szDecal << endl;
 					long idndex = DECAL_INDEX(szDecal);
 					
 					if(idndex != -1 && tr.flFraction != 1.0){
@@ -885,7 +885,7 @@ bool CBotCS :: HeadTowardWaypoint( void ){
 				f_Pause = gpGlobals->time + .5f;
 				if(iNearWP == iFarGoal){
 					//WaypointDrawBeam(pEdictPlayer,pEdict->v.origin,pEdict->v.origin+Vector(0,50,50),10,10,0,200,0,200,10);
-					//cout << "reached fargoal" << endl;
+					//std::cout << "reached fargoal" << endl;
 					if(Task.current
 						&& (Task.current->lType & BT_CAMPATGOAL)
 						&& Task.current->lAdd == iNearWP){
@@ -893,7 +893,7 @@ bool CBotCS :: HeadTowardWaypoint( void ){
 						Task.NextTask();
 						//Task.current->lType |= BT_DEL;
 						if(f_noCamp < gpGlobals->time){
-							//cout << "reached campatgoal" << endl;
+							//std::cout << "reached campatgoal" << endl;
 							Task.AddTask(BT_CAMP,fDuration,0,0,0);
 							//DEBUG_CLIENTCOMMAND(pEdict,"say %f",Task.current->fAdd);
 							//InitCamp();
@@ -909,12 +909,12 @@ bool CBotCS :: HeadTowardWaypoint( void ){
 						//f_Camp = gpGlobals->time + 1000.0f; // just stay there till the bomb explodes
 						Task.AddTask(BT_CAMP,gpGlobals->time + 1000.0,0,0,0);
 
-						//cout << "waiting for bomb to explode" << endl;
+						//std::cout << "waiting for bomb to explode" << endl;
 					}
 					if(Task.current){
 						if(Task.current->lType & BT_GOTO){
 							if(Task.current->lAdd == iFarGoal){
-								//cout << "reached task goal" << endl;
+								//std::cout << "reached task goal" << endl;
 								Task.NextTask();
 							}
 						}
@@ -992,7 +992,7 @@ bool CBotCS :: HeadTowardWaypoint( void ){
 						|| iNextWP == iNearWP
 						|| iNextWP > WAYPOINT_UNREACHABLE/2){
 						//DEBUG_CLIENTCOMMAND(pEdict,"say lost way");
-						//cout << "unreachable" << endl;
+						//std::cout << "unreachable" << endl;
 						ResetWPlanning();
 						
 						if(Task.current){
@@ -1128,7 +1128,7 @@ bool CBotCS :: HeadTowardWaypoint( void ){
 												GOrder.lTypeoG = CS_WEAPON_HEGRENADE;
 											GOrder.VAim = waypoints[i2TT].origin;
 											GOrder.lState = 1;
-											//cout << "----------------------------- enemyesp ------------------------------"<<endl;
+											//std::cout << "----------------------------- enemyesp ------------------------------"<<endl;
 										}
 									}
 								}
@@ -1213,7 +1213,7 @@ void CBotCS :: FindRoute(int iNearWP){
 	edict_t *pToUse;
 	if(iNearWP == iFarGoal){
 		// bot has reached his 'final' destination, therefore delete this and return
-		//cout << "findroute : reached goal location " << endl;
+		//std::cout << "findroute : reached goal location " << endl;
 		ResetWPlanning();
 		return;
 	}
@@ -1283,10 +1283,10 @@ void CBotCS :: FindRoute(int iNearWP){
 					precount++;
 				}
 				else{
-					//cout << "counting overflow in findroute - "<<_MAXTEMPDIV<<endl;
+					//std::cout << "counting overflow in findroute - "<<_MAXTEMPDIV<<endl;
 				}
 			}
-			//cout << "count has reached : "<<count<<endl;
+			//std::cout << "count has reached : "<<count<<endl;
 			// remove near wps
 			
 			index = 0;
@@ -1335,7 +1335,7 @@ void CBotCS :: FindRoute(int iNearWP){
 				index ++;
 			}
 
-			//cout << precount << " : "<<count<<" : ";
+			//std::cout << precount << " : "<<count<<" : ";
 			index = 0;
 			while(index < count){
 				ConvertFloyd2Way(bot_teamnm,iNearWP,indexes[index].index,&indexes[index].Way1);
@@ -1447,7 +1447,7 @@ void CBotCS :: FindRoute(int iNearWP){
 				}
 				index--;
 			}
-			//cout << count << endl;
+			//std::cout << count << endl;
 			
 			if(count){
 				lSelection = RANDOM_LONG(0, count - 1);
@@ -1545,13 +1545,13 @@ bool CBotCS :: DecideOnWay(void){
 		lTypeOWW = WW_DEF;
 	}
 	
-	//cout << Task.current << " - " << Task.lNOT << endl;
+	//std::cout << Task.current << " - " << Task.lNOT << endl;
 	ResetWPlanning();
 	
 	CheckTasksOnReachability(iNearest);
 	
 	if(Task.current){			// first of all -> is there a order to fulfill ??
-		//cout << "there is a task : " << Task.current->lType <<endl;
+		//std::cout << "there is a task : " << Task.current->lType <<endl;
 		if(Task.current->lType & BT_GOTO){
 			ResetWPlanning();
 			
@@ -1563,13 +1563,13 @@ bool CBotCS :: DecideOnWay(void){
 			else{
 				iWantedDiv = (int)(Task.current->p);
 			}
-			//cout << "performing task : goto" << endl;
+			//std::cout << "performing task : goto" << endl;
 			return true;
 		}
 		else{
 			// just take the next task. if u don't want a task to be deleted by this routine just add a if(){ structure above
 			//Task.NextTask();
-			//cout << "nimptask -> next " << endl;
+			//std::cout << "nimptask -> next " << endl;
 		}
 	}
 	else{
@@ -1794,7 +1794,7 @@ bool CBotCS :: DecideOnWay(void){
 					&&!HasSniper()){
 					lDestination = WPStat.Search(bot_teamnm,iNearest,WPS_SEARCH_ENEMYESPTT,400,2000,50,5);
 					if(lDestination != -1){
-						//cout << "test" << endl;
+						//std::cout << "test" << endl;
 						Task.AddTask(BT_GOTO|BT_CAMPATGOAL|BT_CROUCH,-1,lDestination,(void*)iWantedDiv,15);//todo
 						return true;
 					}
