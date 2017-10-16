@@ -74,7 +74,7 @@ void CSkill :: Load(void){
 			
 			szAct = szFileContent;
 
-			//std::cout << szAct << endl;
+			//std::cout << szAct << std::endl;
 			while(szAct = strstr(szAct,"SKILL")){
 				SITemp.fReact = 0;
 				SITemp.fVSC = 0;

@@ -402,7 +402,7 @@ void WaypointAddADV(short int origin_index, short int aim_index, ADV_WPRecMove *
 		//int iFound=-1;
 		int iS;
 		if(p->advindex[i] == -1){
-			//std::cout << num_recadvm << endl;
+			//std::cout << num_recadvm << std::endl;
 			for(iS = 0; iS < num_recadvm;iS++){
 				if(iS >= MAX_WAYPOINTS)
 					return;

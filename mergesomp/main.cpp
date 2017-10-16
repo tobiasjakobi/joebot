@@ -31,12 +31,12 @@ SOMPattern SPE(6),SPT(6);
 void main(void){
 	SPE.SetMaxPatternNum(1000000);
 	while(*files[lNum]){
-		std::cout << "processing ... " << files[lNum] << endl;
+		std::cout << "processing ... " << files[lNum] << std::endl;
 		SPT.Load(files[lNum]);
 		SPE.AddPattern(SPT);
 		lNum++;
 	}
-	std::cout << "Saving merged data" << endl;
+	std::cout << "Saving merged data" << std::endl;
 	SPE.Save("combat.spt");
-	std::cout << SPE.GetNumP()<<endl;
+	std::cout << SPE.GetNumP()<<std::endl;
 }

@@ -43,7 +43,7 @@ void traincombat(void){
 //	FILE *fhd;
 	long lloop;
 	
-	std::cout << "Program to train the NN for bot" << endl;
+	std::cout << "Program to train the NN for bot" << std::endl;
 	
 	NN.SetLRate(.1);
 	NN.SetLayerNum(4);
@@ -536,7 +536,7 @@ void traincombat(void){
 	
 	Pattern.SaveFile("NNTrain.ptt");
 	//Pattern.SaveText("NNTrain.pta");
-	std::cout << "number of pattern :"<<Pattern.GetPatternNum() << endl;
+	std::cout << "number of pattern :"<<Pattern.GetPatternNum() << std::endl;
 	//Pattern.LoadText("NNTrain.pta");
 	FILE *fhd;
 	fhd = fopen("learnlog.html","w");
@@ -572,19 +572,19 @@ void traincombat(void){
 	fclose(fhd);
 
 	Pattern.GetErrors();
-	std::cout <<endl<<"max error :"<< Pattern.m_dMaxError << endl;
+	std::cout <<std::endl<<"max error :"<< Pattern.m_dMaxError << std::endl;
 	NN.SaveFile("trained.br3");
 	NN.LoadFile("trained.br3");
 	Pattern.GetErrors();
-	std::cout <<endl<<"max error :"<< Pattern.m_dMaxError << endl;
+	std::cout <<std::endl<<"max error :"<< Pattern.m_dMaxError << std::endl;
 
-	//std::cout << lEpoch << endl;
-	std::cout << "Saving local copy"<<endl;
+	//std::cout << lEpoch << std::endl;
+	std::cout << "Saving local copy"<<std::endl;
 	NN.SaveFile("trained.br3");
 	NN.LoadFile("trained.br3");
-	//std::cout << "Saving copy to c:\\spiele\\half-life\\cstrike\\joebot" << endl;
+	//std::cout << "Saving copy to c:\\spiele\\half-life\\cstrike\\joebot" << std::endl;
 	NN.SaveFile("c:\\spiele\\half-life\\cstrike\\joebot\\nn.br3");
-	//std::cout << "Saving copy to f:\\CJoeBot\\cstrike\\joebot\\" << endl;
+	//std::cout << "Saving copy to f:\\CJoeBot\\cstrike\\joebot\\" << std::endl;
 	//NN.Save("f:\\CJoeBot\\cstrike\\joebot\\nn.br2");
 
 	CGenom Gen;
@@ -606,7 +606,7 @@ void traincoll(void){
 	nVec nVIn(3);
 	nVIn.SetMemVec(dIn);
 	
-	std::cout << "Program to train the NN for bot" << endl;
+	std::cout << "Program to train the NN for bot" << std::endl;
 	
 	NN.SetLRate(.1);
 	
@@ -757,8 +757,8 @@ void traincoll(void){
 	
 //	Pattern.EndLog();
 	fclose(fhd);
-	std::cout << lEpoch << endl;
-	std::cout << "Saving local copy"<<endl;
+	std::cout << lEpoch << std::endl;
+	std::cout << "Saving local copy"<<std::endl;
 	NN.SaveFile("colltrained.br3");
 	NN.SaveFile("c:\\spiele\\half-life\\cstrike\\joebot\\nnc.br3");
 	NN.LoadFile("colltrained.br3");
@@ -777,12 +777,12 @@ void traincoll(void){
 	dIn[1] = -1;
 	dIn[2] = -1;
 	nVIn.Normalize();
-	std::cout << dIn[0] << "." << dIn[1] << "." << dIn[2] << "." <<endl;
+	std::cout << dIn[0] << "." << dIn[1] << "." << dIn[2] << "." <<std::endl;
 	NN.SetInput(dIn);
 	NN.Propagate();
 	double d[1];
 	NN.GetOutput(d);
-	std::cout << d[0] << endl;
+	std::cout << d[0] << std::endl;
 }
 
 void main(void){
@@ -790,7 +790,7 @@ void main(void){
 	traincombat();
 	/*NeuralNetBProp temp;
 	temp.Load("nn.br2");
-	std::cout << temp.LWeights[6]->dWeight<<endl;*/
+	std::cout << temp.LWeights[6]->dWeight<<std::endl;*/
 	//Pattern test;
 	/*test.LoadText("nntrain.pta");
 	test.SaveText("-nntrain.pta");*/

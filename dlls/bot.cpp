@@ -205,7 +205,7 @@ void InitGlobalRS(void){
 					
 					iRoamteamA[i2follow]++;
 					
-					//std::cout << STRING(bots[iBotschl]->pEdict->v.netname) <<"("<<ischl<<")"<< " follows " << STRING(p->v.netname) <<"("<<i2follow<<")"<< endl;
+					//std::cout << STRING(bots[iBotschl]->pEdict->v.netname) <<"("<<ischl<<")"<< " follows " << STRING(p->v.netname) <<"("<<i2follow<<")"<< std::endl;
 					
 					bots[iBotschl]->Task.AddTask(BT_ROAMTEAM,gpGlobals->time + 300.0,0,p,0);
 				}
@@ -235,7 +235,7 @@ double ConvertDistance(double dDistance){			// convert distance to [-1;1]
 void BotCreate( edict_t *pPlayer, const char *szTeam, const char *szClass,const char *szName, const char *szSkill)
 {
 	gf_5th = 0;
-	//std::cout << "botcreate" << endl;
+	//std::cout << "botcreate" << std::endl;
 	
 	// initialize the bots array of structures if first time here...
 	if (need_init)

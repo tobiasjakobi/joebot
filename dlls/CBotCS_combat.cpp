@@ -224,7 +224,7 @@ void CBotCS :: Fight( void ){
 		f_ducktill = gpGlobals->time +.5;
 	}
 	// OJump
-	//std::cout << dCombatNNOut[OJump] << endl;
+	//std::cout << dCombatNNOut[OJump] << std::endl;
 	if(dCombatNNOut[OJump] > 0.75){
 		//DEBUG_CLIENTCOMMAND(pEdict,"say NNJUMP");
 		if(!(pEdict->v.button & IN_JUMP)
@@ -420,7 +420,7 @@ void CBotCS :: Fight( void ){
 	}
 
 	// shoot at aim
-	if(CVAR_BOOL(jb_shoot)){		// the friendly mode
+	if(CVAR_BOOL(jb_shoot)){		// the fristd::endly mode
 		if(IsCWeaponKnife()){
 			if(dCombatNNIn[IDistance] < -.5){
 				ShootAtEnemy();			// attack enemy with knife only when near
@@ -442,7 +442,7 @@ void CBotCS :: Fight( void ){
 		}
 	}
 	else{
-		//DEBUG_CLIENTCOMMAND(pEdict,"say bots are friendly");
+		//DEBUG_CLIENTCOMMAND(pEdict,"say bots are fristd::endly");
 	}
 	
 	/*FILE *fhd = fopen("punchangle.txt","a");fprintf(fhd,"%s\t%f\n",STRING(pEdict->v.netname),(pEdict->v.punchangle).Length());fclose(fhd);

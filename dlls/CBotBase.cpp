@@ -60,7 +60,7 @@ GrenadeOrder::~GrenadeOrder(){
 }
 
 void GrenadeOrder::Attack(Vector &VP, long lType){
-	//std::cout << "gorder.attack" << endl;
+	//std::cout << "gorder.attack" << std::endl;
 	VAim = VP;
 	lTypeoG = lType;
 	lState = 1;
@@ -609,7 +609,7 @@ void CBotBase :: PreprocessTasks(void){
 						//if(((CBotCS*)pB)->Task.SearchT( BT_ROAMTEAM|BT_COVER) != -1){	// just to make it easy ... although i don't like this
 						if(pB->Task.SearchP( pEdict ) !=1){	// just to make it easy ... although i don't like this
 							//Task.NextTask();
-							//std::cout << "--------------------------------------------------------------------testing this " << endl;
+							//std::cout << "--------------------------------------------------------------------testing this " << std::endl;
 							//return false;
 							Task.current->lAdd ++;
 							Task.current->p = GetRandomPlayerWO(pEdict,bot_teamnm,1,BT_COVER|BT_ROAMTEAM,pEdict);
@@ -617,7 +617,7 @@ void CBotBase :: PreprocessTasks(void){
 								Task.current->p = 0;
 								Task.NextTask();
 								return;
-								//std::cout << "fuckin roamteam" << endl;
+								//std::cout << "fuckin roamteam" << std::endl;
 								//DEBUG_CLIENTCOMMAND(pEdict,"say fuckin roamteam");
 							}
 						}
@@ -1438,7 +1438,7 @@ void CBotBase :: ShootAtEnemy( void ){
 					}
 				}
 			}
-			//std::cout << i_FOV << " - temp" << endl;
+			//std::cout << i_FOV << " - temp" << std::endl;
 		}
 	}
 	else{
@@ -2396,7 +2396,7 @@ bool CBotBase :: HandleNearWP(int iNearWP, bool &bReturn){
 		if((waypoints[iNearWP].flags & W_FL_SNIPER
 			&& (iGoal == iNearWP||iFarGoal == iNearWP))	/// is that the place we wanna go and camp ?
 			&& f_noCamp < gpGlobals->time){
-			//std::cout << "sniperroutine" << endl;
+			//std::cout << "sniperroutine" << std::endl;
 			fDistance = (waypoints[iNearWP].origin - pEdict->v.origin).Length();
 			
 			GetNearestPlayer(pEdict,bot_teamnm,fMin);
@@ -2808,7 +2808,7 @@ long CBotBase :: WeaponClass2ID(const char *szClassname){
 }
 
 void CBotBase :: ResetWPlanning(void){
-	//std::cout << "ResetWPlanning" << endl;
+	//std::cout << "ResetWPlanning" << std::endl;
 	iFarGoal = -1;
 	iGoal = -1;
 }
@@ -2970,7 +2970,7 @@ void CBotBase :: HandleGOrder(void){
 			break;
 		case GO_WAITFS:		//3
 			lButton &=~ IN_ATTACK;
-			//std::cout << "grenade state 2" << endl;
+			//std::cout << "grenade state 2" << std::endl;
 			if(IsCWeaponGrenade() == GOrder.lTypeoG){
 				f_LookTo = gpGlobals->time + 3.0;
 				//f_GoBack =
@@ -2989,11 +2989,11 @@ void CBotBase :: HandleGOrder(void){
 				GOrder.lState ++;
 			break;
 		case GO_AIM:			//4
-			//std::cout << "grenade state 3" << endl;
+			//std::cout << "grenade state 3" << std::endl;
 			lButton |= IN_ATTACK;
 			
 			if(f_LookTo - .5 < gpGlobals->time){
-				//std::cout << "grenade state 3 - leaving cause of noaim" << endl;
+				//std::cout << "grenade state 3 - leaving cause of noaim" << std::endl;
 				// just skip
 				GOrder.lState = GO_QUIT;
 			}

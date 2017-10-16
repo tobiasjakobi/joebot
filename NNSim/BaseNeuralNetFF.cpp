@@ -102,7 +102,7 @@ bool CBaseNeuralNetFF :: ConnectNeurons(long lFNL, long lFNN, long lSNL, long lS
 	if(0> lFNN || 0> lSNN)
 		return false;
 	
-	//std::cout << lFNL << " : "<<lFNN << " : "<<lSNL << " : "<<lSNN << " : "<<lIW<<endl;
+	//std::cout << lFNL << " : "<<lFNN << " : "<<lSNL << " : "<<lSNN << " : "<<lIW<<std::endl;
 	
 	if(lIW == -1)										// if there isn't already a weight defined for this connection, get one
 		lIW = AddWeight();
@@ -268,7 +268,7 @@ void CBaseNeuralNetFF::Save(FILE *fhd){
 	lNumoCon = GetConnectionNum();
 	
 	fwrite (&lNumoCon,sizeof(long),1,fhd);
-	//std::cout <<lNumoCon << endl;
+	//std::cout <<lNumoCon << std::endl;
 	
 	if(lNumoCon>0){
 		long lN,lL,lLTo;
@@ -277,7 +277,7 @@ void CBaseNeuralNetFF::Save(FILE *fhd){
 			ppNL = pppNeurons[lL];
 			for(lN = plLNNum[lL]-1;lN>-1;lN--){
 				GetNPosition(ppNL[lN],lLayerThis,lNeuronThis);
-				//std::cout << lLayerThis << " : " << lNeuronThis << endl;
+				//std::cout << lLayerThis << " : " << lNeuronThis << std::endl;
 				for(lLTo=0;lLTo<((CBaseNeuronFF*)ppNL[lN])->lLToNum;lLTo++){
 					pA = ((CBaseLinkFF*)((CBaseNeuronFF*)ppNL[lN])->ppLinksTo[lLTo])->p;
 					GetNPosition(pA,lLayerOther,lNeuronOther);
@@ -349,7 +349,7 @@ void CBaseNeuralNetFF::Load(FILE *fhd){
 		}
 	}
 	fread (&lNumoCon,sizeof(long),1,fhd);			// number of connections 
-	//std::cout << lNumoCon << endl;
+	//std::cout << lNumoCon << std::endl;
 	for(lschl=0;lschl < lNumoCon;lschl++){
 		fread(&lLayerThis,sizeof(long),1,fhd);
 		fread(&lNeuronThis,sizeof(long),1,fhd);
@@ -358,7 +358,7 @@ void CBaseNeuralNetFF::Load(FILE *fhd){
 		fread(&lWIndex,sizeof(long),1,fhd);
 
 		if(!ConnectNeurons(lLayerThis,lNeuronThis,lLayerOther,lNeuronOther,lWIndex)){
-			std::cout << "got something strange, canceling operation"<<endl;
+			std::cout << "got something strange, canceling operation"<<std::endl;
 			return;
 		}
 	}
@@ -465,7 +465,7 @@ bool CBaseNeuralNetFF :: AllocNeurons(void){
 		else
 		{
 			pppNeurons[lschl] = 0;
-			std::cout << "what the fuck is this ?"<<endl;
+			std::cout << "what the fuck is this ?"<<std::endl;
 		}
 	}
 	// allocate memory for storing teaching input

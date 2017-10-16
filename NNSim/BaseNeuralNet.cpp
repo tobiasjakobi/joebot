@@ -65,7 +65,7 @@ bool CBaseNeuralNet::SaveFile(const char *szFileName)
 	fhds = fopen(szFileName,"wb");
 
 	if(!fhds){
-		std::cout << "couldn't write file : "<<szFileName<<endl;
+		std::cout << "couldn't write file : "<<szFileName<<std::endl;
 		return false;
 	}
 

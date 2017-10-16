@@ -47,7 +47,7 @@ long CParser :: GetFileSize(const char *szFileName){
 	while (!feof(fhd)){
 		fgetc(fhd);
 		ltemp ++;
-		//std::cout << ltemp << endl;
+		//std::cout << ltemp << std::endl;
 		//ltemp+=fread(sztemp,sizeof(char),1,fhd);
 	}
 	fclose(fhd);

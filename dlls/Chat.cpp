@@ -93,7 +93,7 @@ bool CChatIElem :: Cmp2Key(const char *szPKey){
 	
 	p = pKeys;
 	while(p){
-		//std::cout << p->szKey<<endl;
+		//std::cout << p->szKey<<std::endl;
 		if(strstr(szPKey,p->szKey))
 			return true;
 		p = p->next;
@@ -576,7 +576,7 @@ void CChat :: InitChat (void){
 
 int CChat :: LoadFile(const char *szFileNameP){
 	//return false;
-	//std::cout << "CChat :: LoadFile loading " << szFileNameP << endl;
+	//std::cout << "CChat :: LoadFile loading " << szFileNameP << std::endl;
 	char szFileName[80];
 	char *szReplies;		// pointer to start of replies
 	strcpy(szFileName,szFileNameP);
@@ -606,7 +606,7 @@ int CChat :: LoadFile(const char *szFileNameP){
 	fhd = 0;
 	
 	Preprocess(szFile);		// remove uninteresting stuff
-	/*std::cout << szFile << endl;
+	/*std::cout << szFile << std::endl;
 	Sleep (10000);
 	return false;*/
 	
@@ -628,11 +628,11 @@ int CChat :: LoadFile(const char *szFileNameP){
 				szAct++;
 			
 			szPa = szAct;
-			//std::cout << szAct << endl;
+			//std::cout << szAct << std::endl;
 			
 			for(lTeam=0;lTeam < 3;lTeam++){
 				szAct = szPa;
-				//std::cout <<"---"<< szAct << endl;
+				//std::cout <<"---"<< szAct << std::endl;
 				szAct = strstr(szAct,szTeams[lTeam]);	// go to start of tag
 				if(szAct){
 					szAct += strlen(szTeams[lTeam]);
@@ -649,7 +649,7 @@ int CChat :: LoadFile(const char *szFileNameP){
 						strncpy(szAdd,szAct,sizeof(char) * (strchr(szAct,'\n') - szAct));
 						if(strlen(szAdd) < 80){
 							strcpy(szTexts[lTeam][lTag][lCounter[lTeam][lTag]].szText,szAdd);
-							//std::cout << "-+- " << szAdd << endl;
+							//std::cout << "-+- " << szAdd << std::endl;
 							lCounter[lTeam][lTag] ++;
 							iCCount ++;
 						}
@@ -676,7 +676,7 @@ int CChat :: LoadFile(const char *szFileNameP){
 		
 		szRCatE = szRCatS = strstr(szReplies,szKeyTag);
 		
-		//std::cout << "starting interactive data loading" << endl;
+		//std::cout << "starting interactive data loading" << std::endl;
 		
 		while(szRCatS = szRCatE){		// start of key category
 			szRCatE = strstr(szRCatS+sizeof(char),szKeyTag);			// end of key category
@@ -757,7 +757,7 @@ int CChat :: LoadFile(const char *szFileNameP){
 					pIElem->AddText(szAdd);
 					iCCount ++;
 #ifdef _DEBUG
-					std::cout << " - "<<szAdd << endl;
+					std::cout << " - "<<szAdd << std::endl;
 #endif
 					szAct = strchr(szAct,'\n');
 					while(!IsInstr(*szAct) && *szAct)
@@ -856,15 +856,15 @@ void CChat :: ConvertName(char *szChangP){
 	// make lowercase
 	UTIL_strlwr(szChanged);
 	
-	//std::cout << szChanged << endl;
+	//std::cout << szChanged << std::endl;
 	strcpy(szTemp,szChanged);
 	szEnd  = szChanged + sizeof(char) * strlen(szChanged);
 	// cut out (...) stuff
 	if(szB=strchr(szChanged,'(')){
 		if(szB < szEnd){
-			//std::cout <<"szb : "<<szB<<endl;
+			//std::cout <<"szb : "<<szB<<std::endl;
 			if(szE=strchr(szChanged,')')){
-				//std::cout <<"sze : "<<szE<<endl;
+				//std::cout <<"sze : "<<szE<<std::endl;
 				if(szE < szEnd){
 					if(szE && szB){
 						if(szE>szB){
@@ -889,11 +889,11 @@ void CChat :: ConvertName(char *szChangP){
 	szEnd  = szChanged + sizeof(char) * strlen(szChanged);
 	// cut out [...] stuff
 	if(szB=strchr(szChanged,'[')){
-		//std::cout <<"szb : "<<szB<<endl;
+		//std::cout <<"szb : "<<szB<<std::endl;
 		if(szB < szEnd){
 			if(szE=strchr(szChanged,']')){
 				if(szE < szEnd){
-					//std::cout <<"sze : "<<szE<<endl;
+					//std::cout <<"sze : "<<szE<<std::endl;
 					if(szE && szB){
 						if(szE>szB){
 							strcpy(szTemp,szChanged);
@@ -915,11 +915,11 @@ void CChat :: ConvertName(char *szChangP){
 	szEnd  = szChanged + sizeof(char) * strlen(szChanged);
 	// cut out {...} stuff
 	if(szB=strchr(szChanged,'{')){
-		//std::cout <<"szb : "<<szB<<endl;
+		//std::cout <<"szb : "<<szB<<std::endl;
 		if(szB < szEnd){
 			if(szE=strchr(szChanged,'}')){
 				if(szE < szEnd){
-					//std::cout <<"sze : "<<szE<<endl;
+					//std::cout <<"sze : "<<szE<<std::endl;
 					if(szE && szB){
 						if(szE>szB){
 							strcpy(szTemp,szChanged);
@@ -946,5 +946,5 @@ void CChat :: ConvertName(char *szChangP){
 	
 	// copy back
 	strcpy(szChangP,szChanged);
-	//std::cout << szChangP << endl;
+	//std::cout << szChangP << std::endl;
 }

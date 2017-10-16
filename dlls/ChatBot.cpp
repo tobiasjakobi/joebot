@@ -71,9 +71,9 @@ int CChatBot :: Talk(CBotBase *pBBot){
 	
 	if(strlen(szChatText)){
 		if(f_SayTime < gpGlobals->time){
-			//std::cout << "wanting to say sth."<<endl;
+			//std::cout << "wanting to say sth."<<std::endl;
 			UTIL_HostSay(pBBot->pEdict,0,szChatText);
-			//std::cout << STRING(pEdict->v.netname) << ":" << szChatText << endl;
+			//std::cout << STRING(pEdict->v.netname) << ":" << szChatText << std::endl;
 			*szChatText = 0;
 		}
 	}

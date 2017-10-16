@@ -118,7 +118,7 @@ bool CBotNames::load(const char *szFileName){
 				STRIP_CR(szName);
 				if(strlen(szName) < BN_MAXNAMELENGTH){
 					//strcpy(Names[lNum].szName,szName);
-					//std::cout << szAdd << endl;
+					//std::cout << szAdd << std::endl;
 
 					CBotNamesItem tempName;
 
@@ -164,7 +164,7 @@ void CBotNames::mixIt(void){
 		}
 		/*if(iter1 == m_LNames.end()
 			||iter2 == m_LNames.end()){
-			std::cout << "---------" << endl;
+			std::cout << "---------" << std::endl;
 			continue;
 		}*/
 
@@ -175,7 +175,7 @@ void CBotNames::mixIt(void){
 }
 
 const CBotNamesItem *CBotNames::getName(void){
-	//std::cout << m_LNames.size() << " names"<<endl;
+	//std::cout << m_LNames.size() << " names"<<std::endl;
 	CBotNamesItem *nItem;
 
 	if(!m_LNames.empty()){

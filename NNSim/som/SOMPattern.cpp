@@ -31,7 +31,7 @@ long SOMPattern :: AddPattern(const nVec &VParam){
 		return AddPattern(VParam.ppdDim);
 	}
 	catch(IncompatibleVectors IV){
-		std::cerr << "IncompatibleVectors thrown in SOMPattern :: AddPattern" << endl;
+		std::cerr << "IncompatibleVectors thrown in SOMPattern :: AddPattern" << std::endl;
 		throw IV;
 	}
 }
@@ -54,7 +54,7 @@ long SOMPattern :: AddPattern(const double *dpFParam){
 		return lActPPos;
 	}
 	catch(SetMaxPatternwasntcalled SM){
-		std::cout << "SetMaxPatternwasntcalled was thrown by SOMPattern :: AddPattern" << endl;
+		std::cout << "SetMaxPatternwasntcalled was thrown by SOMPattern :: AddPattern" << std::endl;
 		throw SM;
 	}
 }
@@ -93,7 +93,7 @@ int SOMPattern :: Load (const char *szName){
 	}
 	else{
 		// failed
-		std::cerr << "couldn't open file in SOMPattern::load" << endl;
+		std::cerr << "couldn't open file in SOMPattern::load" << std::endl;
 		fclose(fhd);
 		return false;
 	}
@@ -108,7 +108,7 @@ int SOMPattern :: Save (const char *szName){
 	}
 	else{
 		// failed
-		std::cerr << "couldn't open file in SOMPattern::Save" << endl;
+		std::cerr << "couldn't open file in SOMPattern::Save" << std::endl;
 		fclose(fhd);
 		return false;
 	}

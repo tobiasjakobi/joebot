@@ -65,7 +65,7 @@ int qSOM2d :: InitWeights(InitType IType){
 		}
 		return 0;
 	default:
-		std::cerr << "\"What's that\" - InitWeights"<<endl;
+		std::cerr << "\"What's that\" - InitWeights"<<std::endl;
 		return 1;
 	}
 }
@@ -113,7 +113,7 @@ void qSOM2d :: GetWinner(long &lxMin,long &lyMin){			// GetNearest Neuron to Inp
 		}
 	}
 	catch(NoInput NI){
-		std::cerr << "No Input specified" << endl;
+		std::cerr << "No Input specified" << std::endl;
 		throw NI;
 	}
 }
@@ -242,7 +242,7 @@ double *qSOM2d :: GetNWeights(long lx,long ly){
 		return &dp3Weights[ly * lRow + lx * lNNeurons];
 	}
 	catch(FuckinParam FP){
-		std::cerr << "Got some fuckin' params in qSOM2d :: GetNWeights"<<endl;
+		std::cerr << "Got some fuckin' params in qSOM2d :: GetNWeights"<<std::endl;
 		throw FP;
 	}
 }
@@ -284,7 +284,7 @@ void qSOM2d :: Save(const char *szFileName){
 		}
 	}
 	catch(FileSaveError FSE){
-		std::cerr << "Error opening file : " << szFileName << endl;
+		std::cerr << "Error opening file : " << szFileName << std::endl;
 		throw FSE;
 	}
 }
@@ -321,11 +321,11 @@ void qSOM2d :: Load (const char *szFileName){
 		}
 	}
 	catch(FileLoadError FLE){
-		std::cerr << "Error opening file : " << szFileName << endl;
+		std::cerr << "Error opening file : " << szFileName << std::endl;
 		throw FLE;
 	}
 	catch(UnknownFileFormat UFF){
-		std::cerr << "Unknown file format" << endl;
+		std::cerr << "Unknown file format" << std::endl;
 		throw UFF;
 	}
 }

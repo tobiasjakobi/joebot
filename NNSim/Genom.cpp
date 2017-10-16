@@ -107,7 +107,7 @@ bool CGenom :: SaveTopData(const char *szFileNameP){
 		return true;
 	}
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : File not found" << endl;
+	std::cout << szFileNameP << " : File not found" << std::endl;
 #endif
 	return false;
 }
@@ -130,7 +130,7 @@ bool CGenom :: SaveWeights(const char *szFileNameP){
 		return true;
 	}
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : File not found" << endl;
+	std::cout << szFileNameP << " : File not found" << std::endl;
 #endif
 	return false;
 }
@@ -153,7 +153,7 @@ bool CGenom :: SaveBiases(const char *szFileNameP){
 		return true;
 	}
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : File not found" << endl;
+	std::cout << szFileNameP << " : File not found" << std::endl;
 #endif
 	return false;
 }
@@ -200,13 +200,13 @@ bool CGenom :: LoadTopData(const char *szFileNameP){
 		fread(&header,1,sizeof(header),fhd);
 		if(header.iType != _TOP_DATA){
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : wrong data in file" << endl;
+	std::cout << szFileNameP << " : wrong data in file" << std::endl;
 #endif
 			return false;
 		}
 		if(header.iVersion != __CGENOMVERSION){
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : wrong fileversion" << endl;
+	std::cout << szFileNameP << " : wrong fileversion" << std::endl;
 #endif
 			return false;
 		}
@@ -220,7 +220,7 @@ bool CGenom :: LoadTopData(const char *szFileNameP){
 		return true;
 	}
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : File not found" << endl;
+	std::cout << szFileNameP << " : File not found" << std::endl;
 #endif
 	return false;
 }
@@ -234,13 +234,13 @@ bool CGenom :: LoadWeights(const char *szFileNameP){
 
 		if(header.iType != _WEIGHT_DATA){
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : wrong data in file" << endl;
+	std::cout << szFileNameP << " : wrong data in file" << std::endl;
 #endif
 			return false;
 		}
 		if(header.iVersion != __CGENOMVERSION){
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : wrong fileversion" << endl;
+	std::cout << szFileNameP << " : wrong fileversion" << std::endl;
 #endif
 			return false;
 		}
@@ -254,7 +254,7 @@ bool CGenom :: LoadWeights(const char *szFileNameP){
 		return true;
 	}
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : File not found" << endl;
+	std::cout << szFileNameP << " : File not found" << std::endl;
 #endif
 	return false;
 }
@@ -268,13 +268,13 @@ bool CGenom :: LoadBiases(const char *szFileNameP){
 
 		if(header.iType != _BIAS_DATA){
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : wrong data in file" << endl;
+	std::cout << szFileNameP << " : wrong data in file" << std::endl;
 #endif
 			return false;
 		}
 		if(header.iVersion != __CGENOMVERSION){
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : wrong fileversion" << endl;
+	std::cout << szFileNameP << " : wrong fileversion" << std::endl;
 #endif
 			return false;
 		}
@@ -288,7 +288,7 @@ bool CGenom :: LoadBiases(const char *szFileNameP){
 		return true;
 	}
 #ifdef __GENOM_COUT_LOG
-	std::cout << szFileNameP << " : File not found" << endl;
+	std::cout << szFileNameP << " : File not found" << std::endl;
 #endif
 	return false;
 }
@@ -312,13 +312,13 @@ bool CGenom :: CreateNet(CBaseNeuralNet **p){			// create a net based on the gen
 		if(pToken[0] < 0
 			|| pToken[0] > GT_NUMBEROFTOKEN){
 			pToken = 0;
-			std::cerr << "cgenom :: createnet : unknown token" << endl;
+			std::cerr << "cgenom :: createnet : unknown token" << std::endl;
 			break;
 		}
 		
 		if(psTokenDataSize[pToken[0]]/sizeof(short) + pToken - psTopData > lNumTopData){
 			pToken = 0;
-			std::cerr << "cgenom :: createnet : out of field size" << endl;
+			std::cerr << "cgenom :: createnet : out of field size" << std::endl;
 			break;
 		}
 		
@@ -326,7 +326,7 @@ bool CGenom :: CreateNet(CBaseNeuralNet **p){			// create a net based on the gen
 		switch(pToken[0]){
 		case GT_NetType:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_NetType" << endl;
+			std::cout << "GT_NetType" << std::endl;
 #endif
 			sType = pData[0];
 			/*switch(sType){
@@ -336,14 +336,14 @@ bool CGenom :: CreateNet(CBaseNeuralNet **p){			// create a net based on the gen
 			break;
 		case GT_NumLayer:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_NumLayer" << endl;
+			std::cout << "GT_NumLayer" << std::endl;
 #endif
 			sNumLayer = pData[0];
 			((CBaseNeuralNetFF*)(*p))->SetLayerNum(sNumLayer);
 			break;
 		case GT_NumNeuronsOL:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_NumNeuronsOL" << endl;
+			std::cout << "GT_NumNeuronsOL" << std::endl;
 #endif
 			sLayer = pData[0];
 			pTempData++;
@@ -352,13 +352,13 @@ bool CGenom :: CreateNet(CBaseNeuralNet **p){			// create a net based on the gen
 			break;
 		case GT_Alloc:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_Alloc" << endl;
+			std::cout << "GT_Alloc" << std::endl;
 #endif
 			((CBaseNeuralNetFF*)(*p))->AllocNeurons();
 			break;
 		case GT_ConnectNeurons:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_ConnectNeurons" << endl;
+			std::cout << "GT_ConnectNeurons" << std::endl;
 #endif
 			sL1 = pTempData[0];
 			pTempData ++;
@@ -381,7 +381,7 @@ bool CGenom :: CreateNet(CBaseNeuralNet **p){			// create a net based on the gen
 			break;
 		case GT_SetNeuronBias:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_SetNeuronBias" << endl;
+			std::cout << "GT_SetNeuronBias" << std::endl;
 #endif
 			sL1 = pTempData[0];
 			pTempData ++;
@@ -393,12 +393,12 @@ bool CGenom :: CreateNet(CBaseNeuralNet **p){			// create a net based on the gen
 			break;
 		case GT_End:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_End" << endl;
+			std::cout << "GT_End" << std::endl;
 #endif
 			pToken = 0;
 			break;
 		default:
-			std::cerr << "cgenom :: createnet : unknown token, but in range" << endl;
+			std::cerr << "cgenom :: createnet : unknown token, but in range" << std::endl;
 			break;
 		}
 		if(pToken)
@@ -427,13 +427,13 @@ bool CGenom :: SaveDescription(const char *szName){
 		if(pToken[0] < 0
 			|| pToken[0] > GT_NUMBEROFTOKEN){
 			pToken = 0;
-			std::cerr << "cgenom :: createnet : unknown token" << endl;
+			std::cerr << "cgenom :: createnet : unknown token" << std::endl;
 			break;
 		}
 		
 		if(psTokenDataSize[pToken[0]]/sizeof(short) + pToken - psTopData > lNumTopData){
 			pToken = 0;
-			std::cerr << "cgenom :: createnet : out of field size" << endl;
+			std::cerr << "cgenom :: createnet : out of field size" << std::endl;
 			break;
 		}
 		
@@ -441,21 +441,21 @@ bool CGenom :: SaveDescription(const char *szName){
 		switch(pToken[0]){
 		case GT_NetType:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_NetType" << endl;
+			std::cout << "GT_NetType" << std::endl;
 #endif
 			sType = pData[0];
 			fprintf(fhd,"Create a Feedforward NeuralNet\n");
 			break;
 		case GT_NumLayer:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_NumLayer" << endl;
+			std::cout << "GT_NumLayer" << std::endl;
 #endif
 			sNumLayer = pData[0];
 			fprintf(fhd,"with %i layers\n",sNumLayer);
 			break;
 		case GT_NumNeuronsOL:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_NumNeuronsOL" << endl;
+			std::cout << "GT_NumNeuronsOL" << std::endl;
 #endif
 			sLayer = pData[0];
 			pTempData++;
@@ -464,13 +464,13 @@ bool CGenom :: SaveDescription(const char *szName){
 			break;
 		case GT_Alloc:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_Alloc" << endl;
+			std::cout << "GT_Alloc" << std::endl;
 #endif
 			fprintf(fhd,"and that's all about the basic topology\n");
 			break;
 		case GT_ConnectNeurons:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_ConnectNeurons" << endl;
+			std::cout << "GT_ConnectNeurons" << std::endl;
 #endif
 			sL1 = pTempData[0];
 			pTempData ++;
@@ -491,7 +491,7 @@ bool CGenom :: SaveDescription(const char *szName){
 			break;
 		case GT_SetNeuronBias:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_SetNeuronBias" << endl;
+			std::cout << "GT_SetNeuronBias" << std::endl;
 #endif
 			sL1 = pTempData[0];
 			pTempData ++;
@@ -503,13 +503,13 @@ bool CGenom :: SaveDescription(const char *szName){
 			break;
 		case GT_End:
 #ifdef __GENOM_COUT_LOG
-			std::cout << "GT_End" << endl;
+			std::cout << "GT_End" << std::endl;
 #endif
 			fprintf(fhd,"and that was the whole net :D\n");
 			pToken = 0;
 			break;
 		default:
-			std::cerr << "cgenom :: createnet : unknown token, but in range" << endl;
+			std::cerr << "cgenom :: createnet : unknown token, but in range" << std::endl;
 			break;
 		}
 		if(pToken)
@@ -532,7 +532,7 @@ bool CGenom :: GetFFNet(CBaseNeuralNetFF *p){		// create genetic information fro
 	pToken[0] = GT_NetType;
 	pData[0] = short(p->GetITONet());
 	lNumTopData += psTokenDataSize[GT_NetType]/sizeof(short);
-	//std::cout << psTokenDataSize[pToken[0]] << endl;
+	//std::cout << psTokenDataSize[pToken[0]] << std::endl;
 	
 	WannaAddToken(psTokenDataSize[GT_NumLayer]);
 	pToken =  &(psTopData[lNumTopData]);
@@ -540,7 +540,7 @@ bool CGenom :: GetFFNet(CBaseNeuralNetFF *p){		// create genetic information fro
 	pToken[0] = GT_NumLayer;
 	pData[0] = short(p->lLayerNum);
 	lNumTopData += psTokenDataSize[GT_NumLayer]/sizeof(short);
-	//std::cout << psTokenDataSize[pToken[0]] << endl;
+	//std::cout << psTokenDataSize[pToken[0]] << std::endl;
 	
 	for(lschl = 0;lschl < p->lLayerNum;lschl ++){		
 		WannaAddToken(psTokenDataSize[GT_NumNeuronsOL]);
@@ -551,7 +551,7 @@ bool CGenom :: GetFFNet(CBaseNeuralNetFF *p){		// create genetic information fro
 		pData ++;
 		*((int *)(pData)) = p->plLNNum[lschl];
 		lNumTopData += psTokenDataSize[GT_NumNeuronsOL]/sizeof(short);
-		//std::cout << psTokenDataSize[pToken[0]] << endl;
+		//std::cout << psTokenDataSize[pToken[0]] << std::endl;
 	}
 	
 	WannaAddToken(psTokenDataSize[GT_Alloc]);
@@ -559,7 +559,7 @@ bool CGenom :: GetFFNet(CBaseNeuralNetFF *p){		// create genetic information fro
 	pData = &(pToken[1]);
 	pToken[0] = GT_Alloc;
 	lNumTopData += psTokenDataSize[GT_Alloc]/sizeof(short);
-	//std::cout << psTokenDataSize[pToken[0]] << endl;
+	//std::cout << psTokenDataSize[pToken[0]] << std::endl;
 	
 	CBaseNeuronFF *pN,*pNT;
 	for(lL = 0;lL < p->lLayerNum;lL++){
@@ -606,11 +606,11 @@ bool CGenom :: GetFFNet(CBaseNeuralNetFF *p){		// create genetic information fro
 				lW = lNumWeights;
 				pWeights[lW] = ((CBaseWeightFF*)( ((CBaseLinkFF*)(pN->ppLinksTo[lT]))->pW) )->GetWeight();
 				//pWeights[lW] = ((CBaseWeightFF *)(p->GetWeight( ((CBaseLinkFF*)(pN->ppLinksTo[lT]))->lWIndex)))->GetWeight();
-				//std::cout << ((CBaseLinkFF*)(pN->ppLinksTo))->pW << endl;
-				//std::cout << pWeights[lW] << endl;
+				//std::cout << ((CBaseLinkFF*)(pN->ppLinksTo))->pW << std::endl;
+				//std::cout << pWeights[lW] << std::endl;
 				lNumWeights ++;
 				*((int *)(pData)) = lW;
-				//std::cout << lW << endl;
+				//std::cout << lW << std::endl;
 				//pData += sizeof(int)/sizeof(short);
 				
 				lNumTopData += psTokenDataSize[GT_ConnectNeurons]/sizeof(short);
@@ -619,7 +619,7 @@ bool CGenom :: GetFFNet(CBaseNeuralNetFF *p){		// create genetic information fro
 	}
 	
 	/*for(lschl=0;lschl < lNumTopData;lschl++){
-	std::cout << psTopData[lschl] << endl;
+	std::cout << psTopData[lschl] << std::endl;
 	}*/
 	
 	WannaAddToken(psTokenDataSize[GT_End]);

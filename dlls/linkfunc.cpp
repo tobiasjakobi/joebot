@@ -506,7 +506,7 @@ LINK_ENTITY_TO_FUNC(monster_gonome_dead);
 LINK_ENTITY_TO_FUNC(monster_grunt_ally_repel);
 LINK_ENTITY_TO_FUNC(monster_hfgrunt_dead);
 LINK_ENTITY_TO_FUNC(monster_houndeye_dead);
-LINK_ENTITY_TO_FUNC(monster_human_friendly_grunt);
+LINK_ENTITY_TO_FUNC(monster_human_fristd::endly_grunt);
 LINK_ENTITY_TO_FUNC(monster_human_grunt_ally);
 LINK_ENTITY_TO_FUNC(monster_human_grunt_ally_dead);
 LINK_ENTITY_TO_FUNC(monster_human_medic_ally);

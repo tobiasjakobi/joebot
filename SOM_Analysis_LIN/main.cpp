@@ -39,7 +39,7 @@
 
 void main(){
 	
-	std::cout << "Initialisiere LSSOMSim und LSNNSI"<<endl;
+	std::cout << "Initialisiere LSSOMSim und LSNNSI"<<std::endl;
 	qSOM2d		SOM;
 	SOMPattern	SOMP(1);
 	CPatternBProp NNP;
@@ -57,14 +57,14 @@ void main(){
 	
 	SOM.SetSize(IEND,_XS,_YS);
 	
-	std::cout << "Loading combat.spt " << endl;
+	std::cout << "Loading combat.spt " << std::endl;
 	SOMP.Load("combat.spt");
-	//std::cout<<IEND<<endl;
-	std::cout << "combat.spt   : " <<SOMP.GetNumP() << " Pattern"<<endl;
+	//std::cout<<IEND<<std::endl;
+	std::cout << "combat.spt   : " <<SOMP.GetNumP() << " Pattern"<<std::endl;
 	SOMP.SetSOM(&SOM);
-	std::cout << "Loading NNTrain.ptt " <<endl;
+	std::cout << "Loading NNTrain.ptt " <<std::endl;
 	NNP.LoadFile("../NN_Train/nntrain.ptt");
-	std::cout << "NNTrain.ptt  : " << NNP.GetPatternNum() << " Pattern" << endl;
+	std::cout << "NNTrain.ptt  : " << NNP.GetPatternNum() << " Pattern" << std::endl;
 	
 	SOM.SetDistP(_XS * .9);
 	//SOM.SetNKFunction(fNKcone);
@@ -102,7 +102,7 @@ void main(){
 		EAsec -= lMin * 60;
 		long lSec = (long)EAsec;
 		sprintf(szBuffer,"DI %2.4f\tLR %1.2f\tTE %2.2f\tSP %4.2fk\t%3.li.CY\tET %2li:%2li:%2li",SOM.GetDistP(),SOM.GetLRate(),double(end-start)/double(CLOCKS_PER_SEC),double(_XS*_YS*IEND * SOMP.GetNumP()) / (double(end-start)/double(CLOCKS_PER_SEC)) / 1000.0,lCyM-lCyc,lHour,lMin,lSec);
-		std::cout << szBuffer << endl;
+		std::cout << szBuffer << std::endl;
 		FILE *fhd;
 		if(fhd=fopen("catlog.txt","a")){
 			tm *timetm;
@@ -112,8 +112,8 @@ void main(){
 			fclose(fhd);
 		}
 	}
-//	std::cout << "time elapsed : "<<double(ctime-ovstart) / CLOCKS_PER_SEC<<" secs"<<endl<<SOM.lCat<<endl;
-	std::cout << endl << "saving som to file \"cat.som\" ... ";std::cout.flush();
+//	std::cout << "time elapsed : "<<double(ctime-ovstart) / CLOCKS_PER_SEC<<" secs"<<std::endl<<SOM.lCat<<std::endl;
+	std::cout << std::endl << "saving som to file \"cat.som\" ... ";std::cout.flush();
 	SOM.Save("cat.som");
-	std::cout << " finished" << endl;
+	std::cout << " finished" << std::endl;
 }

@@ -53,7 +53,7 @@ CActivation :: CActivation(){
 		plogS[lschl]= foNActlogS(f);
 	}
 #ifdef __NNSIM_TEXT
-	std::cout << " finished" << endl;
+	std::cout << " finished" << std::endl;
 #endif
 }
 

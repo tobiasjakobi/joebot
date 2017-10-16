@@ -373,7 +373,7 @@ int CBotNames :: Load(const char *szFileName){			// load names into ram ...
 				strncpy(szName,szAct,sizeof(char) * lToReadLength);
 				if(strlen(szName) < BN_MAXNAMELENGTH){
 					strcpy(Names[lNum].szName,szName);
-					//std::cout << szAdd << endl;
+					//std::cout << szAdd << std::endl;
 				}
 				else{
 					szAct = strchr(szAct,'\n');
@@ -424,7 +424,7 @@ void CPersonality :: Load(char *szName){
 	strcat(szFilename,szName);
 	strcat(szFilename,".per");
 	
-	//std::cout << "JoeBOT : Loading personality file for " << szName<< " : " <<szWFilename << endl;
+	//std::cout << "JoeBOT : Loading personality file for " << szName<< " : " <<szWFilename << std::endl;
 	
 	long lSize;
 	strcpy(szWFilename,szFilename);
@@ -478,7 +478,7 @@ void CPersonality :: Save(char *szName){
 
 	strcpy(szWFilename,szFilename);
 	
-	std::cout << "JoeBOT : Saving personality file for " << szName<< " : " << szWFilename << endl;
+	std::cout << "JoeBOT : Saving personality file for " << szName<< " : " << szWFilename << std::endl;
 	
 	if(!(fhd = fopen(szWFilename,"w")))
 		return;

@@ -1098,7 +1098,7 @@ bool bc_botshoot(edict_t *pEntity,int iType,const char *arg1,const char *arg2,co
 		CVAR_SET_FLOAT("jb_shoot", 0);
 	}
 	if (CVAR_BOOL(jb_shoot)){
-		UTIL_ConsoleMessage(pEntity, "Bots shoot is ON (they aren't friendly)\n");
+		UTIL_ConsoleMessage(pEntity, "Bots shoot is ON (they aren't fristd::endly)\n");
 	}
 	else{
 		UTIL_ConsoleMessage(pEntity, "Bots shoot is OFF (they don't like violence anymore)\n");
@@ -1496,7 +1496,7 @@ bool bc_test(edict_t *pEntity,int iType,const char *arg1,const char *arg2,const 
 	while(pent = UTIL_FindEntityByClassname(pent,"info_player_start")){
 		if(pent){
 			WaypointFlood(pent->v.origin,0);
-			std::cout << "fuck" << endl;
+			std::cout << "fuck" << std::endl;
 			break;
 		}
 	}

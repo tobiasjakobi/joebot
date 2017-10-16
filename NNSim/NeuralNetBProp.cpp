@@ -69,7 +69,7 @@ bool CNeuralNetBProp::BackPropagate(){
 
 			for(lIN = pNBP->lLFromNum-1;lIN>-1;lIN--){
 				p = (CLinkBProp*)(pNBP->ppLinksFrom[lIN]);
-				//std::cout << " : " << ((CWeightBProp*)(p->pW))->m_dWeight << " -:=:- " <<(m_dLRate * ((CNeuronBProp *)(p->p))->m_dOut * dDelta) << endl;
+				//std::cout << " : " << ((CWeightBProp*)(p->pW))->m_dWeight << " -:=:- " <<(m_dLRate * ((CNeuronBProp *)(p->p))->m_dOut * dDelta) << std::endl;
 				((CWeightBProp*)(p->pW))->m_dWeight += (m_dLRate * ((CNeuronBProp *)(p->p))->m_dOut * dDelta);
 			}
 		}

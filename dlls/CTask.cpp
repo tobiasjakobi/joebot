@@ -77,7 +77,7 @@ void CTask :: NextValidTask(void){
 }
 
 bool CTask :: AddTask(long lPType, float fPTime, long lPAdd, void * pP,float fAddP){
-	//std::cout << "addtask" << endl;
+	//std::cout << "addtask" << std::endl;
 	if(lNOT >= _MAX_TASKS
 		|| (current&&current->lType & BT_LOCKED))
 		return false;
@@ -146,7 +146,7 @@ bool CTask :: NextTask(void){
 }
 
 void CTask :: Reset(void){
-	//std::cout << "reset" << endl;
+	//std::cout << "reset" << std::endl;
 	lNOT = 0;
 	current = 0;
 }
