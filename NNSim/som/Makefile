@@ -32,11 +32,7 @@ ifeq ($(OPT),debug)
 else
  CFLAGS = $(BASECFLAGS) -O2 -march=i586 -O2 -ffast-math -funroll-loops\
   -fomit-frame-pointer -fexpensive-optimizations
- ifeq ($(OS),Windows_NT)
-  CFLAGS += -falign-loops=2 -falign-jumps=2 -falign-functions=2
- else
-  CFLAGS += -malign-loops=2 -malign-jumps=2 -malign-functions=2
- endif
+ CFLAGS += -falign-loops=2 -falign-jumps=2 -falign-functions=2
 endif
 
 # ---------------------------------------------------------------------------
